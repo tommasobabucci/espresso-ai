@@ -1,0 +1,53 @@
+# ============================================
+# espresso.ai — .gitignore
+# ============================================
+
+# SECRETS — Never commit API keys or credentials
+# Ignore all files inside .env/ except the README
+.env/*
+!.env/README.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Node (if any JS tooling is added)
+node_modules/
+npm-debug.log*
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+.cache/
+
+# Research data (optional — uncomment if you don't want raw data in version control)
+# research_db/raw/
+# research_db/processed/
+
+# Local memory (Claude agent memory that's machine-specific)
+.claude/agent-memory-local/
