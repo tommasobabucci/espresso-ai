@@ -1,0 +1,24 @@
+{
+  "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+  "batch_id": "batch_20260319_0102",
+  "cadence": "weekly",
+  "source": "arxiv",
+  "started_at": "2026-03-19T01:02:46Z",
+  "completed_at": "2026-03-19T01:04:02Z",
+  "date_range": {
+    "start": "2026-03-12",
+    "end": "2026-03-19"
+  },
+  "queries_executed": 21,
+  "total_results_raw": 395,
+  "total_results_unique": 332,
+  "records_written": 332,
+  "lever_distribution": {
+    "GOV": 31,
+    "COMPUTE": 159,
+    "SOCIETY": 52,
+    "INDUSTRY": 86,
+    "ENERGY": 4
+  },
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-12_2026-03-19_arxiv_weekly_signals.jsonl"
+}

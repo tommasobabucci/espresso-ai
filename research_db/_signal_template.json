@@ -1,0 +1,43 @@
+{
+  "_instructions": "Copy this file to create a new signal record. Delete this _instructions field before writing. Append the completed object as a single line to the appropriate JSONL file in research_db/raw/. See research_db/SCHEMA.md for full field definitions and allowed values.",
+
+  "signal_id": "YYYYMMDD-[source_name]-HHMMSS-[5char]",
+  "source_name": "[linkedin | twitter | rss_feed | academic_paper | earnings_call | regulatory_filing | news_site | company_announcement | other]",
+  "source_url": "https://...",
+  "fetch_timestamp": "YYYY-MM-DDTHH:MM:SSZ",
+  "agent_id": "[agent name matching .claude/agents/ definition]",
+  "cadence": "[daily | weekly | monthly | quarterly | annual]",
+  "pipeline_run_id": "YYYY-MM-DD_[cadence]_[8char-uuid]",
+  "collection_batch_id": "batch_YYYYMMDD_HHMM",
+
+  "lever_primary": "[COMPUTE | ENERGY | SOCIETY | INDUSTRY | CAPITAL | GOV]",
+  "lever_secondary": null,
+  "direction": "[+ | - | ~ | ?]",
+  "sub_variable": "[sub_variable_label from SCALE_LEVERS.md]",
+  "confidence": "[high | medium | low]",
+
+  "title": "[Original headline or title — do not paraphrase]",
+  "summary": "[1-2 sentences: what this means for AI scaling, not what it says. Lead with direction. No hedging.]",
+  "key_facts": [
+    "[Specific verifiable claim from source]",
+    "[Specific verifiable claim from source]",
+    "[Specific verifiable claim from source]"
+  ],
+  "raw_content": null,
+
+  "publication_date": "YYYY-MM-DD",
+  "reporting_period": null,
+
+  "signal_strength": null,
+  "cross_lever_interactions": [],
+  "novelty_flag": null,
+  "countervailing_signals": [],
+  "synthesis_notes": null,
+  "is_duplicate": false,
+  "duplicate_of": null,
+
+  "in_scope": true,
+  "data_quality_flags": [],
+  "tags": [],
+  "schema_version": "1.0"
+}

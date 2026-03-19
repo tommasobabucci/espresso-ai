@@ -1,0 +1,30 @@
+{
+  "pipeline_run_id": "2026-03-12_2026-03-19_perplexity_weekly_377008ec",
+  "collection_batch_id": "batch_20260319_0105",
+  "cadence": "weekly",
+  "date_window": {
+    "after": "03/12/2026",
+    "before": "03/19/2026"
+  },
+  "started_at": "2026-03-19T01:05:30Z",
+  "completed_at": "2026-03-19T01:07:30Z",
+  "queries_executed": 7,
+  "signals_collected": 44,
+  "duplicates_removed": 7,
+  "signals_written": 37,
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-12_2026-03-19_perplexity_weekly_signals.jsonl",
+  "quality_metrics": {
+    "tier1_source_count": 0,
+    "unknown_domain_count": 28,
+    "aggregator_title_count": 0,
+    "out_of_date_count": 6,
+    "missing_url_count": 0,
+    "url_not_in_citations_count": 1,
+    "direction_distribution": {
+      "+": 11,
+      "-": 2,
+      "~": 15,
+      "?": 9
+    }
+  }
+}

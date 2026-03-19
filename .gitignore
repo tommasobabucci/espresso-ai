@@ -7,6 +7,9 @@
 .env/*
 !.env/README.md
 
+# Personal documents
+brand_assets/about_me/tommaso-babucci-resume.pdf
+
 # Python
 __pycache__/
 *.py[cod]

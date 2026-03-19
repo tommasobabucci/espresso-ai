@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>espresso·ai — Brand Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ──────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #162B4E;
+      --navy-mid:    #1E3A65;
+      --navy-light:  #2C5282;
+      --red:         #BF3A2B;
+      --red-light:   #D94E3C;
+      --red-pale:    #F5E8E6;
+      --white:       #FFFFFF;
+      --cream:       #FAF9F7;
+      --gray-100:    #F4F3F1;
+      --gray-200:    #E8E6E3;
+      --gray-400:    #A09D99;
+      --gray-600:    #6B6760;
+      --gray-800:    #2C2A27;
+      --ink:         #111827;
+
+      --serif:  'Playfair Display', Georgia, serif;
+      --sans:   'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Nav ───────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 56px;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--red); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ─── Hero ──────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 45%;
+      height: 100%;
+      background: var(--navy);
+      clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 560px;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(52px, 6vw, 80px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .hero-title .dot { color: var(--red); }
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+    }
+    .hero-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--red);
+      margin-bottom: 32px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--gray-600);
+      max-width: 440px;
+    }
+    .hero-right {
+      position: absolute;
+      right: 0; top: 0;
+      width: 45%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .hero-mark {
+      text-align: center;
+      color: var(--white);
+    }
+    .hero-mark-letter {
+      font-family: var(--serif);
+      font-size: 160px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      opacity: 0.12;
+      display: block;
+    }
+    .hero-mark-name {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-top: -20px;
+      position: relative;
+      z-index: 3;
+    }
+    .hero-mark-name span { color: var(--red-light); }
+    .hero-mark-tag {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ─── Section scaffolding ───────────────────────── */
+    section { padding: 96px 80px; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 40px;
+      height: 1px;
+      background: var(--red);
+      opacity: 0.4;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-body {
+      font-size: 16px;
+      color: var(--gray-600);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    /* ─── Positioning ───────────────────────────────── */
+    .positioning { background: var(--cream); }
+    .positioning-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 56px;
+    }
+    .pos-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 2px;
+      padding: 36px;
+      position: relative;
+    }
+    .pos-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--red);
+    }
+    .pos-card h3 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+    .pos-card p {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--navy);
+    }
+    .pos-card.wide { grid-column: 1 / -1; }
+    .pos-card.wide p {
+      font-size: 24px;
+    }
+
+    /* ─── Taglines ──────────────────────────────────── */
+    .taglines { background: var(--navy); }
+    .taglines .section-label { color: rgba(255,255,255,0.4); }
+    .taglines .section-label::after { background: rgba(255,255,255,0.2); }
+    .taglines .section-title { color: var(--white); }
+    .tagline-list {
+      margin-top: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .tagline-item {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      cursor: default;
+      transition: all 0.25s;
+    }
+    .tagline-item:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+    .tagline-item:hover { padding-left: 12px; }
+    .tagline-num {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--red-light);
+      opacity: 0.7;
+      min-width: 24px;
+    }
+    .tagline-text {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.5vw, 32px);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.015em;
+    }
+    .tagline-note {
+      margin-left: auto;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      font-style: italic;
+      white-space: nowrap;
+    }
+    .tagline-primary .tagline-text { color: var(--red-light); }
+    .tagline-primary .tagline-num { opacity: 1; }
+
+    /* ─── Colors ────────────────────────────────────── */
+    .colors { background: var(--white); }
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .color-swatch {
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .color-swatch-block {
+      height: 120px;
+    }
+    .color-swatch-info {
+      padding: 16px;
+      background: var(--white);
+    }
+    .color-swatch-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .color-swatch-hex {
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+    .color-swatch-role {
+      font-size: 11px;
+      color: var(--gray-400);
+      font-style: italic;
+    }
+
+    /* ─── Typography ────────────────────────────────── */
+    .typography { background: var(--cream); }
+    .type-showcase { margin-top: 64px; }
+    .type-block {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .type-block:first-child { border-top: 1px solid var(--gray-200); }
+    .type-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .type-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .type-spec {
+      font-size: 10px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--gray-400);
+    }
+    .type-sample-h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      line-height: 1.08;
+    }
+    .type-sample-h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .type-sample-h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+    .type-sample-body {
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--gray-800);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+    .type-sample-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ─── Voice & Tone ──────────────────────────────── */
+    .voice { background: var(--white); }
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .voice-card {
+      padding: 36px;
+      border-radius: 2px;
+    }
+    .voice-card.do {
+      background: #EEF4FF;
+      border: 1px solid #C5D8FF;
+    }
+    .voice-card.dont {
+      background: var(--red-pale);
+      border: 1px solid #EFC5C0;
+    }
+    .voice-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .voice-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .voice-card.do .voice-badge { background: var(--navy); color: var(--white); }
+    .voice-card.dont .voice-badge { background: var(--red); color: var(--white); }
+    .voice-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .voice-card ul li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      padding-left: 16px;
+      position: relative;
+    }
+    .voice-card.do ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--navy-light);
+      font-size: 12px;
+    }
+    .voice-card.dont ul li::before {
+      content: '×';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    /* ─── AI Giveaways ─────────────────────────────── */
+    .ai-giveaways {
+      margin-top: 48px;
+      border: 1.5px solid var(--navy);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .ai-giveaways-header {
+      background: var(--navy);
+      padding: 18px 36px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .ai-giveaways-header h3 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .ai-giveaways-header span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      font-style: italic;
+    }
+    .ai-giveaways-body {
+      padding: 32px 36px;
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 40px;
+    }
+    .ai-giveaway-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .ai-giveaway-item:nth-last-child(-n+2) { border-bottom: none; }
+    .ai-giveaway-code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 12px;
+      color: var(--red);
+      background: var(--red-pale);
+      padding: 2px 8px;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ai-giveaway-desc {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    /* ─── Voice Adjectives ──────────────────────────── */
+    .voice-attrs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 48px;
+    }
+    .voice-attr {
+      padding: 10px 20px;
+      border: 1.5px solid var(--navy);
+      border-radius: 2px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+      background: transparent;
+      letter-spacing: 0.02em;
+    }
+    .voice-attr.active {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    /* ─── Content principles ────────────────────────── */
+    .content { background: var(--cream); }
+    .content-principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .principle {
+      padding: 40px 32px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 2px;
+      position: relative;
+    }
+    .principle-num {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--gray-200);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .principle h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .principle p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .principle-accent {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), transparent);
+    }
+
+    /* ─── Logo ──────────────────────────────────────── */
+    .logo-section { background: var(--white); }
+    .logo-demos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .logo-demo {
+      padding: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+    }
+    .logo-demo.light { background: var(--cream); border: 1px solid var(--gray-200); }
+    .logo-demo.dark { background: var(--navy); }
+    .logo-demo.red-bg { background: var(--red); }
+    .logo-demo.white { background: var(--white); border: 1px solid var(--gray-200); }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+    }
+    .logo-mark-e {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 36px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .logo-mark-rest {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 36px;
+      letter-spacing: -0.02em;
+    }
+    .logo-mark-dot {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 36px;
+      letter-spacing: -0.02em;
+    }
+    .logo-mark-ai {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 36px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Light version */
+    .logo-demo.light .logo-mark-e,
+    .logo-demo.light .logo-mark-rest,
+    .logo-demo.white .logo-mark-e,
+    .logo-demo.white .logo-mark-rest { color: var(--navy); }
+    .logo-demo.light .logo-mark-dot,
+    .logo-demo.white .logo-mark-dot { color: var(--red); }
+    .logo-demo.light .logo-mark-ai,
+    .logo-demo.white .logo-mark-ai { color: var(--gray-400); }
+
+    /* Dark version */
+    .logo-demo.dark .logo-mark-e,
+    .logo-demo.dark .logo-mark-rest { color: var(--white); }
+    .logo-demo.dark .logo-mark-dot { color: var(--red-light); }
+    .logo-demo.dark .logo-mark-ai { color: rgba(255,255,255,0.45); }
+
+    /* Red version */
+    .logo-demo.red-bg .logo-mark-e,
+    .logo-demo.red-bg .logo-mark-rest,
+    .logo-demo.red-bg .logo-mark-dot,
+    .logo-demo.red-bg .logo-mark-ai { color: var(--white); }
+    .logo-demo.red-bg .logo-mark-dot { opacity: 0.7; }
+
+    .logo-caption {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-top: 16px;
+    }
+    .logo-wrapper { width: 100%; }
+
+    /* ─── Content Examples ──────────────────────────── */
+    .examples { background: var(--navy); }
+    .examples .section-label { color: rgba(255,255,255,0.4); }
+    .examples .section-label::after { background: rgba(255,255,255,0.2); }
+    .examples .section-title { color: var(--white); }
+    .examples .section-body { color: rgba(255,255,255,0.5); }
+    .examples-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .example-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      padding: 32px;
+    }
+    .example-card-type {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 16px;
+      opacity: 0.8;
+    }
+    .example-card-content {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.55;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .example-card-context {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ─── Footer ────────────────────────────────────── */
+    footer {
+      padding: 48px 80px;
+      background: var(--gray-100);
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .footer-logo span { color: var(--red); }
+    .footer-meta {
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+    .footer-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    /* ─── Utilities ─────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--gray-200);
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 64px 24px; }
+      .hero { padding: 100px 24px 64px; }
+      .hero::before { display: none; }
+      .hero-right { display: none; }
+      .positioning-grid,
+      .voice-grid,
+      .logo-demos,
+      .examples-grid,
+      .content-principles { grid-template-columns: 1fr; }
+      .nav { padding: 0 24px; }
+      footer { padding: 32px 24px; flex-direction: column; gap: 16px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">espresso<span>·</span>ai</div>
+    <ul class="nav-links">
+      <li><a href="#positioning">Positioning</a></li>
+      <li><a href="#taglines">Taglines</a></li>
+      <li><a href="#colors">Colors</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#voice">Voice</a></li>
+      <li><a href="#content">Principles</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Brand Identity Guide · 2026</p>
+      <h1 class="hero-title">espresso<span class="dot">·</span>ai</h1>
+      <p class="hero-subtitle">AI news. Concentrated.</p>
+      <div class="hero-rule"></div>
+      <p class="hero-desc">
+        This document defines the visual identity, voice, and messaging principles for espresso·ai — an AI news agent delivering dense signal to the consultants and executives who shape the future.
+      </p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-mark">
+        <span class="hero-mark-letter">e</span>
+        <p class="hero-mark-name">espresso<span>·</span>ai</p>
+        <span class="hero-mark-tag">Brand Identity Guide</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section class="positioning" id="positioning">
+    <p class="section-label">01 — Positioning</p>
+    <h2 class="section-title">What espresso·ai is,<br/>and what it is not.</h2>
+
+    <div class="positioning-grid">
+      <div class="pos-card wide">
+        <h3>Core Positioning</h3>
+        <p>espresso·ai is an AI news agent that distills the signal from the noise — delivering concentrated intelligence on artificial intelligence trends to the consultants and C-suite leaders who need to stay ahead, not just informed.</p>
+      </div>
+      <div class="pos-card">
+        <h3>The Problem We Solve</h3>
+        <p>AI news is everywhere. Clarity is rare. espresso·ai delivers the shot of intelligence that actually matters — curated, concentrated, ready to act on.</p>
+      </div>
+      <div class="pos-card">
+        <h3>Our Audience</h3>
+        <p>Consultants, strategists, and C-suite executives at Fortune 500 companies who treat intelligence as a competitive advantage — not a pastime.</p>
+      </div>
+      <div class="pos-card">
+        <h3>Our Category</h3>
+        <p>Not a newsletter. Not a feed. Not a podcast. A news agent — intelligent, curated, and always working on your behalf.</p>
+      </div>
+      <div class="pos-card">
+        <h3>Our Promise</h3>
+        <p>Dense signal. Zero noise. Every brief from espresso·ai is worth your time — or we've failed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGLINES -->
+  <section class="taglines" id="taglines">
+    <p class="section-label">02 — Taglines</p>
+    <h2 class="section-title">Words that pull weight.</h2>
+
+    <div class="tagline-list">
+      <div class="tagline-item tagline-primary">
+        <span class="tagline-num">01</span>
+        <span class="tagline-text">AI news. Concentrated.</span>
+        <span class="tagline-note">Primary tagline</span>
+      </div>
+      <div class="tagline-item">
+        <span class="tagline-num">02</span>
+        <span class="tagline-text">Dense signal. Zero noise.</span>
+        <span class="tagline-note">Campaign use</span>
+      </div>
+      <div class="tagline-item">
+        <span class="tagline-num">03</span>
+        <span class="tagline-text">The shot of intelligence that matters.</span>
+        <span class="tagline-note">Long-form / editorial</span>
+      </div>
+      <div class="tagline-item">
+        <span class="tagline-num">04</span>
+        <span class="tagline-text">For people who'd rather know than wonder.</span>
+        <span class="tagline-note">Audience-specific</span>
+      </div>
+      <div class="tagline-item">
+        <span class="tagline-num">05</span>
+        <span class="tagline-text">AI trends. Sharp. Brief. Yours.</span>
+        <span class="tagline-note">Social / short-form</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLORS -->
+  <section class="colors" id="colors">
+    <p class="section-label">03 — Color Palette</p>
+    <h2 class="section-title">A palette built on<br/>authority and precision.</h2>
+    <p class="section-body">Navy conveys depth, authority, and intelligence. Etruscan red brings energy, editorial edge, and the warmth of something crafted. White grounds it all in clarity.</p>
+
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background:#162B4E;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Espresso Navy</div>
+          <div class="color-swatch-hex">#162B4E</div>
+          <div class="color-swatch-role">Primary — headlines, backgrounds, authority</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background:#BF3A2B;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Etruscan Red</div>
+          <div class="color-swatch-hex">#BF3A2B</div>
+          <div class="color-swatch-role">Accent — emphasis, editorial marks, energy</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background:#FFFFFF; border: 1px solid #E8E6E3;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Signal White</div>
+          <div class="color-swatch-hex">#FFFFFF</div>
+          <div class="color-swatch-role">Base — backgrounds, negative space, clarity</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background:#FAF9F7;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Newsprint Cream</div>
+          <div class="color-swatch-hex">#FAF9F7</div>
+          <div class="color-swatch-role">Secondary BG — section alternates, cards</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background:#1E3A65;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Navy Mid</div>
+          <div class="color-swatch-hex">#1E3A65</div>
+          <div class="color-swatch-role">Supporting — hover states, depth layers</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background:#D94E3C;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Red Light</div>
+          <div class="color-swatch-hex">#D94E3C</div>
+          <div class="color-swatch-role">Supporting — red on dark backgrounds</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background:#6B6760;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Editorial Gray</div>
+          <div class="color-swatch-hex">#6B6760</div>
+          <div class="color-swatch-role">Body text, captions, supporting copy</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background:#111827;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Ink</div>
+          <div class="color-swatch-hex">#111827</div>
+          <div class="color-swatch-role">High-contrast body text, dark mode base</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="typography" id="typography">
+    <p class="section-label">04 — Typography</p>
+    <h2 class="section-title">Type that commands<br/>the room.</h2>
+    <p class="section-body">Playfair Display brings editorial authority to headlines. Inter delivers digital clarity in body copy. Together: the FT meets Stripe.</p>
+
+    <div class="type-showcase">
+      <div class="type-block">
+        <div class="type-meta">
+          <span class="type-label">Display / H1</span>
+          <span class="type-spec">Playfair Display · 700 · −0.025em · 1.08</span>
+        </div>
+        <p class="type-sample-h1">The age of AI news<br/>is over. Welcome<br/>to intelligence.</p>
+      </div>
+      <div class="type-block">
+        <div class="type-meta">
+          <span class="type-label">Headline / H2</span>
+          <span class="type-spec">Playfair Display · 600 · −0.02em · 1.2</span>
+        </div>
+        <p class="type-sample-h2">What happened in AI<br/>this week — and why it matters.</p>
+      </div>
+      <div class="type-block">
+        <div class="type-meta">
+          <span class="type-label">Subhead / H3</span>
+          <span class="type-spec">Playfair Display · 500 · italic · 1.4</span>
+        </div>
+        <p class="type-sample-h3">Long-term trend analysis for consultants and executives who lead with intelligence.</p>
+      </div>
+      <div class="type-block">
+        <div class="type-meta">
+          <span class="type-label">Body</span>
+          <span class="type-spec">Inter · 400 · 17px · 1.75</span>
+        </div>
+        <p class="type-sample-body">espresso·ai distills the most important AI developments into concentrated briefings — written for people who make decisions, not people who read everything. Each edition is edited for density, not length.</p>
+      </div>
+      <div class="type-block">
+        <div class="type-meta">
+          <span class="type-label">Label / Eyebrow</span>
+          <span class="type-spec">Inter · 600 · 11px · 0.12em · uppercase</span>
+        </div>
+        <p class="type-sample-label">AI Trends · Long-term Analysis · March 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE & TONE -->
+  <section class="voice" id="voice">
+    <p class="section-label">05 — Voice &amp; Tone</p>
+    <h2 class="section-title">Sharp. Editorial.<br/>Never loud.</h2>
+    <p class="section-body">espresso·ai speaks like the smartest person in the room who doesn't need to prove it. Authority through precision, not volume.</p>
+
+    <div class="voice-attrs">
+      <span class="voice-attr active">Authoritative</span>
+      <span class="voice-attr active">Editorial</span>
+      <span class="voice-attr active">Precise</span>
+      <span class="voice-attr">Concise</span>
+      <span class="voice-attr">Intelligent</span>
+      <span class="voice-attr active">Sharp</span>
+      <span class="voice-attr">Calm</span>
+      <span class="voice-attr">Forward-looking</span>
+    </div>
+
+    <div class="voice-grid" style="margin-top:40px;">
+      <div class="voice-card do">
+        <div class="voice-card-header">
+          <span class="voice-badge">Write like this</span>
+        </div>
+        <ul>
+          <li>Lead with the insight, not the context. Readers are smart.</li>
+          <li>Use declarative sentences. State what is true, not what might be.</li>
+          <li>Name the trend before explaining it. Headlines do work.</li>
+          <li>Write as if you have 30 seconds of the reader's attention — because you do.</li>
+          <li>Long-term perspective over daily churn. Signal over noise.</li>
+          <li>Confident, not arrogant. Precise, not pedantic.</li>
+        </ul>
+      </div>
+      <div class="voice-card dont">
+        <div class="voice-card-header">
+          <span class="voice-badge">Never like this</span>
+        </div>
+        <ul>
+          <li>Hype language: "game-changing," "revolutionary," "unprecedented."</li>
+          <li>Hedging without reason: "might," "could potentially," "seems to suggest."</li>
+          <li>Filler phrases: "In today's rapidly evolving AI landscape…"</li>
+          <li>Casual or overly conversational tone that undercuts authority.</li>
+          <li>Passive voice as a default — be direct, be accountable.</li>
+          <li>Clickbait framing that promises more than the content delivers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AI GIVEAWAYS -->
+    <div class="ai-giveaways">
+      <div class="ai-giveaways-header">
+        <h3>Avoid AI Writing Giveaways</h3>
+        <span>Patterns that signal machine-generated prose — never use these</span>
+      </div>
+      <div class="ai-giveaways-body">
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">em dash</span>
+          <span class="ai-giveaway-desc">Don't use — em dashes as sentence connectors. Rewrite as two sentences or use a comma.</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">list of three</span>
+          <span class="ai-giveaway-desc">Avoid the X, Y, and Z triple structure as a rhetorical reflex. Pick one or be specific.</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">transitional openers</span>
+          <span class="ai-giveaway-desc">Never start with "Additionally," "Furthermore," "Moreover," or "In conclusion."</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">meta-commentary</span>
+          <span class="ai-giveaway-desc">Cut "It's worth noting that…" / "It's important to understand that…" — just say the thing.</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">delve / tapestry</span>
+          <span class="ai-giveaway-desc">Avoid: delve, tapestry, mosaic, landscape (as metaphor), paradigm shift, game-changer.</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">rhetorical questions</span>
+          <span class="ai-giveaway-desc">Don't open with "What does this mean for AI?" — answer it, don't ask it.</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">hollow affirmations</span>
+          <span class="ai-giveaway-desc">Remove "Certainly," "Absolutely," "Great question," or any affirmation before the point.</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">summary bullets</span>
+          <span class="ai-giveaway-desc">No "Key takeaways:" lists at the end. The writing itself should do that work.</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">nested qualifiers</span>
+          <span class="ai-giveaway-desc">Avoid stacking "not only… but also…" and "while… it is also true that…" constructions.</span>
+        </div>
+        <div class="ai-giveaway-item">
+          <span class="ai-giveaway-code">symmetric structure</span>
+          <span class="ai-giveaway-desc">Watch for overly balanced sentences. Real prose is asymmetric. Vary rhythm deliberately.</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTENT PRINCIPLES -->
+  <section class="content" id="content">
+    <p class="section-label">06 — Content Principles</p>
+    <h2 class="section-title">Six rules that govern<br/>every piece of content.</h2>
+
+    <div class="content-principles">
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <h3>Signal over noise</h3>
+        <p>Every story earns its place. If it doesn't change how a leader thinks or acts, it doesn't ship.</p>
+        <div class="principle-accent"></div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <h3>Insight, not summary</h3>
+        <p>We don't recap what happened. We explain what it means — for strategy, for markets, for people who lead.</p>
+        <div class="principle-accent"></div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <h3>Long-term lens</h3>
+        <p>Daily news fades. Trends compound. espresso·ai always asks: where is this going over the next 12–36 months?</p>
+        <div class="principle-accent"></div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <h3>Density over volume</h3>
+        <p>A single sharp paragraph beats five rambling ones. We earn the reader's time by respecting it.</p>
+        <div class="principle-accent"></div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">05</div>
+        <h3>Editorial point of view</h3>
+        <p>We have a perspective. We don't hide it behind "some say." Readers trust us because we take a position.</p>
+        <div class="principle-accent"></div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">06</div>
+        <h3>Always actionable</h3>
+        <p>Great intelligence moves people. Every brief should leave the reader knowing what to watch, consider, or do next.</p>
+        <div class="principle-accent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO USAGE -->
+  <section class="logo-section" id="logo">
+    <p class="section-label">07 — Logo Usage</p>
+    <h2 class="section-title">The mark in context.</h2>
+    <p class="section-body">The wordmark is the logo. Small, clean, and never the hero — it identifies without demanding attention. The red dot is its only decoration.</p>
+
+    <div class="logo-demos">
+      <div class="logo-wrapper">
+        <div class="logo-demo light">
+          <div class="logo-mark">
+            <span class="logo-mark-e">e</span><span class="logo-mark-rest">spresso</span><span class="logo-mark-dot">·</span><span class="logo-mark-ai">ai</span>
+          </div>
+        </div>
+        <p class="logo-caption">Primary — on light</p>
+      </div>
+      <div class="logo-wrapper">
+        <div class="logo-demo dark">
+          <div class="logo-mark">
+            <span class="logo-mark-e">e</span><span class="logo-mark-rest">spresso</span><span class="logo-mark-dot">·</span><span class="logo-mark-ai">ai</span>
+          </div>
+        </div>
+        <p class="logo-caption">Reversed — on navy</p>
+      </div>
+      <div class="logo-wrapper">
+        <div class="logo-demo white">
+          <div class="logo-mark" style="transform:scale(0.65); transform-origin:center;">
+            <span class="logo-mark-e">e</span><span class="logo-mark-rest">spresso</span><span class="logo-mark-dot">·</span><span class="logo-mark-ai">ai</span>
+          </div>
+        </div>
+        <p class="logo-caption">Small scale — navigation / footer</p>
+      </div>
+      <div class="logo-wrapper">
+        <div class="logo-demo red-bg">
+          <div class="logo-mark">
+            <span class="logo-mark-e">e</span><span class="logo-mark-rest">spresso</span><span class="logo-mark-dot">·</span><span class="logo-mark-ai">ai</span>
+          </div>
+        </div>
+        <p class="logo-caption">On accent — use sparingly</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT EXAMPLES -->
+  <section class="examples" id="examples">
+    <p class="section-label">08 — Voice in Action</p>
+    <h2 class="section-title">What espresso·ai<br/>sounds like.</h2>
+    <p class="section-body">Examples of the brand voice across content types — from brief intros to LinkedIn posts.</p>
+
+    <div class="examples-grid">
+      <div class="example-card">
+        <div class="example-card-type">Newsletter Brief Opener</div>
+        <div class="example-card-content">"The AI agent race isn't about who ships first. It's about who gets adoption. This week's briefing explains why most enterprise deployments will fail — and the three conditions that separate the ones that won't."</div>
+        <div class="example-card-context">espresso·ai weekly brief — opening hook</div>
+      </div>
+      <div class="example-card">
+        <div class="example-card-type">LinkedIn Post</div>
+        <div class="example-card-content">"The models are plateauing. The workflows aren't. That's the real AI story of 2026 — and most coverage is still writing about the wrong thing."</div>
+        <div class="example-card-context">Short-form, high-conviction, built to provoke thought</div>
+      </div>
+      <div class="example-card">
+        <div class="example-card-type">Trend Headline</div>
+        <div class="example-card-content">"Frontier model costs fell 85% in 18 months. Here's what that means for your AI strategy — and why it changes the build-vs-buy math permanently."</div>
+        <div class="example-card-context">Long-term trend framing with strategic implication</div>
+      </div>
+      <div class="example-card">
+        <div class="example-card-type">Sub-header / Insight Pull</div>
+        <div class="example-card-content">"This isn't an AI shortage. It's an adoption gap. The models are ready. The organizations aren't."</div>
+        <div class="example-card-context">Punchy pull-quote style — declarative, editorial</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">espresso<span>·</span>ai</div>
+    <div class="footer-meta">Brand Identity Guide · Version 1.0 · March 2026</div>
+    <div class="footer-tag">AI News. Concentrated.</div>
+  </footer>
+
+</body>
+</html>
