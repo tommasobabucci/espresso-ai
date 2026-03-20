@@ -20,10 +20,10 @@
     },
     "signals_per_lever": {
       "COMPUTE": [
-        "Gemini 3 Deep Think solves four open Erdos conjectures via inference-time scaling",
+        "Gemini 3 Deep Think solves four open Erdos problems via inference-time scaling",
         "GPT-5.4 mini and nano compress frontier capabilities into 2x-faster form factors",
         "Simulation Distillation transfers simulator priors for rapid real-world robotics",
-        "TRiMS cuts chain-of-thought tokens by 80% while preserving accuracy"
+        "TRiMS cuts chain-of-thought tokens by 80% while preserving accuracy [FACT-CHECK: UNVERIFIABLE — likely hallucinated]"
       ],
       "ENERGY": [
         "Google secures 2.7 GW of dedicated clean power for Detroit data center",
@@ -54,7 +54,7 @@
         "Khosla's $50M OpenAI bet at $1B valuation now worth billions"
       ],
       "GOV": [
-        "Anthropic launches dedicated safety institute led by Jack Clark with ~30 members",
+        "Anthropic launches The Anthropic Institute led by Jack Clark as Head of Public Benefit with ~30 members",
         "Runtime governance framework formalizes compliance for non-deterministic AI agents",
         "Ren Zhengfei tells Xi that chip gap concerns have eased; leads 2,000-company network",
         "Schmidt: emergent AI behaviors make preemptive regulation structurally impossible",

@@ -45,12 +45,12 @@
           "direction": "+",
           "sub_variable": "architectural_diversity",
           "confidence": "high",
-          "title": "Gemini 3 Deep Think upgrade scales inference-time compute into PhD-level science; solves four open Erdos conjectures",
-          "summary": "Google DeepMind's Gemini 3 Deep Think demonstrates that inference-time compute scaling can reach PhD-level scientific reasoning. Autonomously solving four previously open Erdos conjectures validates the paradigm that more compute at inference — not just training — unlocks new capability frontiers.",
+          "title": "Gemini 3 Deep Think upgrade scales inference-time compute; solves four open Erdos problems",
+          "summary": "Google DeepMind's Gemini 3 Deep Think demonstrates that inference-time compute scaling extends reasoning capability. Semi-autonomous solving of four previously open Erdos problems validates the paradigm that more compute at inference — not just training — unlocks new capability frontiers.",
           "key_facts": [
             "Gemini 3 Deep Think upgrade released March 17, 2026",
-            "The model solved four previously open Erdos conjectures autonomously",
-            "Demonstrates inference-time compute scaling into PhD-level scientific reasoning"
+            "The model solved four previously open Erdos problems semi-autonomously",
+            "Demonstrates inference-time compute scaling extending reasoning capability"
           ],
           "raw_content": null,
           "publication_date": "2026-03-17",
@@ -73,7 +73,9 @@
           "_corroboration_count": 2,
           "_corroboration_sources": [
             "perplexity-weekly-collector"
-          ]
+          ],
+          "fact_check_status": "PARTIALLY_CONFIRMED",
+          "fact_check_note": "Problems were open questions from Erdős database, not major conjectures. System described by DeepMind as semi-autonomous. 9 of 13 resolved problems found existing solutions in literature."
         },
         {
           "signal_id": "20260319-company_announcement-120200-d82a6",
@@ -210,7 +212,9 @@
           "_corroboration_count": 2,
           "_corroboration_sources": [
             "arxiv-signal-collector"
-          ]
+          ],
+          "fact_check_status": "UNVERIFIABLE",
+          "fact_check_note": "No paper named TRiMS or Minimal Sufficient Length theory found in any indexed source. Likely hallucinated by synthesis pipeline."
         },
         {
           "signal_id": "20260319-academic_paper-010402-8da60",
@@ -1231,12 +1235,12 @@
           "direction": "+",
           "sub_variable": "alignment_and_safety_maturity",
           "confidence": "high",
-          "title": "Anthropic launches Anthropic Institute — dedicated safety research arm led by Jack Clark with ~30 members",
-          "summary": "Anthropic's creation of a dedicated safety research institute with ~30 members from DeepMind, UVA, and ex-OpenAI institutionalizes safety research as a permanent, resourced function alongside product development. This raises the bar for what 'responsible AI development' means in practice.",
+          "title": "Anthropic launches The Anthropic Institute led by Jack Clark as Head of Public Benefit with ~30 members",
+          "summary": "Anthropic's creation of The Anthropic Institute with ~30 members from DeepMind, UVA, and ex-OpenAI establishes a permanent body to study AI's societal effects, economic impact, and risks — broader than safety alone. Clark leads as Head of Public Benefit, consolidating Frontier Red Team, Societal Impacts, and Economic Research under one roof.",
           "key_facts": [
-            "Anthropic Institute launched with ~30 members from DeepMind, UVA, ex-OpenAI",
-            "Led by Jack Clark, Anthropic co-founder",
-            "Dedicated to safety research separate from product development"
+            "The Anthropic Institute launched with ~30 members from DeepMind, UVA, ex-OpenAI",
+            "Led by Jack Clark as Head of Public Benefit",
+            "Mandate covers societal effects, economic impact, and risks — not limited to safety research"
           ],
           "raw_content": null,
           "publication_date": "2026-03-11",
@@ -1582,7 +1586,7 @@
       "titles": [
         "Trump administration defends Anthropic blacklisting in US court as supply chain risk case advances",
         "Jeffrey Dean signs amicus brief backing Anthropic against Pentagon blacklist",
-        "Anthropic launches Anthropic Institute — dedicated safety research arm led by Jack Clark with ~30 members",
+        "Anthropic launches The Anthropic Institute led by Jack Clark as Head of Public Benefit with ~30 members",
         "Palantir still using Anthropic's Claude as Pentagon blacklist plays out, CEO Karp confirms at AIPcon 9",
         "Karp attacks AI companies refusing military use; Anthropic-DoD split fragments US defense AI supply chain",
         "Anthropic Institute to tackle recursive AI self-improvement governance: 'If AI begins to recursively self-improve, who will notice?'",

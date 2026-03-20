@@ -97,7 +97,7 @@ JSONL file naming: `YYYY-MM-DD_[cadence]_signals.jsonl` (daily), `YYYY-W[WW]_wee
 | Reddit Perplexity Research | `/reddit-perplexity-research [cadence]` | Collect AI signals from curated Reddit subreddits via Perplexity sonar-pro web search, classify by Scale Lever, write JSONL to `research_db/raw/` |
 | Influencer Research | `/influencer-research [cadence]` | Collect AI signals from ~71 key influencers across 10 groups via parallel subagents with WebSearch, classify by Scale Lever, write JSONL to `research_db/raw/` |
 | Weekly Carousel | `/weekly-carousel [--start-date] [--end-date]` | Synthesize raw signals into a 7-slide LinkedIn carousel: dedup, score, select top 5 per lever, write editorial content, generate HTML |
-| Brew Espresso | `/brew-espresso [cadence]` | Run all 8 research collectors in parallel, skip sources with missing API keys, present unified summary. Collection only |
+| Brew Espresso | `/brew-espresso [cadence]` | Run all 7 research collectors in parallel (excludes X/Apify), skip sources with missing API keys, present unified summary. Collection only |
 
 Collection skills require a cadence argument. The weekly carousel skill accepts optional date range arguments and invokes `synthesize_signals.py`.
 

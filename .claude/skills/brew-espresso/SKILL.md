@@ -1,13 +1,13 @@
 ---
 name: brew-espresso
-description: Run all espresso·ai research collectors in parallel for a given cadence. Launches ArXiv, Perplexity, X (Apify/Claude/Perplexity), Reddit (Claude/Perplexity), and Influencer collectors simultaneously. Skips collectors with missing API keys. Collection only — does not run synthesis.
+description: Run all espresso·ai research collectors in parallel for a given cadence. Launches ArXiv, Perplexity, X (Claude/Perplexity), Reddit (Claude/Perplexity), and Influencer collectors simultaneously. Skips collectors with missing API keys. Collection only — does not run synthesis.
 argument-hint: [daily|weekly|monthly|quarterly|annual] [--days-back N]
 allowed-tools: Bash, Read, Agent, WebSearch, Write
 ---
 
 # Brew Espresso — Full Research Collection
 
-Run all 8 espresso·ai research collectors in parallel for a given cadence. Skips collectors whose API keys are not configured. Presents a unified summary when complete.
+Run all 7 espresso·ai research collectors in parallel for a given cadence. Skips collectors whose API keys are not configured. Presents a unified summary when complete.
 
 ## Arguments
 
@@ -55,7 +55,6 @@ python3 -c "
 from dotenv import load_dotenv; load_dotenv('.env/.env'); import os
 print('ANTHROPIC_API_KEY=' + ('SET' if os.getenv('ANTHROPIC_API_KEY') else 'MISSING'))
 print('PERPLEXITY_API_KEY=' + ('SET' if os.getenv('PERPLEXITY_API_KEY') else 'MISSING'))
-print('APIFY_API_TOKEN=' + ('SET' if os.getenv('APIFY_API_TOKEN') else 'MISSING'))
 "
 ```
 
@@ -65,7 +64,6 @@ Based on results, determine which collectors to **run** vs **skip**:
 |---|---|---|
 | ArXiv | None | Yes |
 | Perplexity | `PERPLEXITY_API_KEY` | No |
-| X / Apify | `APIFY_API_TOKEN` | No |
 | X / Claude | `ANTHROPIC_API_KEY` | No |
 | X / Perplexity | `PERPLEXITY_API_KEY` | No |
 | Reddit / Claude | `ANTHROPIC_API_KEY` | No |
@@ -80,7 +78,7 @@ If `.env/.env` is missing or Python deps are unavailable, **stop** and report th
 
 Launch all eligible collectors as Agent tool calls **in a single message** for maximum parallelism.
 
-### Script-based collectors (up to 7)
+### Script-based collectors (up to 6)
 
 For each eligible script-based collector, launch an Agent with this prompt template (fill in `{LABEL}`, `{SCRIPT}`, `{CADENCE}`, `{DAYS_BACK_ARG}`, `{TIMEOUT}`):
 
@@ -104,7 +102,6 @@ Use these specific parameters per collector:
 |---|---|---|
 | `arxiv-collector` | `collect_arxiv_signals.py` | 120000 |
 | `perplexity-collector` | `collect_perplexity_signals.py` | 300000 |
-| `x-collector` | `collect_x_signals.py` | 600000 |
 | `x-claude-collector` | `collect_x_claude_signals.py` | 600000 |
 | `x-perplexity-collector` | `collect_x_perplexity_signals.py` | 300000 |
 | `reddit-claude-collector` | `collect_reddit_claude_signals.py` | 600000 |
@@ -146,14 +143,13 @@ After all agents return, present a single consolidated summary:
 |---|---|---|---|
 | ArXiv | success | NN | LEVER |
 | Perplexity | success | NN | LEVER |
-| X / Apify | skipped | — | — |
 | X / Claude | success | NN | LEVER |
 | X / Perplexity | success | NN | LEVER |
 | Reddit / Claude | success | NN | LEVER |
 | Reddit / Perplexity | success | NN | LEVER |
 | Influencer | success | NN | LEVER |
 
-**Total signals:** NNN across N/8 sources
+**Total signals:** NNN across N/7 sources
 
 ### Aggregate Lever Distribution
 

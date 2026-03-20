@@ -85,6 +85,20 @@ Check `flagged_duplicate_clusters` in the carousel data. If any exist:
 
 For each piece of editorial text, follow espresso·ai voice rules strictly. Check every sentence against the anti-patterns list in BRAND.md. No em dashes as connectors, no lists of three, no transitional openers, no meta-commentary, no AI vocabulary.
 
+### Editorial Accuracy Rules
+
+These rules are **mandatory** and override voice/style preferences when they conflict:
+
+1. **Verbatim fidelity for paper-specific claims.** Titles, method names, benchmark names, author names, and quantitative results (percentages, dollar amounts, counts) must match the source record exactly. Do not round numbers (e.g., 95.83% must not become 96%). Do not substitute synonyms for technical terms.
+
+2. **Use official names.** Organizations, products, institutes, and initiatives must use their official names as they appear in the source record. Do not paraphrase or shorten (e.g., "The Anthropic Institute" must not become "safety institute").
+
+3. **Date window enforcement.** Every signal on a lever slide must have a `published` or `collected_at` date that falls within the reporting window. If a signal's underlying event predates the window by more than 30 days, exclude it and select the next-highest-scored signal for that lever.
+
+4. **Source attribution integrity.** The `source_name` displayed on each signal card must match the original source. Do not upgrade a Reddit thread to a news outlet, or attribute an ArXiv paper to the organization that authored it unless the source record explicitly uses that attribution.
+
+5. **No composite claims.** Each signal card must correspond to exactly one source record. Do not merge findings from multiple papers or news items into a single signal card.
+
 ### Cover Slide (Slide 1)
 
 The cover is a navy slide with two sections separated by a divider: brand identity at top, then this week's data below.
@@ -190,3 +204,7 @@ Before writing the final HTML, verify:
 - [ ] Google Fonts link in `<head>`
 - [ ] Stat cards use actual data from intermediate JSON
 - [ ] No watermarks on any slide
+- [ ] All quantitative claims (percentages, dollar amounts, counts) match source records exactly — no rounding
+- [ ] All organization/product/institute names use official names from source records
+- [ ] Every signal's underlying event falls within the reporting window (or within 30 days before it)
+- [ ] No signal card merges findings from multiple source records
