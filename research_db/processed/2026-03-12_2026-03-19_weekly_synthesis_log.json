@@ -1,0 +1,65 @@
+{
+  "pipeline_run_id": "2026-03-12_2026-03-19_weekly_synth_4b599ac8",
+  "cadence": "weekly",
+  "date_window": {"start": "2026-03-12", "end": "2026-03-19"},
+  "generated_at": "2026-03-20T04:00:00Z",
+  "total_signals_loaded": 554,
+  "duplicates_removed": 19,
+  "unique_signals": 535,
+  "signals_selected": 29,
+  "output_file": "PR/weekly/Espresso AI - Issue 1.html",
+  "editorial_decisions": {
+    "headline": "Models compress. / Capital concentrates. / Governance fragments.",
+    "dashboard_summaries": {
+      "COMPUTE": "Frontier compresses; efficiency research dominates",
+      "ENERGY": "Hyperscalers secure dedicated power at GW scale",
+      "SOCIETY": "White-collar displacement surfaces as structural risk",
+      "INDUSTRY": "Microsoft restructures for superintelligence; agents mature",
+      "CAPITAL": "Record inflows meet pricing sustainability questions",
+      "GOV": "Safety institutionalizes while regulatory paths diverge"
+    },
+    "signals_per_lever": {
+      "COMPUTE": [
+        "Gemini 3 Deep Think solves four open Erdos conjectures via inference-time scaling",
+        "GPT-5.4 mini and nano compress frontier capabilities into 2x-faster form factors",
+        "Simulation Distillation transfers simulator priors for rapid real-world robotics",
+        "TRiMS cuts chain-of-thought tokens by 80% while preserving accuracy"
+      ],
+      "ENERGY": [
+        "Google secures 2.7 GW of dedicated clean power for Detroit data center",
+        "Spiking neural networks cut WiFi sensing energy cost by half at 96% accuracy",
+        "QuantFL reduces federated learning communication by 40% on IoT devices",
+        "Open-source simulator maps datacenter carbon tradeoffs across techniques",
+        "Specialized pretraining cuts required training tokens by 1.75x for domain models"
+      ],
+      "SOCIETY": [
+        "LLMs default to North American cultural norms in zero-shot profiling tasks",
+        "Altman admits AI is fracturing the labor-capital balance with no consensus fix",
+        "RESTA defense reduces jailbreak success rates across vision-language models",
+        "Karpathy's analysis shows high-paying white-collar roles most exposed to AI",
+        "Gebru at SXSW: utopia-apocalypse framing is a strategic distraction"
+      ],
+      "INDUSTRY": [
+        "Microsoft unifies Copilot under Andreou; Suleyman pivots to superintelligence",
+        "Adversarial co-evolution of code and test LLMs matches human-annotated quality",
+        "Enterprise AI pricing spans $0.15 to $60+ per million tokens across frontier models",
+        "AI Scientist trains research agents on synthetic ML tasks using GPT-5 trajectories",
+        "Open-source coding agent hits 90% accuracy in quantum computing middleware"
+      ],
+      "CAPITAL": [
+        "AMI Labs raises $1.03B for world models, the largest European AI seed round",
+        "OpenAI raises $110B at $730B valuation with Amazon, Nvidia, SoftBank",
+        "Current AI pricing is subsidized by VC capital and will rise as IPOs approach",
+        "Marcus: most expensive scaling experiments in history fail to deliver AGI",
+        "Khosla's $50M OpenAI bet at $1B valuation now worth billions"
+      ],
+      "GOV": [
+        "Anthropic launches dedicated safety institute led by Jack Clark with ~30 members",
+        "Runtime governance framework formalizes compliance for non-deterministic AI agents",
+        "Ren Zhengfei tells Xi that chip gap concerns have eased; leads 2,000-company network",
+        "Schmidt: emergent AI behaviors make preemptive regulation structurally impossible",
+        "Commerce evaluates state AI laws; flags Colorado's as most excessive"
+      ]
+    }
+  }
+}

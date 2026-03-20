@@ -1,0 +1,69 @@
+{
+  "pipeline_run_id": "2026-03-13_2026-03-20_reddit_claude_weekly_8af27c83",
+  "collection_batch_id": "batch_20260320_0145",
+  "cadence": "weekly",
+  "source": "reddit_via_claude",
+  "date_window": {
+    "start": "2026-03-13",
+    "end": "2026-03-20"
+  },
+  "started_at": "2026-03-20T01:45:52Z",
+  "completed_at": "2026-03-20T01:59:43Z",
+  "queries_executed": 5,
+  "subreddits_tracked": 9,
+  "subreddits_with_signals": 9,
+  "signals_collected": 40,
+  "duplicates_removed": 10,
+  "signals_written": 30,
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-13_2026-03-20_reddit_claude_weekly_signals.jsonl",
+  "api_usage": {
+    "model": "claude-sonnet-4-6",
+    "total_input_tokens": 479226,
+    "total_output_tokens": 28275,
+    "max_web_searches_per_group": 10
+  },
+  "quality_metrics": {
+    "with_primary_source_count": 29,
+    "no_primary_source_count": 1,
+    "speculation_heavy_count": 0,
+    "meme_or_humor_count": 0,
+    "self_promotional_count": 0,
+    "vendor_astroturf_count": 0,
+    "unknown_domain_count": 26,
+    "aggregator_title_count": 1,
+    "out_of_date_count": 4,
+    "missing_url_count": 17,
+    "url_not_in_citations_count": 13,
+    "direction_distribution": {
+      "+": 6,
+      "-": 2,
+      "~": 18,
+      "?": 4
+    },
+    "lever_distribution": {
+      "COMPUTE": 17,
+      "SOCIETY": 5,
+      "CAPITAL": 3,
+      "ENERGY": 1,
+      "GOV": 1,
+      "INDUSTRY": 3
+    },
+    "subreddit_distribution": {
+      "MachineLearning": 6,
+      "deeplearning": 1,
+      "LocalLLaMA": 7,
+      "artificial": 3,
+      "ArtificialIntelligence": 2,
+      "OpenAI": 4,
+      "singularity": 2,
+      "experienceddevs": 3,
+      "datascience": 2
+    },
+    "post_type_distribution": {
+      "research": 6,
+      "news_discussion": 8,
+      "analysis": 11,
+      "experience": 5
+    }
+  }
+}

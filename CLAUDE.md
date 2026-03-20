@@ -90,8 +90,16 @@ JSONL file naming: `YYYY-MM-DD_[cadence]_signals.jsonl` (daily), `YYYY-W[WW]_wee
 |---|---|---|
 | ArXiv Research | `/arxiv-research [cadence]` | Collect AI papers from ArXiv, classify by Scale Lever, write JSONL to `research_db/raw/` |
 | Perplexity Research | `/perplexity-research [cadence]` | Collect AI news via Perplexity sonar-pro, classify by Scale Lever, write JSONL to `research_db/raw/` |
+| X Research | `/x-research [cadence]` | Collect AI signals from curated X/Twitter accounts via Apify, classify by Scale Lever, write JSONL to `research_db/raw/` |
+| X-Perplexity Research | `/x-perplexity-research [cadence]` | Collect AI signals from curated X accounts via Perplexity sonar-pro web search, classify by Scale Lever, write JSONL to `research_db/raw/` |
+| X Claude Research | `/x-claude-research [cadence]` | Collect AI signals from curated X accounts via Claude API web search, classify by Scale Lever, write JSONL to `research_db/raw/` |
+| Reddit Claude Research | `/reddit-claude-research [cadence]` | Collect AI signals from curated Reddit subreddits via Claude API web search, classify by Scale Lever, write JSONL to `research_db/raw/` |
+| Reddit Perplexity Research | `/reddit-perplexity-research [cadence]` | Collect AI signals from curated Reddit subreddits via Perplexity sonar-pro web search, classify by Scale Lever, write JSONL to `research_db/raw/` |
+| Influencer Research | `/influencer-research [cadence]` | Collect AI signals from ~71 key influencers across 10 groups via parallel subagents with WebSearch, classify by Scale Lever, write JSONL to `research_db/raw/` |
+| Weekly Carousel | `/weekly-carousel [--start-date] [--end-date]` | Synthesize raw signals into a 7-slide LinkedIn carousel: dedup, score, select top 5 per lever, write editorial content, generate HTML |
+| Brew Espresso | `/brew-espresso [cadence]` | Run all 8 research collectors in parallel, skip sources with missing API keys, present unified summary. Collection only |
 
-Both skills require a cadence argument and invoke Python scripts in `.claude/scripts/`.
+Collection skills require a cadence argument. The weekly carousel skill accepts optional date range arguments and invokes `synthesize_signals.py`.
 
 ---
 
@@ -136,6 +144,7 @@ All keys are stored in a single file: `.env/.env`. Never quote values — store 
 
 ```
 PERPLEXITY_API_KEY=pplx-...
+ANTHROPIC_API_KEY=sk-ant-...
 ```
 
 To load keys in Python:

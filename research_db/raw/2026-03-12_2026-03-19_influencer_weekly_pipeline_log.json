@@ -1,0 +1,54 @@
+{
+  "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+  "agent_type": "influencer-research",
+  "cadence": "weekly",
+  "date_window": {
+    "start": "2026-03-12",
+    "end": "2026-03-19"
+  },
+  "execution_timestamp": "2026-03-19T20:00:00Z",
+  "total_signals": 73,
+  "duplicates_removed": 5,
+  "signals_by_agent": {
+    "influencer-china-collector": 7,
+    "influencer-enterprise-collector": 7,
+    "influencer-investor-collector": 4,
+    "influencer-policy-collector": 7,
+    "influencer-ceo-collector": 15,
+    "influencer-researcher-collector": 9,
+    "influencer-lab-collector": 9,
+    "influencer-futurist-collector": 5,
+    "influencer-safety-collector": 3,
+    "influencer-founder-collector": 7
+  },
+  "signals_by_group": {
+    "china_asia_leaders": 7,
+    "enterprise_industry": 7,
+    "investors_capital": 4,
+    "policy_governance": 7,
+    "ceo_industry_leaders": 15,
+    "researchers_scientists": 9,
+    "research_labs": 9,
+    "futurists_intellectuals": 5,
+    "safety_alignment": 3,
+    "founders_emerging_labs": 7
+  },
+  "signals_by_lever": {
+    "INDUSTRY": 22,
+    "COMPUTE": 14,
+    "GOV": 20,
+    "CAPITAL": 10,
+    "SOCIETY": 7
+  },
+  "signals_by_direction": {
+    "+": 46,
+    "-": 16,
+    "?": 11
+  },
+  "influencer_coverage": {
+    "total_influencers": 71,
+    "groups": 10,
+    "agents_completed": 10
+  },
+  "schema_version": "1.0"
+}

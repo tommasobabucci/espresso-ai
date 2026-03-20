@@ -1,0 +1,75 @@
+{
+  "pipeline_run_id": "2026-03-12_2026-03-19_x_claude_weekly_681e0519",
+  "collection_batch_id": "batch_20260319_0325",
+  "cadence": "weekly",
+  "source": "x_twitter_via_claude",
+  "date_window": {
+    "start": "2026-03-12",
+    "end": "2026-03-19"
+  },
+  "started_at": "2026-03-19T03:25:18Z",
+  "completed_at": "2026-03-19T03:53:50Z",
+  "queries_executed": 7,
+  "accounts_tracked": 28,
+  "accounts_with_signals": 20,
+  "signals_collected": 56,
+  "duplicates_removed": 2,
+  "signals_written": 54,
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-12_2026-03-19_x_claude_weekly_signals.jsonl",
+  "api_usage": {
+    "model": "claude-sonnet-4-6",
+    "total_input_tokens": 999484,
+    "total_output_tokens": 39049,
+    "max_web_searches_per_group": 10
+  },
+  "quality_metrics": {
+    "direct_post_count": 14,
+    "indirect_source_count": 40,
+    "unattributed_count": 0,
+    "unknown_domain_count": 24,
+    "aggregator_title_count": 0,
+    "out_of_date_count": 23,
+    "missing_url_count": 0,
+    "url_not_in_citations_count": 54,
+    "direction_distribution": {
+      "+": 16,
+      "-": 0,
+      "~": 29,
+      "?": 9
+    },
+    "lever_distribution": {
+      "COMPUTE": 16,
+      "GOV": 6,
+      "INDUSTRY": 9,
+      "SOCIETY": 10,
+      "CAPITAL": 8,
+      "ENERGY": 5
+    },
+    "account_distribution": {
+      "sama": 3,
+      "DarioAmodei": 2,
+      "demishassabis": 1,
+      "satyanadella": 2,
+      "karpathy": 3,
+      "ylecun": 2,
+      "JeffDean": 1,
+      "fchollet": 2,
+      "GaryMarcus": 3,
+      "jackclarkSF": 2,
+      "mustafasuleyman": 1,
+      "timnitGebru": 1,
+      "svpino": 3,
+      "bindureddy": 3,
+      "EMostaque": 2,
+      "naval": 3,
+      "saranormous": 3,
+      "eladgil": 2,
+      "dyaborlanpatel": 2,
+      "CaseyNewton": 2,
+      "ZoeSchiffer": 1,
+      "emanuelmaiberg": 2,
+      "GridStatusBlog": 4,
+      "DCD_media": 4
+    }
+  }
+}

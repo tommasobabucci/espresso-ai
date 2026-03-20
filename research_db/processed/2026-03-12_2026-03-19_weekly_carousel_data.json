@@ -1,0 +1,1621 @@
+{
+  "meta": {
+    "cadence": "weekly",
+    "date_window": {
+      "start": "2026-03-12",
+      "end": "2026-03-19"
+    },
+    "total_signals_loaded": 554,
+    "duplicates_removed": 19,
+    "unique_signals": 535,
+    "source_files": [
+      "2026-03-13_2026-03-20_reddit_perplexity_weekly_signals.jsonl",
+      "2026-03-12_2026-03-19_perplexity_weekly_signals.jsonl",
+      "2026-03-12_2026-03-19_x_claude_weekly_signals.jsonl",
+      "2026-03-12_2026-03-19_arxiv_weekly_signals.jsonl",
+      "2026-03-12_2026-03-19_influencer_weekly_signals.jsonl",
+      "2026-03-12_2026-03-19_x_perplexity_weekly_signals.jsonl",
+      "2026-03-13_2026-03-20_reddit_claude_weekly_signals.jsonl"
+    ],
+    "pipeline_run_id": "2026-03-12_2026-03-19_weekly_synth_4b599ac8",
+    "generated_at": "2026-03-20T03:53:29Z"
+  },
+  "lever_summaries": {
+    "COMPUTE": {
+      "signal_count": 219,
+      "direction_breakdown": {
+        "+": 158,
+        "?": 30,
+        "-": 4,
+        "~": 27
+      },
+      "dominant_direction": "+",
+      "top_signals": [
+        {
+          "signal_id": "20260319-news_site-120100-e564f",
+          "source_name": "news_site",
+          "source_url": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2026/",
+          "fetch_timestamp": "2026-03-19T20:00:00Z",
+          "agent_id": "influencer-lab-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "architectural_diversity",
+          "confidence": "high",
+          "title": "Gemini 3 Deep Think upgrade scales inference-time compute into PhD-level science; solves four open Erdos conjectures",
+          "summary": "Google DeepMind's Gemini 3 Deep Think demonstrates that inference-time compute scaling can reach PhD-level scientific reasoning. Autonomously solving four previously open Erdos conjectures validates the paradigm that more compute at inference — not just training — unlocks new capability frontiers.",
+          "key_facts": [
+            "Gemini 3 Deep Think upgrade released March 17, 2026",
+            "The model solved four previously open Erdos conjectures autonomously",
+            "Demonstrates inference-time compute scaling into PhD-level scientific reasoning"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:google_deepmind",
+            "influencer_group:research_labs",
+            "account_category:research_lab"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-company_announcement-120200-d82a6",
+          "source_name": "company_announcement",
+          "source_url": "https://openai.com/index/gpt-5-4-mini-nano/",
+          "fetch_timestamp": "2026-03-19T20:00:00Z",
+          "agent_id": "influencer-lab-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "cost_per_flop",
+          "confidence": "high",
+          "title": "OpenAI releases GPT-5.4 mini and nano: frontier capabilities compressed into 2x-faster, low-cost form factors",
+          "summary": "OpenAI's GPT-5.4 mini and nano compress frontier model capabilities into dramatically cheaper and faster form factors. This cost-performance compression accelerates enterprise adoption by making frontier AI economically viable for mid-market and high-volume applications.",
+          "key_facts": [
+            "GPT-5.4 mini and nano released March 17, 2026",
+            "Models are 2x faster than predecessors at lower cost",
+            "Frontier capabilities compressed into smaller, cheaper form factors"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:openai",
+            "influencer_group:research_labs",
+            "account_category:research_lab"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ],
+          "_candidate_cluster_id": 16
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-b01eb",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.15759v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "cost_per_flop",
+          "confidence": "medium",
+          "title": "Simulation Distillation: Pretraining World Models in Simulation for Rapid Real-World Adaptation",
+          "summary": "Simulation-to-real transfer remains a central challenge in robotics, as mismatches between simulated and real-world dynamics often lead to failures. While reinforcement learning offers a principled mechanism for adaptation, existing sim-to-real finetuning methods struggle with exploration and long-horizon credit assignment in the low-data regimes typical of real-world robotics. We introduce Simulation Distillation (SimDist), a sim-to-real framework that distills structural priors from a simul...",
+          "key_facts": [
+            "Simulation-to-real transfer remains a central challenge in robotics, as mismatches between simulated and real-world dynamics often lead to failures",
+            "While reinforcement learning offers a principled mechanism for adaptation, existing sim-to-real finetuning methods struggle with exploration and long-horizon credit assignment in the low-data regimes typical of real-world robotics",
+            "We introduce Simulation Distillation (SimDist), a sim-to-real framework that distills structural priors from a simulator into a latent world model and enables rapid real-world adaptation via online planning and supervised dynamics finetuning",
+            "By transferring reward and value models directly from simulation, SimDist provides dense planning signals from raw perception without requiring value learning during deployment",
+            "As a result, real-world adaptation reduces to short-horizon system identification, avoiding long-horizon credit assignment and enabling fast, stable improvement"
+          ],
+          "raw_content": "Simulation-to-real transfer remains a central challenge in robotics, as mismatches between simulated and real-world dynamics often lead to failures. While reinforcement learning offers a principled mechanism for adaptation, existing sim-to-real finetuning methods struggle with exploration and long-horizon credit assignment in the low-data regimes typical of real-world robotics. We introduce Simulation Distillation (SimDist), a sim-to-real framework that distills structural priors from a simulator into a latent world model and enables rapid real-world adaptation via online planning and supervised dynamics finetuning. By transferring reward and value models directly from simulation, SimDist provides dense planning signals from raw perception without requiring value learning during deployment. As a result, real-world adaptation reduces to short-horizon system identification, avoiding long-horizon credit assignment and enabling fast, stable improvement. Across precise manipulation and quadruped locomotion tasks, SimDist substantially outperforms prior methods in data efficiency, stability, and final performance. Project website and code: https://sim-dist.github.io/",
+          "publication_date": "2026-03-16",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.RO",
+            "arxiv_cat:cs.AI",
+            "arxiv_cat:cs.LG",
+            "first_author:Jacob Levy"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "arxiv-signal-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-77848",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.17449v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "cost_per_flop",
+          "confidence": "low",
+          "title": "TRiMS: Real-Time Tracking of Minimal Sufficient Length for Efficient Reasoning via RL",
+          "summary": "Large language models achieve breakthroughs in complex reasoning via long chain-of-thought sequences. However, this often leads to severe reasoning inflation, causing substantial computational redundancy. To maximize Intelligence per Token, we introduce a theoretical metric, MSL-Minimal Sufficient Length. MSL rigorously characterizes the shortest reasoning length that preserves answer correctness. We provide a recursive definition based on independently sampled sequences and prove the existen...",
+          "key_facts": [
+            "Large language models achieve breakthroughs in complex reasoning via long chain-of-thought sequences",
+            "However, this often leads to severe reasoning inflation, causing substantial computational redundancy",
+            "To maximize Intelligence per Token, we introduce a theoretical metric, MSL-Minimal Sufficient Length",
+            "MSL rigorously characterizes the shortest reasoning length that preserves answer correctness",
+            "We provide a recursive definition based on independently sampled sequences and prove the existence of its limit, establishing the first measurable lower bound for reasoning-chain compression"
+          ],
+          "raw_content": "Large language models achieve breakthroughs in complex reasoning via long chain-of-thought sequences. However, this often leads to severe reasoning inflation, causing substantial computational redundancy. To maximize Intelligence per Token, we introduce a theoretical metric, MSL-Minimal Sufficient Length. MSL rigorously characterizes the shortest reasoning length that preserves answer correctness. We provide a recursive definition based on independently sampled sequences and prove the existence of its limit, establishing the first measurable lower bound for reasoning-chain compression. Building on an analysis of mainstream CoT compression strategies, we identify key structural factors enabling a model to approach MSL. Based on these insights, we propose TRiMS which employs the GRPO algorithm in conjunction with MSL-based estimation during training, while mitigating instabilities during the training process through dynamic batch aggregation and advantage computation using batch-level standard deviation. TRiMS achieves over 80% CoT token reduction with a minor accuracy boost across all benchmarks.",
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.CL",
+            "first_author:Tingcheng Bian"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "arxiv-signal-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-8da60",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.17245v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "cost_per_flop",
+          "confidence": "low",
+          "title": "$I$-Maximal Variation of Hodge Structure and Jacobian Rings",
+          "summary": "We investigate higher--order variation of Hodge structure for families of smooth hypersurfaces and complete intersections through the notion of $I$--maximal variation. Using Griffiths' description of primitive cohomology, we interpret the infinitesimal variation of Hodge structure and the $n$--fold Yukawa coupling as graded multiplication maps in the Jacobian ring. Our main result shows that the Strong Lefschetz property of the Jacobian ring provides the algebraic mechanism ensuring $I$--maxi...",
+          "key_facts": [
+            "We investigate higher--order variation of Hodge structure for families of smooth hypersurfaces and complete intersections through the notion of $I$--maximal variation",
+            "Using Griffiths' description of primitive cohomology, we interpret the infinitesimal variation of Hodge structure and the $n$--fold Yukawa coupling as graded multiplication maps in the Jacobian ring",
+            "Our main result shows that the Strong Lefschetz property of the Jacobian ring provides the algebraic mechanism ensuring $I$--maximal variation",
+            "In particular, we prove that smooth hypersurfaces of degree $d\\ge n+2$ and smooth complete intersections with $κ>0$ exhibit $I$--maximal variation",
+            "We further establish that for complete intersections of general type the infinitesimal Torelli property is equivalent to the nondegeneracy of the Yukawa coupling"
+          ],
+          "raw_content": "We investigate higher--order variation of Hodge structure for families of smooth hypersurfaces and complete intersections through the notion of $I$--maximal variation. Using Griffiths' description of primitive cohomology, we interpret the infinitesimal variation of Hodge structure and the $n$--fold Yukawa coupling as graded multiplication maps in the Jacobian ring. Our main result shows that the Strong Lefschetz property of the Jacobian ring provides the algebraic mechanism ensuring $I$--maximal variation. In particular, we prove that smooth hypersurfaces of degree $d\\ge n+2$ and smooth complete intersections with $κ>0$ exhibit $I$--maximal variation. We further establish that for complete intersections of general type the infinitesimal Torelli property is equivalent to the nondegeneracy of the Yukawa coupling. Finally, we analyze degenerations and show that the failure of the Strong Lefschetz property leads to degeneration of the Yukawa coupling and the loss of $I$--maximal variation. These results identify the Lefschetz property of the Jacobian ring as the fundamental algebraic structure governing maximal variation of Hodge structure.",
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:math.AG",
+            "first_author:Mounir Nisse"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "arxiv-signal-collector"
+          ]
+        }
+      ]
+    },
+    "ENERGY": {
+      "signal_count": 15,
+      "direction_breakdown": {
+        "+": 9,
+        "~": 5,
+        "?": 1
+      },
+      "dominant_direction": "+",
+      "top_signals": [
+        {
+          "signal_id": "20260317-news_site-010601-4c4ee",
+          "source_name": "news_site",
+          "source_url": "https://techcrunch.com/2026/03/17/googles-data-center-power-playbook-comes-into-focus/",
+          "fetch_timestamp": "2026-03-19T01:06:01Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_perplexity_weekly_377008ec",
+          "collection_batch_id": "batch_20260319_0105",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "renewable_allocation",
+          "confidence": "medium",
+          "title": "Google's data center power playbook comes into focus",
+          "summary": "Google announced a deal with Michigan utility DTE to add 2.7 gigawatts of new resources in suburban Detroit to power a new data center. The agreement includes 2.35 GW from clean sources via Google's Clean Transition Tariff and 350 MW from demand response measures.",
+          "key_facts": [
+            "Google's deal with DTE adds 2.7 GW of new resources for a Detroit-area data center.",
+            "2.35 GW comes from clean sources via Clean Transition Tariff.",
+            "350 MW covered by demand response.",
+            "Similar deal signed last month with Xcel Energy for Minnesota data center."
+          ],
+          "raw_content": "This deal mirrors Google's recent agreement with Xcel Energy in Minnesota, signaling a shift toward developing dedicated capacity for data centers using innovative tariffs that encourage utilities to plan for specified clean power types. Strategically, it addresses grid strain from AI workloads by prioritizing new generation over traditional PPAs, potentially setting a model for hyperscalers to secure reliable power without overburdening existing infrastructure. It highlights Google's proactive approach to clean energy procurement amid rising data center demands.",
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "source_pub:TechCrunch",
+            "query_tag:energy_environment"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-c540c",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.14475v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "data_center_power_intensity",
+          "confidence": "medium",
+          "title": "Wi-Spike: A Low-power WiFi Human Multi-action Recognition Model with Spiking Neural Networks",
+          "summary": "WiFi-based human action recognition (HAR) has gained significant attention due to its non-intrusive and privacy-preserving nature. However, most existing WiFi sensing models predominantly focus on improving recognition accuracy, while issues of power consumption and energy efficiency remain insufficiently discussed. In this work, we present Wi-Spike, a bio-inspired spiking neural network (SNN) framework for efficient and accurate action recognition using WiFi channel state information (CSI) s...",
+          "key_facts": [
+            "WiFi-based human action recognition (HAR) has gained significant attention due to its non-intrusive and privacy-preserving nature",
+            "However, most existing WiFi sensing models predominantly focus on improving recognition accuracy, while issues of power consumption and energy efficiency remain insufficiently discussed",
+            "In this work, we present Wi-Spike, a bio-inspired spiking neural network (SNN) framework for efficient and accurate action recognition using WiFi channel state information (CSI) signals",
+            "Specifically, leveraging the event-driven and low-power characteristics of SNNs, Wi-Spike introduces spiking convolutional layers for spatio-temporal feature extraction and a novel temporal attention mechanism to enhance discriminative representation",
+            "The extracted features are subsequently encoded and classified through spiking fully connected layers and a voting layer"
+          ],
+          "raw_content": "WiFi-based human action recognition (HAR) has gained significant attention due to its non-intrusive and privacy-preserving nature. However, most existing WiFi sensing models predominantly focus on improving recognition accuracy, while issues of power consumption and energy efficiency remain insufficiently discussed. In this work, we present Wi-Spike, a bio-inspired spiking neural network (SNN) framework for efficient and accurate action recognition using WiFi channel state information (CSI) signals. Specifically, leveraging the event-driven and low-power characteristics of SNNs, Wi-Spike introduces spiking convolutional layers for spatio-temporal feature extraction and a novel temporal attention mechanism to enhance discriminative representation. The extracted features are subsequently encoded and classified through spiking fully connected layers and a voting layer. Comprehensive experiments on three benchmark datasets (NTU-Fi-HAR, NTU-Fi-HumanID, and UT-HAR) demonstrate that Wi-Spike achieves competitive accuracy in single-action recognition and superior performance in multi-action recognition tasks. As for energy consumption, Wi-Spike reduces the energy cost by at least half compared with other methods, while still achieving 95.83% recognition accuracy in human activity recognition. More importantly, Wi-Spike establishes a new state-of-the-art in WiFi-based multi-action HAR, offering a promising solution for real-time, energy-efficient edge sensing applications.",
+          "publication_date": "2026-03-15",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.CV",
+            "first_author:Nengbo Zhang"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-5c4b7",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.17507v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "data_center_power_intensity",
+          "confidence": "medium",
+          "title": "QuantFL: Sustainable Federated Learning for Edge IoT via Pre-Trained Model Quantisation",
+          "summary": "Federated Learning (FL) enables privacy-preserving intelligence on Internet of Things (IoT) devices but incurs a significant carbon footprint due to the high energy cost of frequent uplink transmission. While pre-trained models are increasingly available on edge devices, their potential to reduce the energy overhead of fine-tuning remains underexplored. In this work, we propose QuantFL, a sustainable FL framework that leverages pre-trained initialisation to enable aggressive, computationally ...",
+          "key_facts": [
+            "Federated Learning (FL) enables privacy-preserving intelligence on Internet of Things (IoT) devices but incurs a significant carbon footprint due to the high energy cost of frequent uplink transmission",
+            "While pre-trained models are increasingly available on edge devices, their potential to reduce the energy overhead of fine-tuning remains underexplored",
+            "In this work, we propose QuantFL, a sustainable FL framework that leverages pre-trained initialisation to enable aggressive, computationally lightweight quantisation",
+            "We demonstrate that pre-training naturally concentrates update statistics, allowing us to use memory-efficient bucket quantisation without the energy-intensive overhead of complex error-feedback mechanisms",
+            "On MNIST and CIFAR-100, QuantFL reduces total communication by 40\\% ($\\simeq40\\%$ total-bit reduction with full-precision downlink; $\\geq80\\%$ on uplink or when downlink is quantised) while matching or exceeding uncompressed baselines under strict bandwidth budgets; BU attains 89.00\\% (MNIST) and 66.89\\% (CIFAR-100) test accuracy with orders of magnitude fewer bits"
+          ],
+          "raw_content": "Federated Learning (FL) enables privacy-preserving intelligence on Internet of Things (IoT) devices but incurs a significant carbon footprint due to the high energy cost of frequent uplink transmission. While pre-trained models are increasingly available on edge devices, their potential to reduce the energy overhead of fine-tuning remains underexplored. In this work, we propose QuantFL, a sustainable FL framework that leverages pre-trained initialisation to enable aggressive, computationally lightweight quantisation. We demonstrate that pre-training naturally concentrates update statistics, allowing us to use memory-efficient bucket quantisation without the energy-intensive overhead of complex error-feedback mechanisms. On MNIST and CIFAR-100, QuantFL reduces total communication by 40\\% ($\\simeq40\\%$ total-bit reduction with full-precision downlink; $\\geq80\\%$ on uplink or when downlink is quantised) while matching or exceeding uncompressed baselines under strict bandwidth budgets; BU attains 89.00\\% (MNIST) and 66.89\\% (CIFAR-100) test accuracy with orders of magnitude fewer bits. We also account for uplink and downlink costs and provide ablations on quantisation levels and initialisation. QuantFL delivers a practical, \"green\" recipe for scalable training on battery-constrained IoT networks.",
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.LG",
+            "arxiv_cat:cs.AI",
+            "first_author:Charuka Herath"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-7b9f3",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.12381v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "data_center_power_intensity",
+          "confidence": "medium",
+          "title": "OpenDC-STEAM: Realistic Modeling and Systematic Exploration of Composable Techniques for Sustainable Datacenters",
+          "summary": "The need to reduce datacenter carbon footprint is urgent. While many sustainability techniques have been proposed, they are often evaluated in isolation, using limited setups or analytical models that overlook real-world dynamics and interactions between methods. This makes it challenging for researchers and operators to understand the effectiveness and trade-offs of combining such techniques. We design OpenDC-STEAM, an open-source customizable datacenter simulator, to investigate the individ...",
+          "key_facts": [
+            "The need to reduce datacenter carbon footprint is urgent",
+            "While many sustainability techniques have been proposed, they are often evaluated in isolation, using limited setups or analytical models that overlook real-world dynamics and interactions between methods",
+            "This makes it challenging for researchers and operators to understand the effectiveness and trade-offs of combining such techniques",
+            "We design OpenDC-STEAM, an open-source customizable datacenter simulator, to investigate the individual and combined impact of sustainability techniques on datacenter operational and embodied carbon emissions, and their trade-off with performance",
+            "Using STEAM, we systematically explore three representative techniques - horizontal scaling, leveraging batteries, and temporal shifting - with diverse representative workloads, datacenter configurations, and carbon-intensity traces"
+          ],
+          "raw_content": "The need to reduce datacenter carbon footprint is urgent. While many sustainability techniques have been proposed, they are often evaluated in isolation, using limited setups or analytical models that overlook real-world dynamics and interactions between methods. This makes it challenging for researchers and operators to understand the effectiveness and trade-offs of combining such techniques. We design OpenDC-STEAM, an open-source customizable datacenter simulator, to investigate the individual and combined impact of sustainability techniques on datacenter operational and embodied carbon emissions, and their trade-off with performance. Using STEAM, we systematically explore three representative techniques - horizontal scaling, leveraging batteries, and temporal shifting - with diverse representative workloads, datacenter configurations, and carbon-intensity traces. Our analysis highlights that datacenter dynamics can influence their effectiveness and that combining strategies can significantly lower emissions, but introduces complex cost-emissions-performance trade-offs that STEAM can help navigate. STEAM supports the integration of new models and techniques, making it a foundation framework for holistic, quantitative, and reproducible research in sustainable computing. Following open-science principles, STEAM is available as FOSS: https://github.com/atlarge-research/OpenDC-STEAM.",
+          "publication_date": "2026-03-12",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.DC",
+            "first_author:Dante Niewenhuis"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-f7ac8",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.16177v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "training_energy_per_model",
+          "confidence": "medium",
+          "title": "The Finetuner's Fallacy: When to Pretrain with Your Finetuning Data",
+          "summary": "Real-world model deployments demand strong performance on narrow domains where data is often scarce. Typically, practitioners finetune models to specialize them, but this risks overfitting to the domain and forgetting general knowledge. We study a simple strategy, specialized pretraining (SPT), where a small domain dataset, typically reserved for finetuning, is repeated starting from pretraining as a fraction of the total tokens. Across three specialized domains (ChemPile, MusicPile, and Proo...",
+          "key_facts": [
+            "Real-world model deployments demand strong performance on narrow domains where data is often scarce",
+            "Typically, practitioners finetune models to specialize them, but this risks overfitting to the domain and forgetting general knowledge",
+            "We study a simple strategy, specialized pretraining (SPT), where a small domain dataset, typically reserved for finetuning, is repeated starting from pretraining as a fraction of the total tokens",
+            "Across three specialized domains (ChemPile, MusicPile, and ProofPile), SPT improves domain performance and preserves general capabilities after finetuning compared to standard pretraining",
+            "In our experiments, SPT reduces the pretraining tokens needed to reach a given domain performance by up to 1.75x"
+          ],
+          "raw_content": "Real-world model deployments demand strong performance on narrow domains where data is often scarce. Typically, practitioners finetune models to specialize them, but this risks overfitting to the domain and forgetting general knowledge. We study a simple strategy, specialized pretraining (SPT), where a small domain dataset, typically reserved for finetuning, is repeated starting from pretraining as a fraction of the total tokens. Across three specialized domains (ChemPile, MusicPile, and ProofPile), SPT improves domain performance and preserves general capabilities after finetuning compared to standard pretraining. In our experiments, SPT reduces the pretraining tokens needed to reach a given domain performance by up to 1.75x. These gains grow when the target domain is underrepresented in the pretraining corpus: on domains far from web text, a 1B SPT model outperforms a 3B standard pretrained model. Beyond these empirical gains, we derive overfitting scaling laws to guide practitioners in selecting the optimal domain-data repetition for a given pretraining compute budget. Our observations reveal the finetuner's fallacy: while finetuning may appear to be the cheapest path to domain adaptation, introducing specialized domain data during pretraining stretches its utility. SPT yields better specialized domain performance (via reduced overfitting across repeated exposures) and better general domain performance (via reduced forgetting during finetuning), ultimately achieving stronger results with fewer parameters and less total compute when amortized over inference. To get the most out of domain data, incorporate it as early in training as possible.",
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.LG",
+            "first_author:Christina Baek"
+          ],
+          "schema_version": "1.0"
+        }
+      ]
+    },
+    "SOCIETY": {
+      "signal_count": 80,
+      "direction_breakdown": {
+        "+": 42,
+        "?": 22,
+        "-": 4,
+        "~": 12
+      },
+      "dominant_direction": "+",
+      "top_signals": [
+        {
+          "signal_id": "20260319-academic_paper-010402-b45d7",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.16749v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "incident_impact_on_trust",
+          "confidence": "high",
+          "title": "Probing Cultural Signals in Large Language Models through Author Profiling",
+          "summary": "Large language models (LLMs) are increasingly deployed in applications with societal impact, raising concerns about the cultural biases they encode. We probe these representations by evaluating whether LLMs can perform author profiling from song lyrics in a zero-shot setting, inferring singers' gender and ethnicity without task-specific fine-tuning. Across several open-source models evaluated on more than 10,000 lyrics, we find that LLMs achieve non-trivial profiling performance but demonstra...",
+          "key_facts": [
+            "Large language models (LLMs) are increasingly deployed in applications with societal impact, raising concerns about the cultural biases they encode",
+            "We probe these representations by evaluating whether LLMs can perform author profiling from song lyrics in a zero-shot setting, inferring singers' gender and ethnicity without task-specific fine-tuning",
+            "Across several open-source models evaluated on more than 10,000 lyrics, we find that LLMs achieve non-trivial profiling performance but demonstrate systematic cultural alignment: most models default toward North American ethnicity, while DeepSeek-1.5B aligns more strongly with Asian ethnicity",
+            "This finding emerges from both the models' prediction distributions and an analysis of their generated rationales",
+            "To quantify these disparities, we introduce two fairness metrics, Modality Accuracy Divergence (MAD) and Recall Divergence (RD), and show that Ministral-8B displays the strongest ethnicity bias among the evaluated models, whereas Gemma-12B shows the most balanced behavior"
+          ],
+          "raw_content": "Large language models (LLMs) are increasingly deployed in applications with societal impact, raising concerns about the cultural biases they encode. We probe these representations by evaluating whether LLMs can perform author profiling from song lyrics in a zero-shot setting, inferring singers' gender and ethnicity without task-specific fine-tuning. Across several open-source models evaluated on more than 10,000 lyrics, we find that LLMs achieve non-trivial profiling performance but demonstrate systematic cultural alignment: most models default toward North American ethnicity, while DeepSeek-1.5B aligns more strongly with Asian ethnicity. This finding emerges from both the models' prediction distributions and an analysis of their generated rationales. To quantify these disparities, we introduce two fairness metrics, Modality Accuracy Divergence (MAD) and Recall Divergence (RD), and show that Ministral-8B displays the strongest ethnicity bias among the evaluated models, whereas Gemma-12B shows the most balanced behavior. Our code is available on GitHub (https://github.com/ValentinLafargue/CulturalProbingLLM).",
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.CL",
+            "arxiv_cat:cs.LG",
+            "first_author:Valentin Lafargue"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "arxiv-signal-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-news_site-100100-a1b2c",
+          "source_name": "news_site",
+          "source_url": "https://fortune.com/2026/03/12/sam-altman-ai-labor-capital-jobs-nobody-knows/",
+          "fetch_timestamp": "2026-03-19T10:01:00Z",
+          "agent_id": "influencer-ceo-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": "INDUSTRY",
+          "direction": "?",
+          "sub_variable": "professional_displacement_signals",
+          "confidence": "high",
+          "title": "Sam Altman admits AI is killing the labor-capital balance and says nobody knows what to do about it",
+          "summary": "Altman publicly acknowledges the structural labor-capital shift AI is driving, calling the next few years a 'painful adjustment' with no consensus on how to manage it. This admission from OpenAI's CEO validates workforce displacement as an imminent, unresolved structural risk to AI scaling.",
+          "key_facts": [
+            "Altman stated 'the next few years are going to be a painful adjustment' for labor markets",
+            "Altman said 'nobody knows what to do' about the labor-capital imbalance AI is creating",
+            "OpenAI pursuing gigawatt data center campuses with goal of making AI 'too cheap to meter'",
+            "New startups deliberately avoiding large headcounts, investing capital into compute instead"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-12",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:sam_altman",
+            "influencer_group:ceo_industry_leaders",
+            "account_category:ai_lab_leader",
+            "vendor_name:openai"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-62aad",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.15259v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "incident_impact_on_trust",
+          "confidence": "high",
+          "title": "Directional Embedding Smoothing for Robust Vision Language Models",
+          "summary": "The safety and reliability of vision-language models (VLMs) are a crucial part of deploying trustworthy agentic AI systems. However, VLMs remain vulnerable to jailbreaking attacks that undermine their safety alignment to yield harmful outputs. In this work, we extend the Randomized Embedding Smoothing and Token Aggregation (RESTA) defense to VLMs and evaluate its performance against the JailBreakV-28K benchmark of multi-modal jailbreaking attacks. We find that RESTA is effective in reducing a...",
+          "key_facts": [
+            "The safety and reliability of vision-language models (VLMs) are a crucial part of deploying trustworthy agentic AI systems",
+            "However, VLMs remain vulnerable to jailbreaking attacks that undermine their safety alignment to yield harmful outputs",
+            "In this work, we extend the Randomized Embedding Smoothing and Token Aggregation (RESTA) defense to VLMs and evaluate its performance against the JailBreakV-28K benchmark of multi-modal jailbreaking attacks",
+            "We find that RESTA is effective in reducing attack success rate over this diverse corpus of attacks, in particular, when employing directional embedding noise, where the injected noise is aligned with the original token embedding vectors",
+            "Our results demonstrate that RESTA can contribute to securing VLMs within agentic systems, as a lightweight, inference-time defense layer of an overall security framework."
+          ],
+          "raw_content": "The safety and reliability of vision-language models (VLMs) are a crucial part of deploying trustworthy agentic AI systems. However, VLMs remain vulnerable to jailbreaking attacks that undermine their safety alignment to yield harmful outputs. In this work, we extend the Randomized Embedding Smoothing and Token Aggregation (RESTA) defense to VLMs and evaluate its performance against the JailBreakV-28K benchmark of multi-modal jailbreaking attacks. We find that RESTA is effective in reducing attack success rate over this diverse corpus of attacks, in particular, when employing directional embedding noise, where the injected noise is aligned with the original token embedding vectors. Our results demonstrate that RESTA can contribute to securing VLMs within agentic systems, as a lightweight, inference-time defense layer of an overall security framework.",
+          "publication_date": "2026-03-16",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.LG",
+            "arxiv_cat:cs.AI",
+            "arxiv_cat:cs.CL",
+            "arxiv_cat:cs.CR",
+            "first_author:Ye Wang"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260319-news_site-110400-d2de8",
+          "source_name": "news_site",
+          "source_url": "https://fortune.com/2026/03/15/andrej-karpathy-openai-cofounder-us-labor-market-exposure-ai-white-collar-jobs-professionals/",
+          "fetch_timestamp": "2026-03-19T20:00:00Z",
+          "agent_id": "influencer-researcher-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "-",
+          "sub_variable": "professional_displacement_signals",
+          "confidence": "high",
+          "title": "Karpathy's vibe-coded labor market analysis shows high-paying white-collar jobs most exposed to AI",
+          "summary": "Karpathy's analysis reveals that the highest-paying professional roles — not entry-level positions — face the greatest AI displacement risk. This inverts the standard automation thesis and signals structural wage compression at the top of the knowledge economy.",
+          "key_facts": [
+            "Karpathy built a labor market exposure tool using AI coding (vibe coding)",
+            "Analysis shows high-paying white-collar jobs are most exposed to AI displacement",
+            "The finding inverts the usual assumption that entry-level roles are most at risk"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-15",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:andrej_karpathy",
+            "influencer_group:researchers_scientists",
+            "account_category:researcher"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-news_site-130100-72941",
+          "source_name": "news_site",
+          "source_url": "https://roastbrief.us/sxsw-2026-experts-call-to-reclaim-humanity-in-the-age-of-ai/",
+          "fetch_timestamp": "2026-03-19T20:00:00Z",
+          "agent_id": "influencer-futurist-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": "GOV",
+          "direction": "-",
+          "sub_variable": "incident_impact_on_trust",
+          "confidence": "high",
+          "title": "SXSW 2026: Timnit Gebru and experts call to reclaim humanity in the age of AI",
+          "summary": "At SXSW 2026, Gebru argued that the AI utopia vs. apocalypse framing is a strategic distraction by tech giants to concentrate wealth and power. Conflating narrow diagnostic tools with AGI models confuses regulators and the public, weakening accountability structures.",
+          "key_facts": [
+            "Timnit Gebru spoke at SXSW 2026 panel 'Reclaiming our Humanity in the Age of AI'",
+            "Panelists argued that conflating specialized AI tools with AGI serves to confuse regulators",
+            "The panel criticized oversimplified utopia vs. apocalypse framings as strategic distractions"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-15",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:timnit_gebru",
+            "influencer_group:futurists_intellectuals",
+            "account_category:public_intellectual",
+            "event:sxsw_2026"
+          ],
+          "schema_version": "1.0"
+        }
+      ]
+    },
+    "INDUSTRY": {
+      "signal_count": 119,
+      "direction_breakdown": {
+        "+": 87,
+        "?": 22,
+        "-": 2,
+        "~": 8
+      },
+      "dominant_direction": "+",
+      "top_signals": [
+        {
+          "signal_id": "20260319-news_site-100500-e5f6g",
+          "source_name": "news_site",
+          "source_url": "https://blogs.microsoft.com/blog/2026/03/17/announcing-copilot-leadership-update/",
+          "fetch_timestamp": "2026-03-19T10:05:00Z",
+          "agent_id": "influencer-ceo-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "business_model_reinvention",
+          "confidence": "high",
+          "title": "Microsoft reshuffles Copilot leadership: Suleyman shifts to superintelligence, Andreou unifies product",
+          "summary": "Microsoft's reorganization consolidates its fragmented Copilot ecosystem under one leader while freeing Suleyman to build frontier models in-house. The move signals Microsoft is reducing its dependency on OpenAI for model development and committing to a five-year internal superintelligence program.",
+          "key_facts": [
+            "Jacob Andreou (former Snap executive) now leads unified Copilot across commercial and consumer",
+            "Mustafa Suleyman will focus exclusively on superintelligence and frontier model development for 5 years",
+            "Microsoft previously offered more than a dozen different Copilot versions, creating customer confusion",
+            "Nadella wrote the company is 'doubling down on our superintelligence mission'"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:satya_nadella",
+            "influencer:mustafa_suleyman",
+            "influencer_group:ceo_industry_leaders",
+            "account_category:industry",
+            "vendor_name:microsoft"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 3,
+          "_corroboration_sources": [
+            "x-claude-collector",
+            "influencer-policy-collector"
+          ],
+          "_candidate_cluster_id": 2
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-4e3fa",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.15611v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "medium",
+          "title": "Code-A1: Adversarial Evolving of Code LLM and Test LLM via Reinforcement Learning",
+          "summary": "Reinforcement learning for code generation relies on verifiable rewards from unit test pass rates. Yet high-quality test suites are scarce, existing datasets offer limited coverage, and static rewards fail to adapt as models improve. Recent self-play methods unify code and test generation in a single model, but face a inherent dilemma: white-box access leads to self-collusion where the model produces trivial tests for easy rewards, yet black-box restriction yields generic tests that miss impl...",
+          "key_facts": [
+            "Reinforcement learning for code generation relies on verifiable rewards from unit test pass rates",
+            "Yet high-quality test suites are scarce, existing datasets offer limited coverage, and static rewards fail to adapt as models improve",
+            "Recent self-play methods unify code and test generation in a single model, but face a inherent dilemma: white-box access leads to self-collusion where the model produces trivial tests for easy rewards, yet black-box restriction yields generic tests that miss implementation-specific bugs",
+            "We introduce Code-A1, an adversarial co-evolution framework that jointly optimizes a Code LLM and a Test LLM with opposing objectives",
+            "The Code LLM is rewarded for passing more tests, while the Test LLM is rewarded for exposing more defects"
+          ],
+          "raw_content": "Reinforcement learning for code generation relies on verifiable rewards from unit test pass rates. Yet high-quality test suites are scarce, existing datasets offer limited coverage, and static rewards fail to adapt as models improve. Recent self-play methods unify code and test generation in a single model, but face a inherent dilemma: white-box access leads to self-collusion where the model produces trivial tests for easy rewards, yet black-box restriction yields generic tests that miss implementation-specific bugs. We introduce Code-A1, an adversarial co-evolution framework that jointly optimizes a Code LLM and a Test LLM with opposing objectives. The Code LLM is rewarded for passing more tests, while the Test LLM is rewarded for exposing more defects. This architectural separation eliminates self-collusion risks and safely enables white-box test generation, where the Test LLM can inspect candidate code to craft targeted adversarial tests. We further introduce a Mistake Book mechanism for experience replay and a composite reward balancing test validity with adversarial difficulty. Experiments on Qwen2.5-Coder models demonstrate that Code-A1 achieves code generation performance matching or exceeding models trained on human-annotated tests, while significantly improving test generation capability.",
+          "publication_date": "2026-03-16",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.CL",
+            "first_author:Aozhe Wang"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "arxiv-signal-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-reddit-015943-2ad09",
+          "source_name": "reddit",
+          "source_url": "https://llm-stats.com/ai-news",
+          "fetch_timestamp": "2026-03-20T01:59:43Z",
+          "agent_id": "reddit-claude-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-13_2026-03-20_reddit_claude_weekly_8af27c83",
+          "collection_batch_id": "batch_20260320_0145",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "productivity_measurement_transparency",
+          "confidence": "medium",
+          "title": "Enterprise AI cost structure: API pricing ranges from $0.15/M to $60+/M tokens — practitioners debate model selection ROI",
+          "summary": "Practitioner discussions in data science communities are increasingly focused on the wide API pricing spread across frontier models — from $0.15/M tokens for lightweight models to $60+/M for frontier models — and how to match model capability to task requirements without over-spending on inference.",
+          "key_facts": [
+            "API pricing for LLMs in 2026 ranges from $0.15/M tokens for lightweight models to $60+/M tokens for frontier models",
+            "Reasoning models (o1, DeepSeek-R1) trade higher latency for improved accuracy on complex tasks vs. faster, cheaper small models",
+            "Benchmark scores provide signals but real performance depends on task-specific prompts and evaluation — per practitioner consensus",
+            "DeepSeek V3.2 offers reasoning and tool-use capabilities as an open alternative to proprietary frontier models at lower cost",
+            "Gemini 3.1 Pro features a 1M-token context window and scored 77.1% on ARC-AGI-2 as of February 2026"
+          ],
+          "raw_content": "The frontier model landscape in March 2026 presents data science teams with a complex cost-capability tradeoff matrix. Reasoning models like o1 and DeepSeek-R1 trade latency for accuracy on complex tasks, while smaller models like GPT-4o-mini and Claude 3.5 Haiku offer faster, cheaper responses for simpler workloads. Practitioner consensus is that benchmark performance does not reliably predict real-world task performance — actual output quality depends heavily on prompt design and task-specific evaluation. DeepSeek V3.2 has emerged as a cost-competitive open alternative to proprietary frontier models, offering reasoning and tool-use capabilities at significantly lower cost. For enterprise data science teams, the strategic implication is that model selection must be driven by task-level benchmarking rather than headline capability claims.",
+          "publication_date": "2026-03-19",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "missing_url",
+            "unknown_domain"
+          ],
+          "tags": [
+            "subreddit:datascience",
+            "post_type:analysis",
+            "reddit_score:0",
+            "reddit_comments:0",
+            "query_tag:reddit_industry",
+            "has_primary_source:True"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-3c1d2",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.17216v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "high",
+          "title": "AI Scientist via Synthetic Task Scaling",
+          "summary": "With the advent of AI agents, automatic scientific discovery has become a tenable goal. Many recent works scaffold agentic systems that can perform machine learning research, but don't offer a principled way to train such agents -- and current LLMs often generate plausible-looking but ineffective ideas. To make progress on training agents that can learn from doing, we provide a novel synthetic environment generation pipeline targeting machine learning agents. Our pipeline automatically synthe...",
+          "key_facts": [
+            "With the advent of AI agents, automatic scientific discovery has become a tenable goal",
+            "Many recent works scaffold agentic systems that can perform machine learning research, but don't offer a principled way to train such agents -- and current LLMs often generate plausible-looking but ineffective ideas",
+            "To make progress on training agents that can learn from doing, we provide a novel synthetic environment generation pipeline targeting machine learning agents",
+            "Our pipeline automatically synthesizes machine learning challenges compatible with the SWE-agent framework, covering topic sampling, dataset proposal, and code generation",
+            "The resulting synthetic tasks are 1) grounded in real machine learning datasets, because the proposed datasets are verified against the Huggingface API and are 2) verified for higher quality with a self-debugging loop"
+          ],
+          "raw_content": "With the advent of AI agents, automatic scientific discovery has become a tenable goal. Many recent works scaffold agentic systems that can perform machine learning research, but don't offer a principled way to train such agents -- and current LLMs often generate plausible-looking but ineffective ideas. To make progress on training agents that can learn from doing, we provide a novel synthetic environment generation pipeline targeting machine learning agents. Our pipeline automatically synthesizes machine learning challenges compatible with the SWE-agent framework, covering topic sampling, dataset proposal, and code generation. The resulting synthetic tasks are 1) grounded in real machine learning datasets, because the proposed datasets are verified against the Huggingface API and are 2) verified for higher quality with a self-debugging loop. To validate the effectiveness of our synthetic tasks, we tackle MLGym, a benchmark for machine learning tasks. From the synthetic tasks, we sample trajectories from a teacher model (GPT-5), then use the trajectories to train a student model (Qwen3-4B and Qwen3-8B). The student models trained with our synthetic tasks achieve improved performance on MLGym, raising the AUP metric by 9% for Qwen3-4B and 12% for Qwen3-8B.",
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.AI",
+            "first_author:Ziyang Cai"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-85a8f",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.15538v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "high",
+          "title": "QiboAgent: a practitioner's guideline to open source assistants for Quantum Computing code development",
+          "summary": "We introduce QiboAgent, a reference implementation designed to serve as a practitioner's guideline for developing specialized coding assistants in Quantum Computing middleware. Addressing the limitations in scientific software development of general-purpose proprietary models, we explore how lightweight, open-source Large Language Models (LLMs) provided with a custom workflow architecture compare. In detail, we experiment with two complementary paradigms: a Retrieval-Augmented Generation pipe...",
+          "key_facts": [
+            "We introduce QiboAgent, a reference implementation designed to serve as a practitioner's guideline for developing specialized coding assistants in Quantum Computing middleware",
+            "Addressing the limitations in scientific software development of general-purpose proprietary models, we explore how lightweight, open-source Large Language Models (LLMs) provided with a custom workflow architecture compare",
+            "In detail, we experiment with two complementary paradigms: a Retrieval-Augmented Generation pipeline for high-precision information retrieval, and an autonomous agentic workflow for complex software engineering tasks",
+            "We observe that this hybrid approach significantly reduces hallucination rates in code generation compared to a proprietary baseline, achieving a peak accuracy of 90.2% with relatively small open-source models of size up to 30B parameters",
+            "Furthermore, the agentic framework exhibits advanced coding capabilities, automating the resolution of maintenance issues and new features requests, or by prototyping larger-scale refactors of the codebase, such as producing a compiled Rust module with bindings of an original pure python package, Qibo in our case"
+          ],
+          "raw_content": "We introduce QiboAgent, a reference implementation designed to serve as a practitioner's guideline for developing specialized coding assistants in Quantum Computing middleware. Addressing the limitations in scientific software development of general-purpose proprietary models, we explore how lightweight, open-source Large Language Models (LLMs) provided with a custom workflow architecture compare. In detail, we experiment with two complementary paradigms: a Retrieval-Augmented Generation pipeline for high-precision information retrieval, and an autonomous agentic workflow for complex software engineering tasks. We observe that this hybrid approach significantly reduces hallucination rates in code generation compared to a proprietary baseline, achieving a peak accuracy of 90.2% with relatively small open-source models of size up to 30B parameters. Furthermore, the agentic framework exhibits advanced coding capabilities, automating the resolution of maintenance issues and new features requests, or by prototyping larger-scale refactors of the codebase, such as producing a compiled Rust module with bindings of an original pure python package, Qibo in our case. The LLM workflows used for our analysis are integrated into a user interface and a Model Context Protocol server, providing an accessible tool for Qibo developers.",
+          "publication_date": "2026-03-16",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:quant-ph",
+            "first_author:Lorenzo Esposito"
+          ],
+          "schema_version": "1.0"
+        }
+      ]
+    },
+    "CAPITAL": {
+      "signal_count": 33,
+      "direction_breakdown": {
+        "+": 22,
+        "?": 5,
+        "-": 1,
+        "~": 5
+      },
+      "dominant_direction": "+",
+      "top_signals": [
+        {
+          "signal_id": "20260319-news_site-110200-c9a07",
+          "source_name": "news_site",
+          "source_url": "https://techcrunch.com/2026/03/09/yann-lecuns-ami-labs-raises-1-03-billion-to-build-world-models/",
+          "fetch_timestamp": "2026-03-19T20:00:00Z",
+          "agent_id": "influencer-researcher-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "venture_funding_discipline",
+          "confidence": "high",
+          "title": "Yann LeCun's AMI Labs raises $1.03B to build world models — record EU seed round",
+          "summary": "AMI Labs' $1.03B raise validates LeCun's long-standing thesis that world models — not autoregressive LLMs — are the path to human-level AI. The largest European AI seed round signals capital is diversifying beyond the US LLM monoculture.",
+          "key_facts": [
+            "AMI Labs raised $1.03B in what is the largest European AI seed round",
+            "The company is building world models based on LeCun's JEPA architecture",
+            "Funding validates the non-LLM approach to artificial intelligence"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-09",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "publication_date_before_window"
+          ],
+          "tags": [
+            "influencer:yann_lecun",
+            "influencer_group:researchers_scientists",
+            "account_category:researcher"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ]
+        },
+        {
+          "signal_id": "20260319-news_site-120300-1507f",
+          "source_name": "news_site",
+          "source_url": "https://www.cnbc.com/2026/02/27/openai-raises-110-billion-largest-private-funding-round.html",
+          "fetch_timestamp": "2026-03-19T20:00:00Z",
+          "agent_id": "influencer-lab-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "venture_funding_discipline",
+          "confidence": "high",
+          "title": "OpenAI raises $110B at $730B valuation — largest private financing in history",
+          "summary": "OpenAI's $110B round — with Amazon ($50B), Nvidia ($30B), and SoftBank ($30B) — is the largest private financing in history. The hyperscaler-led syndicate signals that frontier AI development is consolidating into a capital structure that only the largest companies can sustain.",
+          "key_facts": [
+            "OpenAI raised $110B at a $730B valuation",
+            "Amazon contributed $50B, Nvidia $30B, SoftBank $30B",
+            "Largest private financing round in history"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-02-27",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "publication_date_before_window"
+          ],
+          "tags": [
+            "influencer:openai",
+            "influencer_group:research_labs",
+            "account_category:research_lab"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "reddit-claude-collector"
+          ],
+          "_candidate_cluster_id": 9
+        },
+        {
+          "signal_id": "20260313-reddit-015554-e2e8c",
+          "source_name": "reddit",
+          "source_url": "https://www.marketingprofs.com/opinions/2026/54427/ai-update-march-13-2026-ai-news-and-views-from-the-past-week",
+          "fetch_timestamp": "2026-03-20T01:55:54Z",
+          "agent_id": "reddit-claude-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-13_2026-03-20_reddit_claude_weekly_8af27c83",
+          "collection_batch_id": "batch_20260320_0145",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "roi_signal_clarity",
+          "confidence": "medium",
+          "title": "Cheap AI pricing may not last — OpenAI and Anthropic still operating at massive losses ahead of IPO push",
+          "summary": "Analysis circulating on r/OpenAI warns that current AI pricing is heavily subsidized by venture funding and discounted compute partnerships. As OpenAI and Anthropic pursue profitability and potential public listings, analysts expect subscription and usage costs to rise significantly.",
+          "key_facts": [
+            "Current AI pricing is heavily subsidized by venture funding, discounted compute partnerships, and aggressive competition",
+            "OpenAI and Anthropic still operate with large losses despite rapid revenue growth",
+            "OpenAI is reportedly taking early steps toward a public listing as early as late 2026",
+            "Analysts expect subscription prices and API usage costs to rise as companies pursue profitability for public investors",
+            "GPT-5.4 nano is priced at $0.20/M input tokens — among the lowest frontier model prices — but still loss-leading"
+          ],
+          "raw_content": "This thread resonated strongly with r/OpenAI practitioners and developers who have built cost models around current AI pricing. The core argument is that today's pricing reflects a land-grab phase subsidized by VC capital, not sustainable unit economics — and that the IPO pipeline will force a repricing event. OpenAI's $25B+ annualized revenue still falls far short of covering its compute and operational costs, meaning current prices are structurally below cost. Community members debated the timeline for price normalization, with some arguing inference efficiency gains (e.g., GPT-5.4 nano at $0.20/M tokens) could offset margin pressure. Others flagged that enterprise contracts locked in at current rates may create a two-tier market between legacy and new customers.",
+          "publication_date": "2026-03-13",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "missing_url",
+            "unknown_domain"
+          ],
+          "tags": [
+            "subreddit:OpenAI",
+            "post_type:analysis",
+            "reddit_score:0",
+            "reddit_comments:0",
+            "query_tag:reddit_market_sentiment",
+            "has_primary_source:True"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ],
+          "_candidate_cluster_id": 9
+        },
+        {
+          "signal_id": "20260314-twitter-033753-74df8",
+          "source_name": "twitter",
+          "source_url": "https://garymarcus.substack.com/p/breaking-expensive-new-evidence-that",
+          "fetch_timestamp": "2026-03-19T03:37:53Z",
+          "agent_id": "x-claude-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_x_claude_weekly_681e0519",
+          "collection_batch_id": "batch_20260319_0325",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "capital_exit_velocity",
+          "confidence": "medium",
+          "title": "Marcus declares 'scaling is not all you need' as Meta and xAI experiments fail to deliver AGI breakthroughs",
+          "summary": "Gary Marcus published a Substack post arguing that the most expensive AI scaling experiments in history — from Meta and xAI — have both failed to deliver the expected results, vindicating his long-standing critique that compute-only scaling cannot reach AGI. He frames this as a pivotal moment for the field to pivot toward new architectures.",
+          "key_facts": [
+            "Meta's latest large model described as 'good but not great' and not what Zuckerberg was hoping for",
+            "Elon Musk admitted xAI 'was not built right first time around' and is being rebuilt from foundations up",
+            "Marcus predicted in 2020 that scaling alone would not reach AGI and urged focus on neurosymbolic AI",
+            "Marcus links Musk's concession to his earlier theory that SpaceX's $250B xAI acquisition was a disguised bailout",
+            "Post published March 14, 2026 with 263 likes and 145 comments on Substack"
+          ],
+          "raw_content": "Marcus points to two simultaneous high-profile failures: Meta's latest model being 'good but not great,' and Elon Musk conceding that xAI 'was not built right first time around' and is being rebuilt from the ground up. He argues these represent the most expensive scientific experiments in history and that the results validate his 2020 prediction that scaling alone would not achieve AGI. Marcus calls for the field to now seriously pursue world cognitive models and neurosymbolic AI. He also links Musk's admission to his earlier theory that SpaceX's $250B acquisition of xAI was a 'thinly disguised bailout.' The post carries significant governance implications: if scaling is failing, the regulatory and safety frameworks built around frontier model risk may need to be reconsidered.",
+          "publication_date": "2026-03-14",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "url_not_in_citations",
+            "indirect_source",
+            "unknown_domain"
+          ],
+          "tags": [
+            "x_handle:GaryMarcus",
+            "account_category:policy",
+            "source_pub:Marcus on AI (Substack)",
+            "query_tag:x_policy_safety",
+            "source_type:indirect_reference"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "influencer-policy-collector"
+          ],
+          "_candidate_cluster_id": 10
+        },
+        {
+          "signal_id": "20260319-news_site-100100-vk50m",
+          "source_name": "news_site",
+          "source_url": "https://fortune.com/2026/03/13/openai-original-vc-bet-how-vinod-khosla-stepped-in-after-elon-musk-balked/",
+          "fetch_timestamp": "2026-03-19T10:01:00Z",
+          "agent_id": "influencer-investor-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": "GOV",
+          "direction": "+",
+          "sub_variable": "venture_funding_discipline",
+          "confidence": "high",
+          "title": "OpenAI's original VC bet: How Vinod Khosla stepped in after Elon Musk balked",
+          "summary": "Khosla's $50M check at a $1B valuation into a nonprofit with no commercial model -- now worth billions -- validates the thesis that contrarian, conviction-driven capital allocation in foundational AI companies generates outsized returns, reinforcing the capital flywheel into frontier AI development.",
+          "key_facts": [
+            "Khosla invested $50M for 5% of OpenAI at a $1B valuation, the largest initial check he had written in 40 years",
+            "Khosla sent an apology letter to LPs acknowledging the deal looked foolhardy but proceeded anyway",
+            "The investment was partly a geopolitical hedge against Chinese AI dominance, after Musk refused to follow through on a pledged $1B",
+            "OpenAI now has 900 million active weekly users as of early 2026"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-13",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "GOV"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:vinod_khosla",
+            "influencer_group:investors_capital",
+            "account_category:capital"
+          ],
+          "schema_version": "1.0",
+          "_candidate_cluster_id": 9
+        }
+      ]
+    },
+    "GOV": {
+      "signal_count": 69,
+      "direction_breakdown": {
+        "+": 36,
+        "?": 17,
+        "-": 8,
+        "~": 8
+      },
+      "dominant_direction": "+",
+      "top_signals": [
+        {
+          "signal_id": "20260319-company_announcement-120400-177c6",
+          "source_name": "company_announcement",
+          "source_url": "https://www.anthropic.com/news/anthropic-institute",
+          "fetch_timestamp": "2026-03-19T20:00:00Z",
+          "agent_id": "influencer-lab-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "alignment_and_safety_maturity",
+          "confidence": "high",
+          "title": "Anthropic launches Anthropic Institute — dedicated safety research arm led by Jack Clark with ~30 members",
+          "summary": "Anthropic's creation of a dedicated safety research institute with ~30 members from DeepMind, UVA, and ex-OpenAI institutionalizes safety research as a permanent, resourced function alongside product development. This raises the bar for what 'responsible AI development' means in practice.",
+          "key_facts": [
+            "Anthropic Institute launched with ~30 members from DeepMind, UVA, ex-OpenAI",
+            "Led by Jack Clark, Anthropic co-founder",
+            "Dedicated to safety research separate from product development"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-11",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "publication_date_before_window"
+          ],
+          "tags": [
+            "influencer:anthropic",
+            "influencer_group:research_labs",
+            "account_category:research_lab"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ],
+          "_candidate_cluster_id": 13
+        },
+        {
+          "signal_id": "20260319-academic_paper-010402-9cc1e",
+          "source_name": "academic_paper",
+          "source_url": "https://arxiv.org/abs/2603.16586v1",
+          "fetch_timestamp": "2026-03-19T01:04:02Z",
+          "agent_id": "arxiv-signal-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-19_weekly_709b13b0",
+          "collection_batch_id": "batch_20260319_0102",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "regulatory_framework_clarity",
+          "confidence": "high",
+          "title": "Runtime Governance for AI Agents: Policies on Paths",
+          "summary": "AI agents -- systems that plan, reason, and act using large language models -- produce non-deterministic, path-dependent behavior that cannot be fully governed at design time, where with governed we mean striking the right balance between as high as possible successful task completion rate and the legal, data-breach, reputational and other costs associated with running agents. We argue that the execution path is the central object for effective runtime governance and formalize compliance poli...",
+          "key_facts": [
+            "AI agents -- systems that plan, reason, and act using large language models -- produce non-deterministic, path-dependent behavior that cannot be fully governed at design time, where with governed we mean striking the right balance between as high as possible successful task completion rate and the legal, data-breach, reputational and other costs associated with running agents",
+            "We argue that the execution path is the central object for effective runtime governance and formalize compliance policies as deterministic functions mapping agent identity, partial path, proposed next action, and organizational state to a policy violation probability",
+            "We show that prompt-level instructions (and \"system prompts\"), and static access control are special cases of this framework: the former shape the distribution over paths without actually evaluating them; the latter evaluates deterministic policies that ignore the path (i.e., these can only account for a specific subset of all possible paths)",
+            "In our view, runtime evaluation is the general case, and it is necessary for any path-dependent policy",
+            "We develop the formal framework for analyzing AI agent governance, present concrete policy examples (inspired by the AI act), discuss a reference implementation, and identify open problems including risk calibration and the limits of enforced compliance."
+          ],
+          "raw_content": "AI agents -- systems that plan, reason, and act using large language models -- produce non-deterministic, path-dependent behavior that cannot be fully governed at design time, where with governed we mean striking the right balance between as high as possible successful task completion rate and the legal, data-breach, reputational and other costs associated with running agents. We argue that the execution path is the central object for effective runtime governance and formalize compliance policies as deterministic functions mapping agent identity, partial path, proposed next action, and organizational state to a policy violation probability. We show that prompt-level instructions (and \"system prompts\"), and static access control are special cases of this framework: the former shape the distribution over paths without actually evaluating them; the latter evaluates deterministic policies that ignore the path (i.e., these can only account for a specific subset of all possible paths). In our view, runtime evaluation is the general case, and it is necessary for any path-dependent policy. We develop the formal framework for analyzing AI agent governance, present concrete policy examples (inspired by the AI act), discuss a reference implementation, and identify open problems including risk calibration and the limits of enforced compliance.",
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "arxiv_cat:cs.AI",
+            "first_author:Maurits Kaptein"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260319-news_site-100600-f2g8h",
+          "source_name": "news_site",
+          "source_url": "https://dig.watch/updates/huaweis-ren-discusses-chinas-tech-growth-with-xi",
+          "fetch_timestamp": "2026-03-19T10:06:00Z",
+          "agent_id": "influencer-china-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "GOV",
+          "lever_secondary": "COMPUTE",
+          "direction": "+",
+          "sub_variable": "export_controls_and_chip_access",
+          "confidence": "high",
+          "title": "Ren Zhengfei tells Xi Jinping that concerns over domestic chip gaps have eased; leads 2,000-company semiconductor self-sufficiency network",
+          "summary": "At a Feb. 17 symposium with Xi Jinping, Huawei founder Ren Zhengfei declared that recent breakthroughs have alleviated his concerns about China's semiconductor gap under US export controls. Ren leads a consortium of 2,000+ Chinese companies targeting 70% semiconductor value chain self-sufficiency by 2028 — a structural shift that will reshape the global compute supply map.",
+          "key_facts": [
+            "Ren Zhengfei told Xi Jinping at Feb. 17 meeting that domestic chip concerns have eased due to recent breakthroughs",
+            "Ren heads a network of 2,000+ Chinese companies working toward 70% semiconductor value chain self-sufficiency by 2028",
+            "Meeting included DeepSeek CEO Liang Wenfeng, Xiaomi CEO Lei Jun, and BYD chairman Wang Chuanfu",
+            "Analysts described the symposium as a symbolic end to China's crackdown on the tech sector"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-02-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "COMPUTE"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": "While this event predates the March 12-19 window, it represents the most significant recent Ren Zhengfei activity and directly shapes the context for the Ascend 950 launch occurring within the window",
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "publication_date_outside_window"
+          ],
+          "tags": [
+            "influencer:ren_zhengfei",
+            "influencer_group:china_asia_leaders",
+            "account_category:ai_lab_leader",
+            "region:china",
+            "company:huawei",
+            "topic:semiconductor",
+            "topic:us_china",
+            "topic:export_controls"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260319-news_site-100200-esaid",
+          "source_name": "news_site",
+          "source_url": "https://tech.yahoo.com/ai/articles/exclusive-former-google-ceo-eric-194912401.html",
+          "fetch_timestamp": "2026-03-19T10:02:00Z",
+          "agent_id": "influencer-investor-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "geopolitical_fragmentation_index",
+          "confidence": "high",
+          "title": "Eric Schmidt argues emergent AI behaviors make preemptive regulation nearly impossible at Isaac Asimov Memorial Debate",
+          "summary": "Schmidt's assertion that frontier AI models produce untestable emergent features frames regulation as structurally lagging capability -- a signal that governance frameworks will remain reactive rather than preventive, widening the gap between deployed capability and regulatory coverage.",
+          "key_facts": [
+            "Schmidt stated that a central problem with regulating frontier AI is that new features emerge in these systems that are not tested or testable",
+            "He argued that banning larger models by law would stop progress but also stop emergent capabilities",
+            "Schmidt said AI developers should be held accountable if found in violation of law but must be allowed to ship products",
+            "Comments made at Isaac Asimov Memorial Debate moderated by Neil deGrasse Tyson at AMNH in Manhattan"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "INDUSTRY"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:eric_schmidt",
+            "influencer_group:investors_capital",
+            "account_category:capital"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260319-news_site-100100-d4s1a",
+          "source_name": "news_site",
+          "source_url": "https://www.mondaq.com/unitedstates/new-technology/1757200/department-of-commerce-report-on-state-artificial-intelligence-laws-expected-by-march-11-2026",
+          "fetch_timestamp": "2026-03-19T10:01:00Z",
+          "agent_id": "influencer-policy-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-12_2026-03-19_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260319_1000",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "regulatory_framework_clarity",
+          "confidence": "high",
+          "title": "Commerce Department publishes evaluation of 'onerous' state AI laws per EO 14365 deadline",
+          "summary": "The federal government is consolidating AI regulatory authority at the national level, flagging state laws that conflict with its pro-innovation stance. States with laws deemed onerous face loss of federal broadband funding, creating direct financial pressure to align with Washington's minimally burdensome AI framework.",
+          "key_facts": [
+            "Commerce Department report on state AI laws was mandated by EO 14365, due March 11, 2026",
+            "States with 'onerous' AI laws may lose eligibility for BEAD broadband funds",
+            "Colorado AI Act singled out by David Sacks as 'probably the most excessive'",
+            "EO directs FTC to classify state-mandated bias mitigation as per se deceptive trade practice"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-11",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:david_sacks",
+            "influencer_group:policy_governance",
+            "account_category:policy",
+            "region:us",
+            "policy:federal_preemption"
+          ],
+          "schema_version": "1.0"
+        }
+      ]
+    }
+  },
+  "overall_stats": {
+    "total_unique": 535,
+    "source_pipeline_count": 7,
+    "lever_count": 6,
+    "dominant_direction": "+",
+    "direction_breakdown": {
+      "+": 354,
+      "?": 97,
+      "-": 19,
+      "~": 65
+    }
+  },
+  "flagged_duplicate_clusters": [
+    {
+      "cluster_id": 1,
+      "entity_key": "meta|GOV",
+      "titles": [
+        "Narrative Frames: A New Approach to Analysing Metaphors in AI Ethics and Policy Discourse",
+        "MetaClaw: Just Talk -- An Agent That Meta-Learns and Evolves in the Wild"
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "entity_key": "intel|INDUSTRY",
+      "titles": [
+        "Surg$Σ$: A Spectrum of Large-Scale Multimodal Data and Foundation Models for Surgical Intelligence",
+        "Evasive Intelligence: Lessons from Malware Analysis for Evaluating AI Agents",
+        "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving",
+        "From Digital Twins to World Models:Opportunities, Challenges, and Applications for Mobile Edge General Intelligence",
+        "Meta Superintelligence Labs under Nat Friedman acquires Moltbook team, continues aggressive AI talent consolidation",
+        "Microsoft reshuffles Copilot leadership: Suleyman shifts to superintelligence, Andreou unifies product"
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "entity_key": "meta|COMPUTE",
+      "titles": [
+        "Efficient generation of entangled photons in the telecommunications range using nonlinear metasurfaces integrated with ScAlN/GaN heterostructures",
+        "Meta announces four MTIA custom chip generations: MTIA 300 in production, 400/450/500 through end of 2027",
+        "[R] Effective Theory of Wide and Deep Transformers (Meta): 60+ Page Analysis of Forward/Backward Signal Propagation, Width Scaling, NTK, and Optimizer Behavior"
+      ]
+    },
+    {
+      "cluster_id": 4,
+      "entity_key": "intel|SOCIETY",
+      "titles": [
+        "Intelligent Co-Design: An Interactive LLM Framework for Interior Spatial Design via Multi-Modal Agents",
+        "Zoe Schiffer on WIRED: At least three AI researchers have resigned from Meta's new superintelligence lab, with two returning to OpenAI within a month of joining"
+      ]
+    },
+    {
+      "cluster_id": 5,
+      "entity_key": "intel|COMPUTE",
+      "titles": [
+        "LLM-Augmented Release Intelligence: Automated Change Summarization and Impact Analysis in Cloud-Native CI/CD Pipelines",
+        "Research Paradigm of Materials Science Tetrahedra with Artificial Intelligence",
+        "Microsoft Copilot boss Mustafa Suleyman to chase superintelligence with in-house frontier models",
+        "Altman declares AI has crossed into 'major economic utility' at BlackRock Infrastructure Summit, pitches intelligence as a metered utility",
+        "LeCun paper argues AGI is misdefined and proposes 'Superhuman Adaptable Intelligence' (SAI) as a more rigorous replacement concept"
+      ]
+    },
+    {
+      "cluster_id": 6,
+      "entity_key": "$1|COMPUTE",
+      "titles": [
+        "Information-Geometric Signatures from Nonextensivity in the $1$-D Blume-Capel Model",
+        "NVIDIA GTC 2026: Jensen Huang sees $1 trillion in orders for Blackwell and Vera Rubin through 2027"
+      ]
+    },
+    {
+      "cluster_id": 7,
+      "entity_key": "intel|GOV",
+      "titles": [
+        "AI-Enabled Bit-Mapping Medium Access Control Protocol for Intelligent and Energy-Efficient IoT Networks",
+        "Noam Brown: Safety orgs must adapt to a world where intelligence is a function of inference compute",
+        "MEPs support postponement of certain rules on artificial intelligence",
+        "Blackburn Releases Discussion Draft of National Policy Framework for Artificial Intelligence",
+        "Transitioning to superintelligence team amid Microsoft AI restructuring"
+      ]
+    },
+    {
+      "cluster_id": 8,
+      "entity_key": "tsmc|COMPUTE",
+      "titles": [
+        "TSMC Says Advanced-Node Capacity Falls 'About Three Times Short' of AI Demand",
+        "[News] NVIDIA Rubin Ultra and Feynman Reportedly to Boost TSMC SoIC; Besi, Applied Materials, TEL to Benefit",
+        "AMD vs. TSMC: Which Chip Stock Actually Delivers the Smarter Return in 2026?",
+        "Dylan Patel on Dwarkesh Podcast: Logic, memory, and power are the 3 bottlenecks to scaling AI compute; Nvidia secured TSMC N3 allocation early"
+      ]
+    },
+    {
+      "cluster_id": 9,
+      "entity_key": "openai|CAPITAL",
+      "titles": [
+        "OpenAI's original VC bet: How Vinod Khosla stepped in after Elon Musk balked",
+        "OpenAI raises $110B at $730B valuation — largest private financing in history",
+        "OpenAI raised $110 billion",
+        "Cheap AI pricing may not last — OpenAI and Anthropic still operating at massive losses ahead of IPO push",
+        "OpenAI's o3 model achieves 96% on ARC-AGI benchmark, pushing AGI timelines to 2027",
+        "Leaked OpenAI roadmap: GPT-5 Q3 2026, AGI lab spinout planned"
+      ]
+    },
+    {
+      "cluster_id": 10,
+      "entity_key": "meta|CAPITAL",
+      "titles": [
+        "Marcus declares 'scaling is not all you need' as Meta and xAI experiments fail to deliver AGI breakthroughs",
+        "Meta plans sweeping layoffs of up to 16,000 employees as AI infrastructure costs mount",
+        "Metaculus forecasters update AGI median to 2028 after o3 results"
+      ]
+    },
+    {
+      "cluster_id": 11,
+      "entity_key": "nvidia|COMPUTE",
+      "titles": [
+        "Nvidia's Open Model Super Panel: Mira Murati and lab leaders argue the future belongs to open agent systems",
+        "Nvidia's China Chip Restart Hinges on a 15% U.S. Fee and Narrow Manufacturing Window",
+        "Jeff Dean announces fireside chat with Bill Dally at NVIDIA GTC on March 18 to discuss agentic AI systems and next-frontier architectures",
+        "Dylan Patel on CNBC: Nvidia CEO is laying the foundation for regular enterprises to deploy AI",
+        "[N] NVIDIA Releases Nemotron 3 Super: 120B Hybrid Mamba-Transformer MoE with 12B Active Params, 1M Context, 5x Throughput Gain, Trained on 25T Tokens with NVFP4"
+      ]
+    },
+    {
+      "cluster_id": 12,
+      "entity_key": "nvidia|INDUSTRY",
+      "titles": [
+        "Jensen Huang: Nvidia will have 75K employees and 7.5 million AI agents in 10 years",
+        "IBM and NVIDIA announce expanded collaboration at GTC 2026 to advance AI for the enterprise",
+        "Hugging Face CEO Delangue on Nvidia's open-source power grab: strategic generosity that monetizes hardware",
+        "Mistral launches Forge at Nvidia GTC: enterprise platform for training custom AI models from scratch"
+      ]
+    },
+    {
+      "cluster_id": 13,
+      "entity_key": "anthropic|GOV",
+      "titles": [
+        "Trump administration defends Anthropic blacklisting in US court as supply chain risk case advances",
+        "Jeffrey Dean signs amicus brief backing Anthropic against Pentagon blacklist",
+        "Anthropic launches Anthropic Institute — dedicated safety research arm led by Jack Clark with ~30 members",
+        "Palantir still using Anthropic's Claude as Pentagon blacklist plays out, CEO Karp confirms at AIPcon 9",
+        "Karp attacks AI companies refusing military use; Anthropic-DoD split fragments US defense AI supply chain",
+        "Anthropic Institute to tackle recursive AI self-improvement governance: 'If AI begins to recursively self-improve, who will notice?'",
+        "Anthropic cannot deploy Claude for autonomous weapons systems"
+      ]
+    },
+    {
+      "cluster_id": 14,
+      "entity_key": "xai|INDUSTRY",
+      "titles": [
+        "Elon Musk says xAI must be 'rebuilt' as co-founder exodus continues with 9 of 11 departed",
+        "Musk's xAI hiring Wall Street bankers and credit experts to teach Grok finance"
+      ]
+    },
+    {
+      "cluster_id": 15,
+      "entity_key": "amd|COMPUTE",
+      "titles": [
+        "Samsung and AMD expand strategic collaboration: HBM4 supply for AMD Instinct MI455X GPU",
+        "AMD's next-generation AI chips set to power 2026 data center growth"
+      ]
+    },
+    {
+      "cluster_id": 16,
+      "entity_key": "openai|COMPUTE",
+      "titles": [
+        "OpenAI releases GPT-5.4 mini and nano: frontier capabilities compressed into 2x-faster, low-cost form factors",
+        "Amodei calls OpenAI's Pentagon deal 'safety theater' and 'straight up lies' in leaked internal memo, then publicly apologizes for tone",
+        "Reddy calls OpenAI Codex 5.3 pricing 'insanely well priced' and predicts a seismic shift from Anthropic to OpenAI among enterprise developers",
+        "GPT-5.4 Launch Widely Seen as Reactive to #QuitGPT Crisis — Reddit Debates Whether OpenAI Is Losing Its Edge to Specialized Models",
+        "#QuitGPT movement hits 2.5M users after OpenAI signs Pentagon AI deal — Claude jumps to #1 on App Store",
+        "GPT-5.4 launched just 48 hours after GPT-5.3 Instant — is OpenAI releasing models reactively now?"
+      ]
+    }
+  ]
+}

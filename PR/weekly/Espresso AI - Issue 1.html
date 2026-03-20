@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>espresso·ai — Weekly Intelligence Brief — Issue 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #162B4E;
+      --navy-mid:   #1E3A65;
+      --red:        #BF3A2B;
+      --red-light:  #D94E3C;
+      --white:      #FFFFFF;
+      --cream:      #FAF9F7;
+      --gray-100:   #F4F3F1;
+      --gray-200:   #E8E6E3;
+      --gray-400:   #A09D99;
+      --gray-600:   #6B6760;
+      --ink:        #111827;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'Inter', -apple-system, sans-serif;
+      --slide-w: 1080px;
+      --slide-h: 1080px;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      background: #e0ddd8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+      font-family: var(--sans);
+    }
+
+    .slide {
+      width: var(--slide-w);
+      height: var(--slide-h);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--white);
+    }
+
+    /* ─── Nav bar ────────────────────────────────── */
+    .slide-nav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      z-index: 10;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .slide-nav-logo {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .slide-nav-logo .dot { color: var(--red); }
+    .slide-nav-right {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    /* ─── Footer ─────────────────────────────────── */
+    .slide-footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      z-index: 10;
+      border-top: 1px solid var(--gray-200);
+    }
+    .slide-footer-left {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-400);
+    }
+    .slide-footer-right {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-400);
+    }
+
+    /* ─── Content area ───────────────────────────── */
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      padding: 52px 56px 44px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── Utilities ───────────────────────────────── */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ─── Direction badges ────────────────────────── */
+    .dir-pos { background: #E8F5E9; color: #2E7D32; }
+    .dir-neg { background: #FFEBEE; color: #C62828; }
+    .dir-neu { background: var(--gray-100); color: var(--gray-600); }
+    .dir-amb { background: #FFF8E1; color: #F57F17; }
+
+    /* ─── SLIDE 1 — COVER (NAVY) ────────────────── */
+    .slide-title {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .slide-title .slide-nav {
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    .slide-title .slide-nav-logo { color: var(--white); }
+    .slide-title .slide-nav-logo .dot { color: var(--red-light); }
+    .slide-title .slide-nav-right { color: rgba(255,255,255,0.35); }
+    .slide-title .slide-footer {
+      border-top-color: rgba(255,255,255,0.08);
+    }
+    .slide-title .slide-footer-left { color: rgba(255,255,255,0.3); }
+    .slide-title .slide-footer-right { color: rgba(255,255,255,0.3); }
+
+    .title-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding-top: 16px;
+    }
+    .title-rule {
+      width: 56px;
+      height: 3px;
+      background: var(--red-light);
+      margin-bottom: 18px;
+    }
+    .title-headline {
+      font-family: var(--serif);
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+
+    /* Stats row */
+    .title-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 20px;
+      border-radius: 2px;
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* Lever dashboard */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 36px;
+    }
+    .dashboard-item {
+      padding: 10px 0;
+    }
+
+    /* Brand hero section (top of cover) */
+    .cover-brand {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 28px;
+    }
+    .cover-wordmark {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .cover-wordmark .dot { color: var(--red-light); }
+    .cover-tagline {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+    .cover-desc {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.55;
+      max-width: 920px;
+    }
+    .cover-curated {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--red-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 14px;
+    }
+
+    /* This Week section */
+    .cover-week {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .cover-issue-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .cover-issue-badge {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--red-light);
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+    .dashboard-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 3px;
+    }
+    .dashboard-lever-code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--red-light);
+      background: rgba(217,78,60,0.12);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .dashboard-dir {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .dashboard-count {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+    }
+    .dashboard-lever-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2px;
+    }
+    .dashboard-summary {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.4;
+    }
+
+    /* ─── LEVER SLIDES ───────────────────────────── */
+    .slide-lever .slide-content {
+      padding-top: 64px;
+    }
+    .lever-header {
+      margin-bottom: 20px;
+    }
+    .lever-code {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .lever-title {
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .lever-subtitle {
+      font-size: 16px;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .lever-stats-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .lever-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lever-stat-num {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .lever-stat-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .lever-stat-dir {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .lever-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--gray-200);
+      margin-bottom: 16px;
+    }
+    .lever-accent {
+      position: absolute;
+      top: 52px; left: 0;
+      width: 4px;
+      height: 80px;
+      background: var(--red);
+    }
+
+    /* ─── Signal cards ───────────────────────────── */
+    .signal-list {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .signal-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .signal-item:last-child { border-bottom: none; }
+    .signal-dir {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      font-size: 15px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .signal-body { flex: 1; }
+    .signal-headline {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .signal-summary {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+    .signal-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .signal-source {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      opacity: 0.5;
+    }
+    .signal-tag {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    /* ─── Print / PDF ────────────────────────────── */
+    @media print {
+      body { background: none; gap: 0; padding: 0; }
+      .slide { page-break-after: always; page-break-inside: avoid; }
+      .slide:last-child { page-break-after: auto; }
+    }
+    @page { size: 1080px 1080px; margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ SLIDE 1 — COVER ═══ -->
+<div class="slide slide-title">
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">A strong sip of this week's AI news</div>
+  </div>
+  <div class="slide-content">
+    <div class="title-inner">
+      <!-- Brand identity section -->
+      <div class="cover-brand">
+        <div class="cover-wordmark">espresso<span class="dot">·</span>ai</div>
+        <div class="cover-tagline">AI news. Concentrated.</div>
+        <div class="cover-desc">A multi-agent intelligence pipeline that collects signals from research papers, news, social media, and 71 key influencers. Every signal is classified against six structural levers that determine whether AI reaches transformational scale or stalls before it gets there.</div>
+        <div class="cover-curated">Curated by Tommaso Babucci</div>
+      </div>
+
+      <!-- This week section -->
+      <div class="cover-week">
+        <div class="cover-issue-row">
+          <span class="cover-issue-badge">Issue 1</span>
+          <div class="eyebrow" style="color: var(--red-light);">Week of March 12–19, 2026</div>
+        </div>
+        <div class="title-rule"></div>
+        <h1 class="title-headline">Models compress.<br/>Capital concentrates.<br/>Governance fragments.</h1>
+        <div class="title-stats">
+          <div class="stat-card">
+            <div class="stat-num">554</div>
+            <div class="stat-label">Signals collected</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">7</div>
+            <div class="stat-label">Source pipelines</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">6</div>
+            <div class="stat-label">Scale levers</div>
+          </div>
+        </div>
+        <div class="dashboard-grid">
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">COMPUTE</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">219 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Chips, Fabs, Data Centers, Supply Chain</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">ENERGY</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">15 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Power Demand, Grid, Renewables, Cooling</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">SOCIETY</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">80 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Adoption, Talent, Workforce, Trust</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">INDUSTRY</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">119 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Enterprise ROI, Deployments, Business Models</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">CAPITAL</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">33 signals</span>
+            </div>
+            <div class="dashboard-lever-name">VC, Hyperscaler Capex, Valuations, ROI</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">GOV</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">69 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Regulation, Export Controls, Safety, Geopolitics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">1 / 7</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 2 — COMPUTE ═══ -->
+<div class="slide slide-lever">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 1 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">COMPUTE — Compute &amp; Infrastructure</div>
+      <h2 class="lever-title">Inference-Time Compute Reaches PhD-Level Science While Models Compress to Consumer Scale</h2>
+      <p class="lever-subtitle">219 signals this week. Gemini 3 solves open conjectures through inference scaling while OpenAI compresses frontier capabilities into low-cost form factors.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">219</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">158 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">30 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Gemini 3 Deep Think solves four open Erdos conjectures via inference-time scaling</div>
+          <div class="signal-summary">PhD-level autonomous reasoning validates that more compute at inference unlocks capability frontiers beyond training-time scaling alone.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Google DeepMind</span>
+            <span class="signal-tag">architectural_diversity</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">GPT-5.4 mini and nano compress frontier capabilities into 2x-faster form factors</div>
+          <div class="signal-summary">Cost-performance compression makes frontier AI economically viable for mid-market and high-volume enterprise applications.</div>
+          <div class="signal-meta">
+            <span class="signal-source">OpenAI</span>
+            <span class="signal-tag">cost_per_flop</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">Simulation Distillation transfers simulator priors for rapid real-world robotics</div>
+          <div class="signal-summary">SimDist bypasses long-horizon credit assignment by distilling simulator knowledge into latent world models, cutting real-world adaptation to short-horizon system identification.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">cost_per_flop</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">TRiMS cuts chain-of-thought tokens by 80% while preserving accuracy</div>
+          <div class="signal-summary">Minimal Sufficient Length theory provides the first measurable lower bound for reasoning-chain compression, directly reducing inference cost at scale.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">cost_per_flop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">2 / 7</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 3 — ENERGY ═══ -->
+<div class="slide slide-lever" style="background: var(--cream);">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 2 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">ENERGY — Energy &amp; Environment</div>
+      <h2 class="lever-title">Google Secures Gigawatts While Researchers Race to Cut AI's Power Bill</h2>
+      <p class="lever-subtitle">15 signals this week. Google locked in 2.7 GW of dedicated clean capacity while research teams pursued architectures that halve inference energy consumption.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">15</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">9 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neu">~</span>
+        <div class="lever-stat-label">5 neutral</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">Google secures 2.7 GW of dedicated clean power for Detroit data center</div>
+          <div class="signal-summary">The DTE deal mirrors Minnesota's Xcel agreement, establishing a model where hyperscalers procure new generation capacity rather than competing for existing grid resources.</div>
+          <div class="signal-meta">
+            <span class="signal-source">TechCrunch</span>
+            <span class="signal-tag">renewable_allocation</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Spiking neural networks cut WiFi sensing energy cost by half at 96% accuracy</div>
+          <div class="signal-summary">Bio-inspired SNN architectures offer a path to energy-efficient edge AI, reducing inference power without sacrificing task performance.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">data_center_power_intensity</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">QuantFL reduces federated learning communication by 40% on IoT devices</div>
+          <div class="signal-summary">Pre-trained model quantization enables sustainable edge training with lower carbon footprint from reduced uplink transmission costs.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">data_center_power_intensity</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Open-source simulator maps datacenter carbon tradeoffs across techniques</div>
+          <div class="signal-summary">OpenDC-STEAM enables systematic exploration of carbon reduction strategies, revealing that combined approaches lower emissions but introduce complex performance tradeoffs.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">data_center_power_intensity</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Specialized pretraining cuts required training tokens by 1.75x for domain models</div>
+          <div class="signal-summary">Incorporating domain data during pretraining stretches its utility across fine-tuning stages, reducing total compute and energy for domain-specific deployments.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">training_energy_per_model</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">3 / 7</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 4 — SOCIETY ═══ -->
+<div class="slide slide-lever">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 3 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">SOCIETY — Society &amp; Human Capital</div>
+      <h2 class="lever-title">The Displacement Signal Arrives: White-Collar Jobs Face the Highest AI Exposure</h2>
+      <p class="lever-subtitle">80 signals this week. AI leaders acknowledged workforce displacement as structural and unresolved. Bias research reveals systematic cultural alignment in frontier models.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">80</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">42 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">22 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">LLMs default to North American cultural norms in zero-shot profiling tasks</div>
+          <div class="signal-summary">Author profiling across 10,000 lyrics reveals systematic cultural bias: most models default to North American ethnicity while DeepSeek aligns Asian. Fairness metrics quantify the gap.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">incident_impact_on_trust</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">Altman admits AI is fracturing the labor-capital balance with no consensus fix</div>
+          <div class="signal-summary">OpenAI's CEO called the next few years a "painful adjustment" for labor markets. The admission validates workforce displacement as an imminent, unresolved structural risk.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Fortune</span>
+            <span class="signal-tag">professional_displacement_signals</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">RESTA defense reduces jailbreak success rates across vision-language models</div>
+          <div class="signal-summary">Directional embedding smoothing provides a lightweight, inference-time safety layer for VLMs within agentic systems. Securing deployed models is now a tractable engineering problem.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">incident_impact_on_trust</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neg">&minus;</span>
+        <div class="signal-body">
+          <div class="signal-headline">Karpathy's analysis shows high-paying white-collar roles most exposed to AI</div>
+          <div class="signal-summary">The highest-paying professional roles face the greatest displacement risk, inverting the standard automation thesis and signaling wage compression at the top of the knowledge economy.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Fortune</span>
+            <span class="signal-tag">professional_displacement_signals</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neg">&minus;</span>
+        <div class="signal-body">
+          <div class="signal-headline">Gebru at SXSW: utopia-apocalypse framing is a strategic distraction</div>
+          <div class="signal-summary">Conflating narrow diagnostic tools with AGI models confuses regulators and the public, weakening the accountability structures needed for responsible deployment.</div>
+          <div class="signal-meta">
+            <span class="signal-source">SXSW 2026</span>
+            <span class="signal-tag">incident_impact_on_trust</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">4 / 7</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 5 — INDUSTRY ═══ -->
+<div class="slide slide-lever" style="background: var(--cream);">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 4 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">INDUSTRY — Industry &amp; Business Transformation</div>
+      <h2 class="lever-title">Microsoft Bets Its AI Future on Superintelligence While Agents Enter Production</h2>
+      <p class="lever-subtitle">119 signals this week. Microsoft unified Copilot under one leader and committed Suleyman to five years of frontier model development. Agent frameworks mature rapidly.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">119</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">87 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">22 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Microsoft unifies Copilot under Andreou; Suleyman pivots to superintelligence</div>
+          <div class="signal-summary">The reorganization consolidates a fragmented product line while reducing dependency on OpenAI for frontier model development. A five-year internal commitment follows.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Microsoft</span>
+            <span class="signal-tag">business_model_reinvention</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Adversarial co-evolution of code and test LLMs matches human-annotated quality</div>
+          <div class="signal-summary">Code-A1 eliminates self-collusion in RL-based code generation by separating code and test models with opposing objectives. The test LLM inspects code to craft targeted adversarial cases.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">workflow_integration_depth</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">Enterprise AI pricing spans $0.15 to $60+ per million tokens across frontier models</div>
+          <div class="signal-summary">Practitioners debate model selection ROI as the pricing spread between lightweight and frontier models forces task-level cost optimization rather than default-to-best strategies.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Reddit r/datascience</span>
+            <span class="signal-tag">productivity_measurement_transparency</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">AI Scientist trains research agents on synthetic ML tasks using GPT-5 trajectories</div>
+          <div class="signal-summary">Synthetic environment pipelines ground agent training in verified Hugging Face datasets. Student models trained on GPT-5 trajectories improved MLGym performance by 9-12%.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">workflow_integration_depth</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Open-source coding agent hits 90% accuracy in quantum computing middleware</div>
+          <div class="signal-summary">QiboAgent combines RAG with agentic workflows to reduce hallucination rates and automate maintenance tasks, including cross-language refactoring from Python to Rust.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">workflow_integration_depth</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">5 / 7</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 6 — CAPITAL ═══ -->
+<div class="slide slide-lever">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 5 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">CAPITAL — Capital &amp; Investment</div>
+      <h2 class="lever-title">Record Capital Floods Into AI as Pricing Sustainability Questions Surface</h2>
+      <p class="lever-subtitle">33 signals this week. OpenAI closed $110B at a $730B valuation. AMI Labs raised Europe's largest AI seed round. Current pricing structures remain below cost.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">33</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">22 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">5 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">AMI Labs raises $1.03B for world models, the largest European AI seed round</div>
+          <div class="signal-summary">LeCun's JEPA-based venture validates capital diversification beyond the US LLM monoculture. The bet: world models, not autoregressive generation, lead to human-level AI.</div>
+          <div class="signal-meta">
+            <span class="signal-source">TechCrunch</span>
+            <span class="signal-tag">venture_funding_discipline</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">OpenAI raises $110B at $730B valuation with Amazon, Nvidia, SoftBank</div>
+          <div class="signal-summary">The largest private financing in history. A hyperscaler-led syndicate signals that frontier AI development is consolidating into a capital structure only the largest companies can sustain.</div>
+          <div class="signal-meta">
+            <span class="signal-source">CNBC</span>
+            <span class="signal-tag">venture_funding_discipline</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Current AI pricing is subsidized by VC capital and will rise as IPOs approach</div>
+          <div class="signal-summary">OpenAI's $25B+ annualized revenue still falls short of covering compute costs. The IPO pipeline will force a repricing event that restructures enterprise cost models.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Reddit r/OpenAI</span>
+            <span class="signal-tag">roi_signal_clarity</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">Marcus: most expensive scaling experiments in history fail to deliver AGI</div>
+          <div class="signal-summary">Meta's latest model landed below expectations. Musk conceded xAI was "not built right." Both failures at unprecedented cost levels challenge the compute-scaling thesis.</div>
+          <div class="signal-meta">
+            <span class="signal-source">X @GaryMarcus</span>
+            <span class="signal-tag">capital_exit_velocity</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Khosla's $50M OpenAI bet at $1B valuation now worth billions</div>
+          <div class="signal-summary">Contrarian conviction capital in a nonprofit with no commercial model generated outsized returns, reinforcing the flywheel into frontier AI development.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Fortune</span>
+            <span class="signal-tag">venture_funding_discipline</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">6 / 7</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 7 — GOV ═══ -->
+<div class="slide slide-lever" style="background: var(--cream);">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 6 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">GOV — Governance &amp; Geopolitics</div>
+      <h2 class="lever-title">Anthropic Creates a Safety Institute While Regulators and Superpowers Diverge</h2>
+      <p class="lever-subtitle">69 signals this week. Anthropic launched a dedicated safety research arm. The Commerce Department evaluated state AI laws. China's chip self-sufficiency network accelerated.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">69</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">36 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">17 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Anthropic launches dedicated safety institute led by Jack Clark with ~30 members</div>
+          <div class="signal-summary">A permanent, resourced safety function alongside product development raises the bar for what "responsible AI" means in practice. Recruits from DeepMind, UVA, and ex-OpenAI.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Anthropic</span>
+            <span class="signal-tag">alignment_and_safety_maturity</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Runtime governance framework formalizes compliance for non-deterministic AI agents</div>
+          <div class="signal-summary">Execution paths become the central object for governance. Prompt-level instructions and static access control are special cases of a broader runtime evaluation framework inspired by the EU AI Act.</div>
+          <div class="signal-meta">
+            <span class="signal-source">ArXiv</span>
+            <span class="signal-tag">regulatory_framework_clarity</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Ren Zhengfei tells Xi that chip gap concerns have eased; leads 2,000-company network</div>
+          <div class="signal-summary">A consortium targeting 70% semiconductor value chain self-sufficiency by 2028 reshapes the global compute supply map under US export controls.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Dig Watch</span>
+            <span class="signal-tag">export_controls_and_chip_access</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">Schmidt: emergent AI behaviors make preemptive regulation structurally impossible</div>
+          <div class="signal-summary">New features emerge in frontier models that are untestable before deployment. Governance frameworks will remain reactive, widening the gap between deployed capability and regulatory coverage.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Yahoo Tech</span>
+            <span class="signal-tag">geopolitical_fragmentation_index</span>
+          </div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Commerce evaluates state AI laws; flags Colorado's as most excessive</div>
+          <div class="signal-summary">Federal preemption takes shape. States with "onerous" AI laws may lose broadband funding, creating direct financial pressure to align with Washington's pro-innovation framework.</div>
+          <div class="signal-meta">
+            <span class="signal-source">Mondaq</span>
+            <span class="signal-tag">regulatory_framework_clarity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">7 / 7</div>
+  </div>
+</div>
+
+</body>
+</html>

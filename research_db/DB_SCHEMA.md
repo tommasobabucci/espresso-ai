@@ -89,7 +89,7 @@ Every signal record contains the following fields. Fields marked **Required** mu
 | `collection_batch_id` | string | Required | Batch ID from the collection phase. Format: `batch_YYYYMMDD_HHMM`. Used for tracing multi-stage processing. |
 
 **Allowed `source_name` values:**
-`linkedin` · `twitter` · `rss_feed` · `academic_paper` · `earnings_call` · `regulatory_filing` · `news_site` · `company_announcement` · `other`
+`linkedin` · `twitter` · `reddit` · `rss_feed` · `academic_paper` · `earnings_call` · `regulatory_filing` · `news_site` · `company_announcement` · `other`
 
 ---
 
@@ -184,6 +184,61 @@ Every signal record contains the following fields. Fields marked **Required** mu
 ### LinkedIn Output Agent (reads)
 
 Query: `SELECT * FROM signals WHERE in_scope=1 AND is_duplicate=0 AND signal_strength >= 7 ORDER BY publication_date DESC`
+
+---
+
+## Source-Specific Conventions
+
+### X/Twitter (`source_name: "twitter"`)
+
+Signals collected from X/Twitter via the Apify scraper use `source_name: "twitter"` (already in the enum).
+
+**Signal ID format:** `YYYYMMDD-twitter-HHMMSS-[5char]`
+
+**Source URL format:** `https://x.com/{handle}/status/{tweet_id}`
+
+**Standard tags:**
+- `x_handle:{handle}` — account handle (without @)
+- `x_likes:{count}` — like count at collection time
+- `x_retweets:{count}` — retweet count at collection time
+- `x_replies:{count}` — reply count at collection time
+- `account_category:{category}` — one of: `ai_lab_leader`, `researcher`, `policy`, `industry`, `capital`, `journalist`, `analyst`
+
+**Quality flags specific to X:**
+- `low_engagement` — likes below cadence threshold but above the 100-like floor
+- `thread_fragment` — tweet is a self-reply (thread continuation), not the first tweet
+- `no_primary_source` — tweet contains no URLs and no quoted tweet
+- `self_promotional` — tweet promotes the author's own product/service
+
+**Confidence capping:** Tweets without linked URLs or quoted tweets are capped at `medium` confidence regardless of keyword score, since tweets are inherently lower-evidence than articles with full reporting.
+
+### Reddit (`source_name: "reddit"`)
+
+Signals collected from Reddit via Claude web search or Perplexity web search use `source_name: "reddit"`.
+
+**Signal ID format:** `YYYYMMDD-reddit-HHMMSS-[5char]`
+
+**Source URL:** Prefer primary source URL when available (paper, article, announcement linked in the Reddit post). Fall back to Reddit post URL.
+
+**Standard tags:**
+- `subreddit:{name}` — source subreddit (without r/ prefix)
+- `post_type:{type}` — one of: `research`, `experience`, `news_discussion`, `analysis`
+- `reddit_score:{int}` — upvote score at collection time (0 if unknown)
+- `reddit_comments:{int}` — comment count at collection time (0 if unknown)
+- `has_primary_source:{bool}` — whether the post references a primary source
+- `reddit_post_url:{url}` — Reddit post URL (included when `source_url` points to an external primary source)
+
+**Quality flags specific to Reddit:**
+- `no_primary_source` — post contains no external source link
+- `speculation_heavy` — high ratio of speculative language
+- `meme_or_humor` — detected humor/meme content
+- `self_promotional` — user promoting their own product/service
+- `vendor_astroturf` — suspected corporate posting
+
+**Confidence capping:**
+- Reddit post citing a primary source (paper, article, announcement) → no penalty
+- Original analysis/experience/research post (no primary source) → cap at `medium`
+- Discussion thread with no primary source → cap at `low`
 
 ---
 
