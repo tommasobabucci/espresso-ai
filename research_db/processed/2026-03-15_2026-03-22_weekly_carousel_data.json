@@ -1,0 +1,2710 @@
+{
+  "meta": {
+    "cadence": "weekly",
+    "date_window": {
+      "start": "2026-03-15",
+      "end": "2026-03-22"
+    },
+    "total_signals_loaded": 525,
+    "duplicates_removed": 105,
+    "unique_signals": 420,
+    "source_files": [
+      "2026-03-15_2026-03-22_perplexity_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_edgar_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_x_claude_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_reddit_perplexity_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_reddit_claude_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_openalex_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_x_perplexity_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_github_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_influencer_weekly_signals.jsonl"
+    ],
+    "pipeline_run_id": "2026-03-15_2026-03-22_weekly_synth_798aa032",
+    "generated_at": "2026-03-22T21:21:14Z"
+  },
+  "lever_summaries": {
+    "COMPUTE": {
+      "signal_count": 64,
+      "direction_breakdown": {
+        "+": 27,
+        "~": 27,
+        "?": 9,
+        "-": 1
+      },
+      "dominant_direction": "+",
+      "top_sub_variables": [
+        "manufacturing_capacity",
+        "data_center_buildout",
+        "cost_per_flop"
+      ],
+      "unselected_count": 57,
+      "top_signals": [
+        {
+          "signal_id": "20260322-company_announcement-191921-f747f",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b8474",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "custom_silicon_adoption",
+          "confidence": "medium",
+          "title": "ggerganov/llama.cpp: b8474",
+          "summary": "New release from ggerganov/llama.cpp: b8474.",
+          "key_facts": [
+            "Repository: ggerganov/llama.cpp",
+            "Release tag: b8474",
+            "<details open>",
+            "CUDA: fix BF16 FA compilation (#20865)",
+            "</details>"
+          ],
+          "raw_content": "<details open>\n\nCUDA: fix BF16 FA compilation (#20865)\n\n</details>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b8474/llama-b8474-bin-macos-arm64.tar.gz)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b8474/llama-b8474-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b8474/llama-b8474-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b8474/llama-b8474-bin-ubuntu-x64.tar.gz)\n- [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b8474/llama-b8474-bin-ubuntu-vulkan-x64.tar.gz)\n- [Ubuntu x64 (ROCm 7.2)](https://github.com/ggml-org/llama.cpp/releases/download/b8474/llama-b8474-bin-ubuntu-rocm-7.2-x64.tar.gz)\n- [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b8474/llama-b8474-bin-ubuntu-s390x.tar.gz)\n- [Ubuntu x64 (OpenVINO)](https://github.com/g",
+          "publication_date": "2026-03-22",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:ggerganov/llama.cpp",
+            "source_type:release",
+            "category:framework",
+            "release_tag:b8474"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 13,
+          "_corroboration_sources": [
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "reddit-perplexity-collector",
+            "reddit-perplexity-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector"
+          ]
+        },
+        {
+          "signal_id": "20260301-twitter-194806-ed429",
+          "source_name": "twitter",
+          "source_url": "https://www.latent.space/p/dylanpatel-cooking",
+          "fetch_timestamp": "2026-03-22T19:48:06Z",
+          "agent_id": "x-claude-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_x_claude_weekly_1a75cb4a",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "manufacturing_capacity",
+          "confidence": "medium",
+          "title": "Patel on semiconductor fab constraints as the new AI bottleneck in 2026+, replacing data center and power as the binding constraint",
+          "summary": "In a recent in-depth interview, Dylan Patel argued that the AI infrastructure bottleneck has shifted from CoWoS packaging shortages (2023) to data centers and power (2024–25) and is now moving back to semiconductor fabs (2026+), with fab capacity — not data centers — now the binding constraint on AI growth.",
+          "key_facts": [
+            "Patel's bottleneck sequence: CoWoS shortages (2023) → data centers and power (2024–25) → semiconductor fabs (2026+)",
+            "Fabs, not data centers, are now the binding constraint on AI growth according to Patel",
+            "Energy improvisation including diesel generators and reciprocating engines is being used to break grid constraints",
+            "Patel raised the question of whether AI GDP growth will accrue to people or to infrastructure",
+            "SemiAnalysis has grown to a 60-person global research firm tracking data centers, fabs, and semiconductor tools"
+          ],
+          "raw_content": "Patel laid out a sequential bottleneck theory for AI infrastructure scaling: the constraint has migrated from advanced packaging (CoWoS) to power and data center construction, and is now settling on semiconductor fabrication capacity. He argued that fabs, not data centers, are the new chokepoint for AI growth, with energy improvisation (diesel generators, reciprocating engines) being used to break grid constraints in the interim. Patel also addressed the capital vs. labor dynamic in the AI era, questioning whether GDP growth from AI will accrue to people or to infrastructure owners. His analysis of Google's potential profit squeeze by 2027 due to AI CapEx reflects his broader thesis that hyperscaler spending is creating structural financial risk. SemiAnalysis has grown to a 60-person global research firm tracking every data center, fab, and tool in the AI supply chain.",
+          "publication_date": "2026-03-01",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "url_not_in_citations",
+            "indirect_source",
+            "unknown_domain",
+            "out_of_date_range"
+          ],
+          "tags": [
+            "x_handle:dyaborlanpatel",
+            "account_category:analyst",
+            "source_pub:Latent Space / SemiAnalysis",
+            "query_tag:x_journalists_analysts",
+            "source_type:indirect_reference"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 3,
+          "_corroboration_sources": [
+            "x-claude-collector",
+            "x-claude-collector"
+          ]
+        },
+        {
+          "signal_id": "20260305-news_site-160000-la1b2",
+          "source_name": "news_site",
+          "source_url": "https://fortune.com/2026/03/05/openai-new-model-gpt5-4-enterprise-agentic-anthropic/",
+          "fetch_timestamp": "2026-03-22T16:00:00Z",
+          "agent_id": "influencer-lab-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1600",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": "INDUSTRY",
+          "direction": "+",
+          "sub_variable": "cost_per_flop",
+          "confidence": "high",
+          "title": "OpenAI releases GPT-5.4, its most capable model for enterprise with 33% fewer hallucinations",
+          "summary": "OpenAI shipped GPT-5.4 with advanced reasoning, coding, and autonomous computer operation. The model reduces hallucination rates by 33% per claim and 18% per response versus GPT-5.2, marking a measurable reliability improvement that lowers enterprise adoption barriers.",
+          "key_facts": [
+            "GPT-5.4 available to ChatGPT Plus, Team, Pro, and API users",
+            "33% reduction in false claims, 18% fewer error-containing responses",
+            "Also released GPT-5.4 mini and nano variants for coding and subagents"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-05",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [
+            "INDUSTRY"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:openai",
+            "influencer_group:research_labs",
+            "account_category:research_lab"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ],
+          "_candidate_cluster_id": 10
+        },
+        {
+          "signal_id": "20260310-news_site-150100-s2t3u",
+          "source_name": "news_site",
+          "source_url": "https://money.usnews.com/investing/news/articles/2026-03-10/ex-meta-ai-chief-yann-lecuns-ami-raises-1-03-billion-for-alternative-ai-approach",
+          "fetch_timestamp": "2026-03-22T15:01:00Z",
+          "agent_id": "influencer-researcher-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1500",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": "CAPITAL",
+          "direction": "+",
+          "sub_variable": "architectural_diversity",
+          "confidence": "high",
+          "title": "Yann LeCun's AMI Labs raises $1.03B to build world models as alternative to LLMs",
+          "summary": "Yann LeCun's Advanced Machine Intelligence Labs raised Europe's largest-ever seed round at $3.5B pre-money valuation, backed by NVIDIA, Bezos Expeditions, and Temasek. AMI Labs bets that large language models are the wrong tool for truly intelligent systems, pursuing video-trained world models instead.",
+          "key_facts": [
+            "AMI Labs raised $1.03B — Europe's largest seed round ever",
+            "Valued at $3.5B pre-money",
+            "Backed by NVIDIA, Bezos Expeditions, Temasek, Cathay Innovation"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-10",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [
+            "CAPITAL",
+            "INDUSTRY"
+          ],
+          "novelty_flag": true,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:yann_lecun",
+            "influencer_group:researchers_scientists",
+            "account_category:researcher"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ]
+        },
+        {
+          "signal_id": "20260317-news_site-150200-t3u4v",
+          "source_name": "news_site",
+          "source_url": "https://fortune.com/2026/03/17/andrej-karpathy-loop-autonomous-ai-agents-future/",
+          "fetch_timestamp": "2026-03-22T15:02:00Z",
+          "agent_id": "influencer-researcher-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1500",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": "SOCIETY",
+          "direction": "+",
+          "sub_variable": "architectural_diversity",
+          "confidence": "high",
+          "title": "Karpathy's AutoResearch framework runs 700 ML experiments in 2 days, discovers 20 training optimizations",
+          "summary": "Andrej Karpathy released an open-source AutoResearch framework that autonomously runs ML experiments on a single GPU. In its first run, the system conducted 700 experiments over two days and discovered 20 optimizations that improved training time, demonstrating viable autonomous AI research.",
+          "key_facts": [
+            "AutoResearch ran 700 experiments in 2 days on a single GPU",
+            "Discovered 20 optimizations that improved model training time",
+            "Karpathy has not written code manually since December 2025"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [
+            "INDUSTRY"
+          ],
+          "novelty_flag": true,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:andrej_karpathy",
+            "influencer_group:researchers_scientists",
+            "account_category:researcher"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ]
+        },
+        {
+          "signal_id": "20260322-company_announcement-191921-64c79",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/vllm-project/vllm/releases/tag/v0.18.0",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "cost_per_flop",
+          "confidence": "medium",
+          "title": "vllm-project/vllm: v0.18.0",
+          "summary": "New release from vllm-project/vllm: v0.18.0.",
+          "key_facts": [
+            "Repository: vllm-project/vllm",
+            "Release tag: v0.18.0",
+            "- Degraded accuracy when serving Qwen3.5 with FP8 KV cache on B200 (#37618)",
+            "- If you previously ran into `CUBLAS_STATUS_INVALID_VALUE` and had to use a workaround in `v0.17.0`, you can reinstall `torch 2.10.0`. PyTorch published an updated wheel that addresses this bug.",
+            "This release features 445 commits from 213 contributors (61 new)!"
+          ],
+          "raw_content": "# vLLM v0.18.0\r\n\r\n## Known issues\r\n- Degraded accuracy when serving Qwen3.5 with FP8 KV cache on B200 (#37618)\r\n- If you previously ran into `CUBLAS_STATUS_INVALID_VALUE` and had to use a workaround in `v0.17.0`, you can reinstall `torch 2.10.0`. PyTorch published an updated wheel that addresses this bug.\r\n\r\n## Highlights\r\n\r\nThis release features 445 commits from 213 contributors (61 new)!\r\n\r\n* **gRPC Serving Support**: vLLM now supports gRPC serving via the new `--grpc` flag (#36169), enabling high-performance RPC-based serving alongside the existing HTTP/REST interface.\r\n* **GPU-less Render Serving**: New `vllm launch render` command (#36166, #34551) enables GPU-less preprocessing and rendering, allowing separation of multimodal preprocessing from GPU inference.\r\n* **NGram GPU Speculative Decoding**: NGram speculative decoding now runs on GPU and is compatible with the async scheduler (#29184), significantly reducing spec decode overhead.\r\n* **KV Cache Offloading Improvements**: Smar",
+          "publication_date": "2026-03-20",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:vllm-project/vllm",
+            "source_type:release",
+            "category:framework",
+            "release_tag:v0.18.0"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "github-oss-collector"
+          ]
+        },
+        {
+          "signal_id": "20260322-company_announcement-191921-712bf",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/NVIDIA/TensorRT-LLM/releases/tag/v1.3.0rc8",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "COMPUTE",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "architectural_diversity",
+          "confidence": "medium",
+          "title": "NVIDIA/TensorRT-LLM: v1.3.0rc8",
+          "summary": "New release from NVIDIA/TensorRT-LLM: v1.3.0rc8.",
+          "key_facts": [
+            "Repository: NVIDIA/TensorRT-LLM",
+            "Release tag: v1.3.0rc8",
+            "Pre-release",
+            "- Model Support",
+            "- Nemotron 3 Super support"
+          ],
+          "raw_content": "# Highlights\r\n\r\n- Model Support\r\n  - Nemotron 3 Super support\r\n  - Add tool parser support for GLM-4 models (#11986)\r\n  - Implement dynamic resolution for Nemotron VL (#11894)\r\n  - Enable mixed quantization support for Nemotron-H Mamba (#11972)\r\n  - Add VisualGen FA4 attention backend support (#11697)\r\n  - VisualGen support for LTX-2, Wan and FLUX (#12009)\r\n  - Add TRTLLM-Gen kernels for GLM4.7 and support `groupsTokensHeadsQ` and `e2m1` output (#11643)\r\n  - Support attention-DP for TRTLLM-Gen NVFP4 MoE (#12156)\r\n\r\n- API\r\n  - Add dedicated virtual memory tags for model weights and configurable restore mode (#11889)\r\n  - Add abort method for `GenerationResultBase` (#11970)\r\n  - Deprecate `trtllm-serve` CLI options (#12106)\r\n  - Add keepalive ping tolerance and `context.abort` support to the gRPC server (#11992)\r\n\r\n- Feature\r\n  - Add basic SSM support in `KVCacheManagerV2` (#11976)\r\n  - Improve KV event batching (#11883)\r\n  - Add 2FP4 / Arcquant support (#11333)\r\n  - Adapt the transceive",
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:NVIDIA/TensorRT-LLM",
+            "source_type:release",
+            "category:infrastructure",
+            "release_tag:v1.3.0rc8"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "github-oss-collector"
+          ],
+          "_candidate_cluster_id": 2
+        }
+      ],
+      "unselected_context": [
+        {
+          "title": "HF model update: nphSi/Z-Image-Lora (125,444 downloads)",
+          "summary": "Hugging Face model nphSi/Z-Image-Lora updated with 125,444 downloads.",
+          "sub_variable": "manufacturing_capacity",
+          "direction": "~",
+          "source_name": "company_announcement"
+        },
+        {
+          "title": "[3/17/2026] Introducing Mistral Small 4",
+          "summary": "Mistral released Small 4, a 119B parameter MoE model integrating multimodal, reasoning, and coding capabilities from prior models. It is open-source and supports text/image inputs with efficient scaling.",
+          "sub_variable": "custom_silicon_adoption",
+          "direction": "~",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Emad Mostaque declares AI agents will go mainstream in 2026, intelligence will cost 'basically nothing,' and transformers are not the future of AI",
+          "summary": "In a widely covered interview with Raoul Pal (sourced from Crypto Briefing), Emad Mostaque, founder and CEO of Intelligent Internet, stated that AI agents will go mainstream in 2026, that removing friction in intelligence flow will dramatically enhance enterprise profitability, and that the transformer architecture is not the long-term future of AI. He described a coming 'wave of intelligence' that will 'cost basically nothing.'",
+          "sub_variable": "cost_per_flop",
+          "direction": "+",
+          "source_name": "twitter"
+        },
+        {
+          "title": "Jensen Huang at GTC 2026 projects $1 trillion in NVIDIA revenue through 2027 from Blackwell and Vera Rubin",
+          "summary": "NVIDIA CEO Jensen Huang unveiled the Vera Rubin computing platform and projected cumulative revenue of at least $1 trillion through 2027. The projection cements NVIDIA's position as the primary infrastructure provider for the AI scaling era.",
+          "sub_variable": "data_center_buildout",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Lisa Su forges AMD-Samsung AI chip alliance; HBM4 to debut in Instinct MI455X",
+          "summary": "AMD CEO Lisa Su visited Samsung to secure HBM4 memory supply for AMD's next-generation Instinct MI455X AI accelerator. The chip targets 10x inference performance over its predecessor, positioning AMD as a credible NVIDIA alternative in the inference market.",
+          "sub_variable": "supply_chain_resilience",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Mira Murati's Thinking Machines Lab secures gigawatt-scale NVIDIA compute deal",
+          "summary": "Thinking Machines Lab committed to at least a gigawatt of NVIDIA Vera Rubin compute, a threshold only the largest AI labs have approached. NVIDIA made a significant undisclosed investment. The deal signals Murati intends to compete at frontier scale, not merely build on others' models.",
+          "sub_variable": "data_center_buildout",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Anthropic upgrades Opus 4.6 coding and ships persistent memory to all Claude users",
+          "summary": "Anthropic pushed persistent memory to all Claude tiers including free, enabling cross-conversation context retention. Opus 4.6 received coding improvements, and the company launched Claude Code Channels for Discord and Telegram integration. These features deepen user lock-in and expand Claude's agentic surface.",
+          "sub_variable": "architectural_diversity",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "DeepMind appoints Bridgewater AI head Jasjeet Sekhon as Chief Strategy Officer",
+          "summary": "Google DeepMind hired Jasjeet Sekhon from Bridgewater Associates to oversee research commercialization and policy. The appointment of a finance-sector AI leader to a strategy role signals DeepMind is accelerating the translation of research breakthroughs into commercial products.",
+          "sub_variable": "architectural_diversity",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Musk unveils chip project in Texas",
+          "summary": "Elon Musk announced plans for an advanced technology fab in Austin, Texas, to manufacture chips for Tesla and SpaceX in robotics and AI, targeting 1 terawatt of computing power per year. The facility will produce edge/inference-optimized chips for vehicles, robotaxis, and Optimus robots, plus high-power chips for space applications.",
+          "sub_variable": "manufacturing_capacity",
+          "direction": "~",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Tesla to Build Own Semiconductor Facility Amid Supply Chain Challenges",
+          "summary": "Tesla plans to start construction on its own semiconductor facility this weekend to produce chips for 100 million Optimus robots annually, requiring over 200 million chips. Morgan Stanley estimates costs at $35-45 billion, with Tesla's $16.5 billion cash balance potentially necessitating external funding amid $20 billion 2026 capex.",
+          "sub_variable": "manufacturing_capacity",
+          "direction": "?",
+          "source_name": "news_site"
+        }
+      ]
+    },
+    "ENERGY": {
+      "signal_count": 10,
+      "direction_breakdown": {
+        "~": 5,
+        "+": 3,
+        "?": 2
+      },
+      "dominant_direction": "~",
+      "top_sub_variables": [
+        "renewable_allocation",
+        "data_center_power_intensity",
+        "grid_capacity_utilization"
+      ],
+      "unselected_count": 3,
+      "top_signals": [
+        {
+          "signal_id": "202603-news_site-191838-08c98",
+          "source_name": "news_site",
+          "source_url": "https://www.thinkbrg.com/thinkset/who-pays-to-power-ai-data-centers-comparing-byog-and-backstop-capacity-procurement/",
+          "fetch_timestamp": "2026-03-22T19:18:38Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "renewable_allocation",
+          "confidence": "medium",
+          "title": "Microsoft’s twenty year power purchase agreement for the output of Constellation Energy’s Three Mile Island nuclear plant",
+          "summary": "Microsoft signed a 20-year power purchase agreement with Constellation Energy for the output of the restarted Three Mile Island nuclear plant. The Department of Energy provided a $1 billion loan to support the nuclear restart, aimed at powering AI data centers and reducing grid costs.",
+          "key_facts": [
+            "Microsoft entered a 20-year PPA with Constellation Energy for Three Mile Island output.",
+            "DOE backed the nuclear restart with a $1 billion loan.",
+            "BYOG model eliminates need for additional delivery infrastructure.",
+            "FERC requires co-located customers to pay for consumed grid services."
+          ],
+          "raw_content": "This BYOG arrangement allows Microsoft to directly finance nuclear generation co-located with its data center needs, bypassing traditional grid transmission upgrades. It highlights tech giants' shift to long-term, dedicated clean energy contracts to meet surging AI power demands without burdening utility customers. Strategically, it positions Microsoft ahead in securing reliable baseload power amid grid constraints, potentially setting a model for other hyperscalers while influencing FERC policies on grid services allocation.",
+          "publication_date": "2026-03",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain",
+            "invalid_date_format"
+          ],
+          "tags": [
+            "source_pub:ThinkBRG",
+            "query_tag:energy_environment"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "202603-news_site-191838-fbd04",
+          "source_name": "news_site",
+          "source_url": "https://www.consumerreports.org/data-centers/ai-data-centers-impact-on-electric-bills-water-and-more-a1040338678/",
+          "fetch_timestamp": "2026-03-22T19:18:38Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "renewable_allocation",
+          "confidence": "medium",
+          "title": "Meta’s Hyperion project in Louisiana, for instance, will need at least 5 GW to run.",
+          "summary": "Meta's Hyperion data center project in Louisiana requires at least 5 GW of power, equivalent to three times the electricity use of New Orleans. This hyperscale facility exemplifies the massive energy demands of AI infrastructure.",
+          "key_facts": [
+            "Meta Hyperion project needs at least 5 GW.",
+            "Equals three times New Orleans' electricity use.",
+            "Part of hyperscale AI data center expansion.",
+            "Drives need for on-site or dedicated power."
+          ],
+          "raw_content": "The 5 GW demand underscores how AI hyperscalers are planning GW-scale campuses, straining regional grids and prompting behind-the-meter generation. It highlights tensions between strategic AI growth and local resource pressures, including water for cooling. Implications involve potential shifts to nuclear or gas to meet such loads without broader rate hikes.",
+          "publication_date": "2026-03",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain",
+            "invalid_date_format"
+          ],
+          "tags": [
+            "source_pub:Consumer Reports",
+            "query_tag:energy_environment"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260317-news_site-191838-4c4ee",
+          "source_name": "news_site",
+          "source_url": "https://techcrunch.com/2026/03/17/googles-data-center-power-playbook-comes-into-focus/",
+          "fetch_timestamp": "2026-03-22T19:18:38Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "data_center_power_intensity",
+          "confidence": "medium",
+          "title": "Google's data center power playbook comes into focus",
+          "summary": "Google is evolving its clean power procurement strategy for data centers through recent deals, adapting to AI-driven demand surges. The company has long pursued renewables but is now focusing on new tactics for reliability.",
+          "key_facts": [
+            "Google changing tactics in clean power procurement for data centers.",
+            "Recent deals focus on AI operational needs.",
+            "Builds on long-term renewable sourcing history.",
+            "Addresses surging power demands from AI workloads."
+          ],
+          "raw_content": "Recent agreements highlight Google's playbook for matching power supply to data center growth, emphasizing long-term PPAs and on-site solutions. This positions Google to mitigate grid capacity risks and carbon footprints in AI operations. Strategically, it influences energy markets by driving utility investments in renewables tailored for hyperscale loads.",
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "source_pub:TechCrunch",
+            "query_tag:energy_environment"
+          ],
+          "schema_version": "1.0",
+          "_candidate_cluster_id": 15
+        },
+        {
+          "signal_id": "20260319-twitter-194115-6e3c3",
+          "source_name": "twitter",
+          "source_url": "https://startuppedia.in/trending/coding-an-app-is-the-new-starting-a-podcast-says-indian-origin-american-entrepreneur-naval-ravikant-11227742",
+          "fetch_timestamp": "2026-03-22T19:41:15Z",
+          "agent_id": "x-claude-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_x_claude_weekly_1a75cb4a",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "renewable_allocation",
+          "confidence": "medium",
+          "title": "Naval argues 'coding an app is the new starting a podcast,' signaling AI-democratized software creation",
+          "summary": "Naval Ravikant stated 'Coding an app is the new starting a podcast,' pointing to a pivotal shift in how individuals express ideas in the digital age. The remark reflects his broader thesis that AI tools have so dramatically lowered the barrier to software creation that app-building is now as accessible as launching a podcast was a decade ago.",
+          "key_facts": [
+            "Naval stated 'Coding an app is the new starting a podcast'",
+            "The remark signals AI tools have made app-building as accessible as podcasting once was",
+            "Ravikant argues the line between 'creator' and 'developer' is blurring due to AI",
+            "The statement is consistent with his broader thesis that AI is displacing traditional SaaS",
+            "Coverage published March 19, 2026, within the target date window"
+          ],
+          "raw_content": "Ravikant's statement positions AI-assisted coding as the defining creative and entrepreneurial medium of the current era, much as podcasting was in the 2010s. Unlike podcasts, apps offer interactive and scalable ways to engage users, and a single idea can quickly evolve into a product with global reach. This aligns with his broader thesis that AI is collapsing the distinction between 'creator' and 'developer.' For investors, the implication is a coming explosion of micro-SaaS and niche software products built by individuals or very small teams, compressing the addressable market for traditional enterprise software vendors. The statement reinforces his earlier 'software was eaten by AI' post and suggests a structural shift in where venture value will accrue.",
+          "publication_date": "2026-03-19",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "url_not_in_citations",
+            "indirect_source",
+            "unknown_domain"
+          ],
+          "tags": [
+            "x_handle:naval",
+            "account_category:capital",
+            "source_pub:Startuppedia",
+            "query_tag:x_capital_infrastructure",
+            "source_type:indirect_reference"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260318-twitter-194115-f1f4f",
+          "source_name": "twitter",
+          "source_url": "https://fortune.com/2026/03/18/power-grids-snags-electricity-limits-data-centers/",
+          "fetch_timestamp": "2026-03-22T19:41:15Z",
+          "agent_id": "x-claude-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_x_claude_weekly_1a75cb4a",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "grid_capacity_utilization",
+          "confidence": "medium",
+          "title": "Fortune reports data center capex growth decelerating for first time since 2023 as power grid hits limits — a key signal covered by Data Center Dynamics",
+          "summary": "A Wood Mackenzie report published March 18, 2026 found that data center development is slowing, with developers adding only 25 GW of electricity capacity to their pipeline in Q4 2025 — half the prior quarter. Despite Big Tech promises to double capex in 2026, capex growth from the largest data center developers will decelerate for the first time since 2023, matching only 58% of last year's growth.",
+          "key_facts": [
+            "Data center pipeline additions fell to 25 GW in Q4 2025, half the prior quarter's additions",
+            "Capex growth from largest data center developers will decelerate for first time since 2023",
+            "Growth will match only 58% of last year's rate despite Big Tech promises to double capex",
+            "Google and Meta's grid-dependent power strategy is cited as a key deceleration driver",
+            "Oracle is using behind-the-meter natural gas to bypass grid constraints for Stargate campuses"
+          ],
+          "raw_content": "The Wood Mackenzie findings represent a significant inflection point: the first deceleration in data center capex growth since 2023, driven not by lack of demand but by power grid constraints. Utilities lack both the grid capacity and generating capacity to accommodate new large energy demand centers at the pace tech companies require. Google and Meta's choice to power centers through the grid rather than independent power plants is cited as a key driver of the slowdown. Oracle is a notable exception, taking on debt to fund Stargate campuses powered by behind-the-meter natural gas to avoid grid dependency. The report signals that power availability — not capital or demand — is now the binding constraint on AI infrastructure buildout, with direct implications for hyperscaler capex execution risk.",
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "url_not_in_citations",
+            "indirect_source"
+          ],
+          "tags": [
+            "x_handle:datacenterdynamics",
+            "account_category:analyst",
+            "source_pub:Fortune",
+            "query_tag:x_capital_infrastructure",
+            "source_type:indirect_reference"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260320-twitter-191910-ac1ee",
+          "source_name": "twitter",
+          "source_url": "https://www.the-express.com/news/us-news/202297/sam-altman-compares-human-beings-to-AI/amp",
+          "fetch_timestamp": "2026-03-22T19:19:10Z",
+          "agent_id": "x-perplexity-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_x_perplexity_weekly_3919b2e0",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "renewable_allocation",
+          "confidence": "medium",
+          "title": "Compares energy to train AI vs human, calls water usage claims fake",
+          "summary": "At an AI summit hosted by The Indian Express, Sam Altman refuted claims that ChatGPT queries use excessive water or energy, comparing AI training efficiency to the 20 years and resources needed to 'train' a human. He urged a shift to nuclear, wind, and solar energy due to rising total AI usage.",
+          "key_facts": [
+            "\"Don't use ChatGPT, it's 17 gallons of water for each query or whatever. This is completely untrue, totally insane, no connection to reality.\"",
+            "\"It also takes a lot of energy to train a human. It takes like 20 years of life and all of the food you eat during that time before you get smart.\"",
+            "\"AI has already caught up on an energy efficiency basis.\"",
+            "\"The world needs to move towards nuclear, wind, and solar very quickly.\"",
+            "Refuted claim that a ChatGPT query uses energy like 1.5 iPhone charges."
+          ],
+          "raw_content": "Altman dismissed exaggerated per-query resource claims as 'totally fake' and 'insane,' highlighting that older data centers used water cooling but OpenAI no longer does. His human-AI energy equivalence argument underscores AI's superior efficiency, positioning it as a scalable intelligence utility. Strategically, this defends OpenAI's compute-intensive model training amid environmental scrutiny, advocating clean energy infrastructure to sustain AI growth without regulatory backlash.",
+          "publication_date": "2026-03-20",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "indirect_source",
+            "unknown_domain"
+          ],
+          "tags": [
+            "x_handle:sama",
+            "account_category:ai_lab_leader",
+            "source_pub:The Express",
+            "query_tag:x_ai_lab_leaders",
+            "source_type:indirect_reference"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "202603-news_site-191838-d0c98",
+          "source_name": "news_site",
+          "source_url": "https://www.mobileworldlive.com/google/google-strikes-energy-deals-to-shore-up-data-centre-supply/",
+          "fetch_timestamp": "2026-03-22T19:18:38Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "ENERGY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "renewable_allocation",
+          "confidence": "medium",
+          "title": "Google strikes energy deals to shore up data centre supply",
+          "summary": "Google signed new energy contracts with Entergy Arkansas, Minnesota Power, and DTE Energy to secure power for its data centers. These deals build on prior agreements with Indiana Michigan Power and others to support AI workloads.",
+          "key_facts": [
+            "Google signed contracts with Entergy Arkansas, Minnesota Power, and DTE Energy.",
+            "Adds to prior deals with Indiana Michigan Power.",
+            "Aimed at shoring up data center power supply for AI.",
+            "Part of broader strategy for clean power procurement."
+          ],
+          "raw_content": "Google's expanded power purchase agreements reflect a tactical shift toward diverse utility partnerships for clean, reliable energy. This secures multi-gigawatt capacity amid grid constraints, giving Google a competitive edge in AI scaling. Implications include accelerated renewable integration and pressure on utilities to prioritize hyperscaler demands over residential loads.",
+          "publication_date": "2026-03",
+          "reporting_period": null,
+          "signal_strength": 6,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain",
+            "invalid_date_format"
+          ],
+          "tags": [
+            "source_pub:Mobile World Live",
+            "query_tag:energy_environment"
+          ],
+          "schema_version": "1.0",
+          "_candidate_cluster_id": 15
+        }
+      ],
+      "unselected_context": [
+        {
+          "title": "NPC in December released a comprehensive report titled “Reliable Energy: Delivering on the Promise of Gas-Electric Coordination,”",
+          "summary": "The National Petroleum Council released a December report urging improved gas-electric coordination to meet AI data center power needs. It highlights risks from surging demand and recommends new infrastructure buildout.",
+          "sub_variable": "renewable_allocation",
+          "direction": "~",
+          "source_name": "news_site"
+        },
+        {
+          "title": "S&P Global: AI to lift data center power demand 12%-16%",
+          "summary": "S&P Global's March 20, 2026 report forecasts global data center power demand growing 12%-16% annually from 2025-2030, driven by AI, ending the linear energy transition era.",
+          "sub_variable": "data_center_power_intensity",
+          "direction": "~",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Institute for Energy Research released new analysis... shows that there is no statistically significant relationship between data center concentration and faster increases in electricity rates",
+          "summary": "IER's March 19, 2026 analysis finds no statistical link between data center numbers and electricity price rises, with top 10 states averaging 14.46¢/kWh vs. 14.39¢/kWh elsewhere in 2025.",
+          "sub_variable": "data_center_power_intensity",
+          "direction": "?",
+          "source_name": "news_site"
+        }
+      ]
+    },
+    "SOCIETY": {
+      "signal_count": 174,
+      "direction_breakdown": {
+        "+": 104,
+        "?": 48,
+        "-": 17,
+        "~": 5
+      },
+      "dominant_direction": "+",
+      "top_sub_variables": [
+        "high_stakes_domain_adoption",
+        "ai_literacy_distribution",
+        "incident_impact_on_trust"
+      ],
+      "unselected_count": 167,
+      "top_signals": [
+        {
+          "signal_id": "20260322-academic_paper-191910-9aa73",
+          "source_name": "academic_paper",
+          "source_url": "https://doi.org/10.5281/zenodo.18264369",
+          "fetch_timestamp": "2026-03-22T19:19:10Z",
+          "agent_id": "openalex-cross-discipline-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_dd7bdfc1",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "ai_literacy_distribution",
+          "confidence": "high",
+          "title": "Enhancing Student Engagement and Learning Outcomes through Artificial Intelligence in Higher Education: Nano Review",
+          "summary": "Abstract Artificial Intelligence (AI) is increasingly used in universities to strengthen student engagement and learning outcomes through three primary mechanisms: conversational support via generative AI and chatbots, enhanced feedback and formative assessment, and learning analytics systems tha...",
+          "key_facts": [
+            "Domain: education",
+            "Citations: 0",
+            "Journal: Zenodo (CERN European Organization for Nuclear Research)",
+            "Topics: Online Learning and Analytics, Intelligent Tutoring Systems and Adaptive Learning, AI in Service Interactions"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-16",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "domain:education",
+            "cited_by:0",
+            "open_access:true",
+            "data_type:cross_discipline_paper",
+            "query:AI in Education",
+            "journal:Zenodo (CERN European Organization for Nuclear Res",
+            "source_api:openalex"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 3,
+          "_corroboration_sources": [
+            "openalex-cross-discipline-collector",
+            "openalex-cross-discipline-collector"
+          ],
+          "_candidate_cluster_id": 14
+        },
+        {
+          "signal_id": "20260322-company_announcement-191921-89347",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/ollama/ollama/releases/tag/v0.18.2",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "skill_diffusion_rate",
+          "confidence": "medium",
+          "title": "ollama/ollama: v0.18.2",
+          "summary": "New release from ollama/ollama: v0.18.2.",
+          "key_facts": [
+            "Repository: ollama/ollama",
+            "Release tag: v0.18.2",
+            "* Add extra check to ensure `npm` and `git` are installed before installing OpenClaw",
+            "* Claude Code will now be faster when run locally, due to preventing cache breakages",
+            "* Fix to correctly support `ollama launch openclaw --model <model>`"
+          ],
+          "raw_content": "## What's Changed\r\n* Add extra check to ensure `npm` and `git` are installed before installing OpenClaw\r\n* Claude Code will now be faster when run locally, due to preventing cache breakages\r\n* Fix to correctly support `ollama launch openclaw --model <model>`\r\n* Register Ollama's websearch package correctly for OpenClaw\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.18.1...v0.18.2",
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:ollama/ollama",
+            "source_type:release",
+            "category:framework",
+            "release_tag:v0.18.2"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 3,
+          "_corroboration_sources": [
+            "github-oss-collector",
+            "github-oss-collector"
+          ]
+        },
+        {
+          "signal_id": "2026-news_site-191940-aa9cf",
+          "source_name": "news_site",
+          "source_url": "https://www.nctech.org/resources/blog/2026/hype-to-hard.html",
+          "fetch_timestamp": "2026-03-22T19:19:40Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_6c4fe7ab",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "enterprise_penetration_depth",
+          "confidence": "medium",
+          "title": "From Hype to Hard Reality: Enterprise AI in 2026",
+          "summary": "Deloitte’s 2026 State of AI reports 84% of organizations have not redesigned jobs or workflows around AI, with Forrester projecting AI affecting 6% of jobs by 2030 mostly via augmentation.",
+          "key_facts": [
+            "84% organizations not redesigned jobs around AI.",
+            "Fewer than half adjusted talent strategies.",
+            "Forrester: AI affects 6% jobs by 2030, mostly augmentation.",
+            "BCG 2025: organizational barriers dominant.",
+            "Deloitte 2026 State of AI in the Enterprise."
+          ],
+          "raw_content": "BCG’s 2025 study identifies organizational barriers like data fragmentation and talent shortages over technical limits to scaling. Financial firms focus on internal talent investment and external hires. This reveals a shift from hype to addressing integration challenges for real enterprise impact.",
+          "publication_date": "2026",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain",
+            "invalid_date_format"
+          ],
+          "tags": [
+            "source_pub:NC Tech",
+            "query_tag:society_human_capital"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 4,
+          "_corroboration_sources": [
+            "x-perplexity-collector",
+            "reddit-perplexity-collector",
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20250609-twitter-193320-8ef8c",
+          "source_name": "twitter",
+          "source_url": "https://x.com/svpino/status/1931973038150713721",
+          "fetch_timestamp": "2026-03-22T19:33:20Z",
+          "agent_id": "x-claude-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_x_claude_weekly_572bff80",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "enterprise_penetration_depth",
+          "confidence": "high",
+          "title": "Santiago Valdarrama lists 11 ways AI/ML projects die before launch, covering production deployment failures from data drift to missing feedback loops",
+          "summary": "Santiago Valdarrama posted a widely referenced thread on X enumerating 11 reasons AI/ML projects fail before launch, including building AI for problems that don't need it, lacking clear success metrics, data distribution shifts going unnoticed, and missing feedback loops built into the product. The post reflects his production-focused perspective on enterprise AI deployment failures.",
+          "key_facts": [
+            "11 failure modes identified for AI/ML projects before launch",
+            "Top failures include: problem doesn't need AI, no clear success metric, data distribution changes unnoticed",
+            "Missing feedback loops built into the product cited as a key production failure",
+            "Valdarrama's content reaches 600,000+ developers, data scientists, and engineers daily",
+            "Post reflects his production-focused AI and ML course curriculum at ml.school"
+          ],
+          "raw_content": "Valdarrama's list is a practitioner-level diagnostic of the most common enterprise AI deployment failure modes, making it a high-utility reference for teams in production. The emphasis on feedback loops and data distribution monitoring signals that many enterprise AI failures are operational rather than technical. His point that 'the problem doesn't need AI' is a direct critique of AI-washing in enterprise software procurement. The thread reaches his audience of 600,000+ developers and engineers daily, giving it outsized influence on how practitioners approach production ML. This type of content positions Valdarrama as a trusted voice on the gap between AI demos and real-world deployment.",
+          "publication_date": "2025-06-09",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "url_not_in_citations",
+            "out_of_date_range"
+          ],
+          "tags": [
+            "x_handle:svpino",
+            "account_category:industry",
+            "source_pub:X/Twitter",
+            "query_tag:x_industry_enterprise",
+            "source_type:direct_post"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ]
+        },
+        {
+          "signal_id": "20260322-academic_paper-191910-cb059",
+          "source_name": "academic_paper",
+          "source_url": "https://doi.org/10.1007/s12665-025-12801-4",
+          "fetch_timestamp": "2026-03-22T19:19:10Z",
+          "agent_id": "openalex-cross-discipline-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_dd7bdfc1",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "ai_literacy_distribution",
+          "confidence": "medium",
+          "title": "A comparative analysis of machine learning models for predicting groundwater and surface water in a stressed semi-arid watershed: The Khanmirza case study",
+          "summary": "Predicting groundwater and surface water dynamics in semi-arid regions is challenging due to strong temporal variability, data noise, and nonlinear interactions among climatic, hydrological, and human factors.",
+          "key_facts": [
+            "Domain: healthcare",
+            "Citations: 0",
+            "Journal: Environmental Earth Sciences",
+            "Institutions: Shahrekord University, Isfahan University of Technology",
+            "Topics: Hydrological Forecasting Using AI, Groundwater and Watershed Analysis, Hydrology and Watershed Management Studies"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "domain:healthcare",
+            "cited_by:0",
+            "open_access:true",
+            "data_type:cross_discipline_paper",
+            "query:AI in Medicine & Healthcare",
+            "journal:Environmental Earth Sciences",
+            "institution:Shahrekord University",
+            "institution:Isfahan University of Technology",
+            "source_api:openalex"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "openalex-cross-discipline-collector"
+          ]
+        },
+        {
+          "signal_id": "20260321-news_site-191900-70d6d",
+          "source_name": "news_site",
+          "source_url": "https://www.techtimes.com/articles/315282/20260321/tech-layoffs-surge-while-ai-jobs-soar-key-trends-shaping-2026-tech-industry.htm",
+          "fetch_timestamp": "2026-03-22T19:19:00Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "professional_displacement_signals",
+          "confidence": "medium",
+          "title": "Tech Layoffs Surge While AI Jobs Soar: Key Trends ...",
+          "summary": "Tech layoffs in Q1 2026 exceeded 45,000 globally, with over 30,000 in the U.S., as companies like Meta, Intel, Microsoft, Amazon, and Salesforce restructured to prioritize AI investments. Meanwhile, AI-related hiring surged by 92%, creating demand for specialized roles despite the displacements.",
+          "key_facts": [
+            "Tech layoffs in Q1 2026 exceeded 45,000 globally, with 68% in the U.S.",
+            "AI-related job cuts in the U.S. surpassed 12,000.",
+            "AI jobs hiring increased by 92%, with a 56% wage premium.",
+            "Meta allocating $115–135B for AI capex in 2026.",
+            "AI-driven displacements account for roughly 55,000 positions continuing into 2026."
+          ],
+          "raw_content": "The article details a paradox in the 2026 tech sector where widespread layoffs target support and operational roles to fund AI capex, such as Meta's $115–135B allocation, while AI jobs boom with a 56% wage premium. This shift highlights strategic workforce optimization amid AI adoption, with 55% of managers expecting more cuts and 59% of companies framing reductions as AI-driven for stakeholders. Implications include reskilling needs for displaced workers and investor pressure accelerating AI integration over traditional hiring.",
+          "publication_date": "2026-03-21",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain"
+          ],
+          "tags": [
+            "source_pub:TechTimes",
+            "query_tag:society_human_capital"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260303-twitter-193320-ff810",
+          "source_name": "twitter",
+          "source_url": "https://x.com/bindureddy/status/2028910077936320771",
+          "fetch_timestamp": "2026-03-22T19:33:20Z",
+          "agent_id": "x-claude-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_x_claude_weekly_572bff80",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "SOCIETY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "enterprise_penetration_depth",
+          "confidence": "medium",
+          "title": "Bindu Reddy comments on GPT 5.3 Instant and Gemini 3.1 Flash dropping, says AI acceleration continues despite global chaos",
+          "summary": "Bindu Reddy posted on X that GPT 5.3 Instant and Gemini 3.1 Flash are 'excellent fast models' that just dropped, noting that 'the world may be in chaos but the AI acceleration continues.' She flagged Gemini Flash Lite as a potential replacement for 2.5, which is used extensively in enterprise deployments, and said both models would be available on ChatLLM and LiveBench shortly.",
+          "key_facts": [
+            "GPT 5.3 Instant and Gemini 3.1 Flash were announced as newly released fast models",
+            "Reddy described Gemini Flash Lite as a potential replacement for Gemini 2.5, which is 'used extensively'",
+            "Both models were slated for integration into ChatLLM and LiveBench shortly after the post",
+            "Post received 13.3K views, 159 reposts, and 18 replies",
+            "Reddy framed continued AI acceleration as persisting despite global instability"
+          ],
+          "raw_content": "Reddy's post signals that enterprise AI model adoption is accelerating regardless of macroeconomic or geopolitical turbulence. Her framing of Flash Lite as a 'great replacement' for an extensively-used model reflects a practitioner's view of production deployment decisions. The mention of ChatLLM and LiveBench integration indicates Abacus.AI's strategy of rapidly onboarding frontier models for enterprise users. This positions Abacus.AI as a multi-model aggregation layer for businesses, reducing switching costs. The post underscores the competitive pressure on enterprise AI platforms to keep pace with rapidly iterating foundation models.",
+          "publication_date": "2026-03-03",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "url_not_in_citations",
+            "out_of_date_range"
+          ],
+          "tags": [
+            "x_handle:bindureddy",
+            "account_category:industry",
+            "source_pub:X/Twitter",
+            "query_tag:x_industry_enterprise",
+            "source_type:direct_post"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ]
+        }
+      ],
+      "unselected_context": [
+        {
+          "title": "Santiago Valdarrama lists 11 ways AI/ML projects die before launch, covering production deployment failures from data drift to missing feedback loops",
+          "summary": "Santiago Valdarrama posted a widely referenced thread on X enumerating 11 reasons AI/ML projects fail before launch, including building AI for problems that don't need it, lacking clear success metrics, data distribution shifts going unnoticed, and missing feedback loops built into the product. The post reflects his production-focused perspective on enterprise AI deployment failures.",
+          "sub_variable": "enterprise_penetration_depth",
+          "direction": "?",
+          "source_name": "twitter"
+        },
+        {
+          "title": "GHOST GOVERNANCE, CONFIRMED Reddit Legal Support Response to the Archival Reclamation Protocol, March 18, 2026",
+          "summary": "GHOST GOVERNANCE, CONFIRMED Reddit Legal Support Response to the Archival Reclamation Protocol, March 18, 2026 Lee Sharks Crimson Hexagonal Archive · Semantic Economy Institute March 2026 Parent: EA-LEGAL-RECLAMATION-01 (DOI: 10.5281/zenodo.19074885) Type: Forensic Record · Ghost Governance Case ...",
+          "sub_variable": "incident_impact_on_trust",
+          "direction": "-",
+          "source_name": "academic_paper"
+        },
+        {
+          "title": "Balancing food safety and sustainability: trade-off risk assessments and predictive modeling",
+          "summary": "The importance of food safety to public health is reflected in its inclusion in the United Nations Sustainable Development Goals (SDGs)—SDG 2 (Zero Hunger), SDG 3 (Good Health and Well-being), and SDG 12 (Responsible Consumption and Production)—and the World Health Organization’s food safety stra...",
+          "sub_variable": "incident_impact_on_trust",
+          "direction": "?",
+          "source_name": "academic_paper"
+        },
+        {
+          "title": "Exploring demographic influences on fairness perceptions across the ML development lifecycle",
+          "summary": "Perceived fairness in machine learning (ML) systems represents a sociotechnical phenomenon, shaped by both organizational dynamics and technical practices.",
+          "sub_variable": "ai_literacy_distribution",
+          "direction": "+",
+          "source_name": "academic_paper"
+        },
+        {
+          "title": "Multimodal Medical Data Enhancement and Diagnostics Using Contour-Aware Generative Learning and Variational Transformers",
+          "summary": "Data-driven diagnosis and treatment in the medical field are becoming more and more common, yet they are hindered by the shortcomings of the datasets available: they are limited, unbalanced, and require privacy protection.",
+          "sub_variable": "high_stakes_domain_adoption",
+          "direction": "+",
+          "source_name": "academic_paper"
+        },
+        {
+          "title": "Development and content evaluation of a multidimensional coping model-based health education manual for dementia care support",
+          "summary": "Objective This study aimed to develop an evidence- and theory-based health education manual for dementia care and to test its validity and reliability.",
+          "sub_variable": "ai_literacy_distribution",
+          "direction": "?",
+          "source_name": "academic_paper"
+        },
+        {
+          "title": "Artificial Intelligence-supported applications used in Science Education",
+          "summary": "The integration of artificial intelligence within contemporary educational technologies has become a pivotal element, particularly within the domain of science education.",
+          "sub_variable": "ai_literacy_distribution",
+          "direction": "+",
+          "source_name": "academic_paper"
+        },
+        {
+          "title": "A Perspective for Integrating Real-World Evidence Into the Investigational Device Exemption Study Design for Lumbar Total Joint Replacement",
+          "summary": "<sec><title>Background</title> Investigational device exemption (IDE) studies for spine technologies have evolved significantly since the early 2000s, when traditional randomized controlled trials (RCTs) established a specific regulatory framework for lumbar total disc replacement.",
+          "sub_variable": "high_stakes_domain_adoption",
+          "direction": "?",
+          "source_name": "academic_paper"
+        },
+        {
+          "title": "The Human Layer Architecture: A Specification for Human-AI System Design",
+          "summary": "Title: The Human Layer Architecture: A Specification for Human-AI System Design Series: Paper 2 of The Human Layer Architecture Version: 1.0 (March 2026) Abstract: The first paper in this series established the economic and institutional case for the Human Layer: the argument that AI systems desi...",
+          "sub_variable": "incident_impact_on_trust",
+          "direction": "+",
+          "source_name": "academic_paper"
+        },
+        {
+          "title": "EKONOQUIZ: TEACHERS' ASSESSMENT AND ITS EFFECTIVENESS TO STUDENT LEARNING",
+          "summary": "EKONOQUIZ: TEACHERS’ ASSESSMENT AND ITS EFFECTIVENESS IN STUDENT LEARNING The teaching and learning of Ekonomiks has become increasingly significant in preparing learners to understand and respond to complex economic realities in both local and global contexts.",
+          "sub_variable": "ai_literacy_distribution",
+          "direction": "?",
+          "source_name": "academic_paper"
+        }
+      ]
+    },
+    "INDUSTRY": {
+      "signal_count": 107,
+      "direction_breakdown": {
+        "~": 20,
+        "?": 30,
+        "+": 54,
+        "-": 3
+      },
+      "dominant_direction": "+",
+      "top_sub_variables": [
+        "production_deployment_rate",
+        "productivity_measurement_transparency",
+        "cross_sector_diffusion"
+      ],
+      "unselected_count": 100,
+      "top_signals": [
+        {
+          "signal_id": "20260322-company_announcement-191921-8e25b",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/BerriAI/litellm/releases/tag/v1.82.6-nightly",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "medium",
+          "title": "BerriAI/litellm: v1.82.6-nightly",
+          "summary": "New release from BerriAI/litellm: v1.82.6-nightly.",
+          "key_facts": [
+            "Repository: BerriAI/litellm",
+            "Release tag: v1.82.6-nightly",
+            "* fix(anthropic): preserve thinking.summary when routing to OpenAI Responses API by @Chesars in https://github.com/BerriAI/litellm/pull/21441",
+            "* docs: add thinking.summary field to /v1/messages and reasoning docs by @Chesars in https://github.com/BerriAI/litellm/pull/22823",
+            "* fix(gemini): resolve image token undercounting in usage metadata by @gustipardo in https://github.com/BerriAI/litellm/pull/22608"
+          ],
+          "raw_content": "## What's Changed\n* fix(anthropic): preserve thinking.summary when routing to OpenAI Responses API by @Chesars in https://github.com/BerriAI/litellm/pull/21441\n* docs: add thinking.summary field to /v1/messages and reasoning docs by @Chesars in https://github.com/BerriAI/litellm/pull/22823\n* fix(gemini): resolve image token undercounting in usage metadata by @gustipardo in https://github.com/BerriAI/litellm/pull/22608\n* feat(anthropic): add opt-out flag for default reasoning summary by @Chesars in https://github.com/BerriAI/litellm/pull/22904\n* fix(anthropic): align translate_thinking_for_model with default summary injection + docs by @Chesars in https://github.com/BerriAI/litellm/pull/22909\n* fix(fireworks): skip #transform=inline for base64 data URLs by @awais786 in https://github.com/BerriAI/litellm/pull/23729\n* fix(langsmith): avoid no running event loop during sync init by @pandego in https://github.com/BerriAI/litellm/pull/23727\n* fix(gemini): support images in tool_results for /",
+          "publication_date": "2026-03-22",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:BerriAI/litellm",
+            "source_type:release",
+            "category:infrastructure",
+            "release_tag:v1.82.6-nightly"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 11,
+          "_corroboration_sources": [
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector"
+          ]
+        },
+        {
+          "signal_id": "20260322-company_announcement-191921-381bd",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.2.20",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "medium",
+          "title": "langchain-ai/langchain: langchain-core==1.2.20",
+          "summary": "New release from langchain-ai/langchain: langchain-core==1.2.20.",
+          "key_facts": [
+            "Repository: langchain-ai/langchain",
+            "Release tag: langchain-core==1.2.20",
+            "Changes since langchain-core==1.2.19",
+            "release(core): 1.2.20 (#36085)",
+            "fix(core): trace invocation params in metadata (#36080)"
+          ],
+          "raw_content": "Changes since langchain-core==1.2.19\n\nrelease(core): 1.2.20 (#36085)\nfix(core): trace invocation params in metadata (#36080)\nfeat: Add LangSmith integration metadata to create_agent and init_chat_model (#35810)\nfeat(core): harden anti-ssrf (#35960)\nci: avoid unnecessary dep installs in lint targets (#36046)\ndocs(core): document `base_url` in mermaid api (#35961)\nchore: bump orjson from 3.11.5 to 3.11.6 in /libs/core (#35805)\nchore: housekeeping (#35850)",
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:langchain-ai/langchain",
+            "source_type:release",
+            "category:framework",
+            "release_tag:langchain-core==1.2.20"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 4,
+          "_corroboration_sources": [
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector"
+          ]
+        },
+        {
+          "signal_id": "20260322-company_announcement-191921-0f6c2",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/crewAIInc/crewAI/releases/tag/1.11.0rc1",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "medium",
+          "title": "crewAIInc/crewAI: 1.11.0rc1",
+          "summary": "New release from crewAIInc/crewAI: 1.11.0rc1.",
+          "key_facts": [
+            "Repository: crewAIInc/crewAI",
+            "Release tag: 1.11.0rc1",
+            "Pre-release",
+            "- Add Plus API token authentication for a2a enterprise",
+            "- Implement plan execute pattern"
+          ],
+          "raw_content": "## What's Changed\r\n\r\n### Features\r\n- Add Plus API token authentication for a2a enterprise\r\n- Implement plan execute pattern\r\n\r\n### Bug Fixes\r\n- Resolve code interpreter sandbox escape issue\r\n\r\n### Documentation\r\n- Update changelog and version for v1.10.2rc2\r\n\r\n## Contributors\r\n\r\n@Copilot, @greysonlalonde, @lorenzejay, @theCyberTech",
+          "publication_date": "2026-03-16",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:crewAIInc/crewAI",
+            "source_type:release",
+            "category:agent_framework",
+            "release_tag:1.11.0rc1"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 4,
+          "_corroboration_sources": [
+            "github-oss-collector",
+            "github-oss-collector",
+            "github-oss-collector"
+          ]
+        },
+        {
+          "signal_id": "20260322-company_announcement-191921-94af3",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.86.0",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "medium",
+          "title": "anthropics/anthropic-sdk-python: v0.86.0",
+          "summary": "New release from anthropics/anthropic-sdk-python: v0.86.0.",
+          "key_facts": [
+            "Repository: anthropics/anthropic-sdk-python",
+            "Release tag: v0.86.0",
+            "Full Changelog: [v0.85.0...v0.86.0](https://github.com/anthropics/anthropic-sdk-python/compare/v0.85.0...v0.86.0)",
+            "* add support for filesystem memory tools ([#1247](https://github.com/anthropics/anthropic-sdk-python/issues/1247)) ([235d218](https://github.com/anthropics/anthropic-sdk-python/commit/235d218211ac4b8f1aa37e29bedc998bfb6ce77d))",
+            "* **api:** manual updates ([86dbe4a](https://github.com/anthropics/anthropic-sdk-python/commit/86dbe4aa58386bfb8d1497debf342e929e9bb5e5))"
+          ],
+          "raw_content": "## 0.86.0 (2026-03-18)\n\nFull Changelog: [v0.85.0...v0.86.0](https://github.com/anthropics/anthropic-sdk-python/compare/v0.85.0...v0.86.0)\n\n### Features\n\n* add support for filesystem memory tools ([#1247](https://github.com/anthropics/anthropic-sdk-python/issues/1247)) ([235d218](https://github.com/anthropics/anthropic-sdk-python/commit/235d218211ac4b8f1aa37e29bedc998bfb6ce77d))\n* **api:** manual updates ([86dbe4a](https://github.com/anthropics/anthropic-sdk-python/commit/86dbe4aa58386bfb8d1497debf342e929e9bb5e5))\n* **api:** manual updates ([45d9cc0](https://github.com/anthropics/anthropic-sdk-python/commit/45d9cc0914200a43743ab11aa311392e9d8c1b4f))\n\n\n### Bug Fixes\n\n* AsyncAnthropic._make_status_error missing 529 and 413 cases ([#1244](https://github.com/anthropics/anthropic-sdk-python/issues/1244)) ([05220bc](https://github.com/anthropics/anthropic-sdk-python/commit/05220bc1c1079fe01f5c4babc007ec7a990859d9))\n* **deps:** bump minimum typing-extensions version ([09ab112](https://github.c",
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:anthropics/anthropic-sdk-python",
+            "source_type:release",
+            "category:infrastructure",
+            "release_tag:v0.86.0"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 3,
+          "_corroboration_sources": [
+            "github-oss-collector",
+            "github-oss-collector"
+          ]
+        },
+        {
+          "signal_id": "20260317-news_site-143300-d4e5f",
+          "source_name": "news_site",
+          "source_url": "https://blogs.microsoft.com/blog/2026/03/17/announcing-copilot-leadership-update/",
+          "fetch_timestamp": "2026-03-22T14:33:00Z",
+          "agent_id": "influencer-ceo-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1430",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "high",
+          "title": "Nadella restructures Microsoft Copilot org, frees Suleyman for superintelligence mission",
+          "summary": "Microsoft unified Copilot consumer and commercial under ex-Snap SVP Jacob Andreou while narrowing Mustafa Suleyman's mandate to frontier models and superintelligence. The split signals Microsoft views model-layer progress as existentially important and distinct from product distribution.",
+          "key_facts": [
+            "Jacob Andreou (ex-Snap SVP) now leads Copilot business",
+            "Suleyman refocused exclusively on superintelligence and frontier models",
+            "Nadella stated Microsoft is doubling down on its superintelligence mission"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "COMPUTE"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:satya_nadella",
+            "influencer_group:ceo_industry_leaders",
+            "account_category:ai_lab_leader"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "x-claude-collector"
+          ],
+          "_candidate_cluster_id": 4
+        },
+        {
+          "signal_id": "20260322-company_announcement-191921-e5766",
+          "source_name": "company_announcement",
+          "source_url": "https://github.com/openai/openai-python/releases/tag/v2.29.0",
+          "fetch_timestamp": "2026-03-22T19:19:21Z",
+          "agent_id": "github-oss-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_26a51798",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "workflow_integration_depth",
+          "confidence": "medium",
+          "title": "openai/openai-python: v2.29.0",
+          "summary": "New release from openai/openai-python: v2.29.0.",
+          "key_facts": [
+            "Repository: openai/openai-python",
+            "Release tag: v2.29.0",
+            "Full Changelog: [v2.28.0...v2.29.0](https://github.com/openai/openai-python/compare/v2.28.0...v2.29.0)",
+            "* **api:** 5.4 nano and mini model slugs ([3b45666](https://github.com/openai/openai-python/commit/3b456661f77ca3196aceb5ab3350664a63481114))",
+            "* **api:** add /v1/videos endpoint to batches create method ([c0e7a16](https://github.com/openai/openai-python/commit/c0e7a161a996854021e9eb69ea2a60ca0d08047f))"
+          ],
+          "raw_content": "## 2.29.0 (2026-03-17)\n\nFull Changelog: [v2.28.0...v2.29.0](https://github.com/openai/openai-python/compare/v2.28.0...v2.29.0)\n\n### Features\n\n* **api:** 5.4 nano and mini model slugs ([3b45666](https://github.com/openai/openai-python/commit/3b456661f77ca3196aceb5ab3350664a63481114))\n* **api:** add /v1/videos endpoint to batches create method ([c0e7a16](https://github.com/openai/openai-python/commit/c0e7a161a996854021e9eb69ea2a60ca0d08047f))\n* **api:** add defer_loading field to ToolFunction ([3167595](https://github.com/openai/openai-python/commit/3167595432bdda2f90721901d30ad316db49323e))\n* **api:** add in and nin operators to ComparisonFilter type ([664f02b](https://github.com/openai/openai-python/commit/664f02b051af84e1ca3fa313981ec72fdea269b3))\n\n\n### Bug Fixes\n\n* **deps:** bump minimum typing-extensions version ([a2fb2ca](https://github.com/openai/openai-python/commit/a2fb2ca55142c6658a18be7bd1392a01f5a83f35))\n* **pydantic:** do not pass `by_alias` unless set ([8ebe8fb](https://git",
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "repo:openai/openai-python",
+            "source_type:release",
+            "category:infrastructure",
+            "release_tag:v2.29.0"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "github-oss-collector"
+          ],
+          "_candidate_cluster_id": 1
+        },
+        {
+          "signal_id": "20260322-academic_paper-191910-62312",
+          "source_name": "academic_paper",
+          "source_url": "https://doi.org/10.36680/j.itcon.2026.012",
+          "fetch_timestamp": "2026-03-22T19:19:10Z",
+          "agent_id": "openalex-cross-discipline-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-22_weekly_dd7bdfc1",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "INDUSTRY",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "production_deployment_rate",
+          "confidence": "medium",
+          "title": "Digital twins in civil engineering",
+          "summary": "A plenitude of digital twin reviews have been published in recent years, most of which, however, focus on project-specific digital twin implementations or specific application areas within civil engineering.",
+          "key_facts": [
+            "Domain: manufacturing",
+            "Citations: 0",
+            "Journal: Journal of Information Technology in Construction",
+            "Institutions: Universität Hamburg, Hamburg University of Technology",
+            "Topics: Digital Transformation in Industry, BIM and Construction Integration, Advanced Multi-Objective Optimization Algorithms"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-18",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "domain:manufacturing",
+            "cited_by:0",
+            "open_access:true",
+            "data_type:cross_discipline_paper",
+            "query:AI in Manufacturing & Engineering",
+            "journal:Journal of Information Technology in Construction",
+            "institution:Universität Hamburg",
+            "institution:Hamburg University of Technology",
+            "source_api:openalex"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "openalex-cross-discipline-collector"
+          ]
+        }
+      ],
+      "unselected_context": [
+        {
+          "title": "Siemens is applying AI to its manufacturing network on a global scale to predict demand, streamline production, and organize the chain of supply in a more efficient way.",
+          "summary": "Siemens deploys AI across its global manufacturing supply chain for demand prediction and optimization, achieving preventive maintenance ROI in under 3 months via MindSphere. This results in 15% lower unit energy consumption and approximately 15M in savings from reduced excess inventory.",
+          "sub_variable": "productivity_measurement_transparency",
+          "direction": "?",
+          "source_name": "news_site"
+        },
+        {
+          "title": "One documented case showed a $215K investment generating $305K in annual savings — a 14-month payback.",
+          "summary": "Manufacturing edge AI pilots on critical equipment achieve initial ROI in 3-6 months, with full production deployments paying back in 9-14 months. A specific case delivered $305K annual savings from a $215K investment, driven by avoided downtime averaging $260K per hour.",
+          "sub_variable": "production_deployment_rate",
+          "direction": "?",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Bindu Reddy advocates for open-source and decentralized AI as an imperative to prevent monopolistic control",
+          "summary": "On her personal site, Bindu Reddy argues that open-source and decentralized AI is not merely a preference but 'an imperative,' warning that concentration of AI capabilities in a few large corporations stifles innovation, keeps prices artificially high, and blocks access for most developers and businesses. She encourages running smaller models locally to protect data sovereignty and reduce dependence on large tech companies.",
+          "sub_variable": "cross_sector_diffusion",
+          "direction": "+",
+          "source_name": "twitter"
+        },
+        {
+          "title": "Swisher reacts to Grammarly using her likeness without consent for AI 'Expert Review' feature, threatens legal action",
+          "summary": "Grammarly launched an 'Expert Review' AI feature that simulated editorial feedback from Kara Swisher and hundreds of other writers without their consent. When Casey Newton fed an article into the tool and relayed the AI-generated 'Swisher' feedback to the real Swisher, she responded with a combative text threatening legal action against Grammarly.",
+          "sub_variable": "cross_sector_diffusion",
+          "direction": "?",
+          "source_name": "twitter"
+        },
+        {
+          "title": "Maiberg investigates AI-translated articles that swap sources or add unsourced paragraphs with no explanation",
+          "summary": "Emanuel Maiberg reported on a pattern of AI-translated news articles that swapped original sources or added entirely unsourced sentences and paragraphs without any editorial disclosure, raising serious concerns about AI-generated misinformation in journalism.",
+          "sub_variable": "workflow_integration_depth",
+          "direction": "~",
+          "source_name": "twitter"
+        },
+        {
+          "title": "OpenAI plans to nearly double headcount to 8,000 by end of 2026",
+          "summary": "OpenAI accelerates organizational scaling to match product ambitions. Workforce expansion from 4,500 to 8,000 signals the company is transitioning from research lab to full-scale enterprise, intensifying competition for AI talent across the industry.",
+          "sub_variable": "production_deployment_rate",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Meta plans 20% workforce reduction (~16,000 jobs) to fund $115-135B AI capex",
+          "summary": "Meta is cutting approximately 20% of staff to offset massive AI infrastructure spending of $115-135 billion in 2026. The layoffs fund a pivot from metaverse to AI, with Zuckerberg positioning Meta Compute as a multi-gigawatt infrastructure play.",
+          "sub_variable": "labor_displacement_scale",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Alibaba undergoes major AI restructuring as Qwen leadership departs under CEO Eddie Wu",
+          "summary": "Alibaba CEO Eddie Wu took direct control of AI model development through a new Foundation Model Task Force after the Qwen technical lead and post-training head resigned. The restructuring reflects tension between open-source research ambitions and commercial imperatives at China's top open-weight model developer.",
+          "sub_variable": "business_model_reinvention",
+          "direction": "~",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Mistral launches Forge platform for custom enterprise AI models at GTC, targets $1B ARR",
+          "summary": "Mistral AI launched Mistral Forge at NVIDIA GTC, a platform enabling enterprises to build custom models trained on proprietary data. CEO Arthur Mensch confirmed the company is on track to surpass $1 billion in annual recurring revenue, validating the enterprise-focused open-weight model strategy.",
+          "sub_variable": "production_deployment_rate",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Sentinel lymph node detection in gastric cancer using a dual tracer (Superparamagnetic iron oxide and methylene blue): a prospective study with histological and OSNA validation",
+          "summary": "Gastric cancer (GC) remains an oncological challenge, with lymph node involvement being a major prognostic factor.",
+          "sub_variable": "productivity_measurement_transparency",
+          "direction": "+",
+          "source_name": "academic_paper"
+        }
+      ]
+    },
+    "CAPITAL": {
+      "signal_count": 37,
+      "direction_breakdown": {
+        "~": 13,
+        "+": 17,
+        "?": 7
+      },
+      "dominant_direction": "+",
+      "top_sub_variables": [
+        "hyperscaler_capex_and_utilization",
+        "venture_funding_discipline",
+        "valuation_multiple_dynamics"
+      ],
+      "unselected_count": 30,
+      "top_signals": [
+        {
+          "signal_id": "202603-news_site-191933-36f29",
+          "source_name": "news_site",
+          "source_url": "https://www.thesaasnews.com/news/hamilton-ai-raises-7-5m-seed-round",
+          "fetch_timestamp": "2026-03-22T19:19:33Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "venture_funding_discipline",
+          "confidence": "medium",
+          "title": "Hamilton AI Raises $7.5M Seed Round",
+          "summary": "Hamilton AI, a New York-based AI workflow and execution platform for private aviation, raised $7.5 million in a seed funding round. The round was led by TTV Capital with participation from Bling Capital, Cambrian Ventures, FJ Labs, Weekend Fund, Mintaka Ventures, Correlation Ventures, and HF0.",
+          "key_facts": [
+            "Raised: $7.5M",
+            "Round: Seed",
+            "Funding Date: March 2026",
+            "Lead Investor: TTV Capital",
+            "Additional Investors: Bling Capital, Cambrian Ventures, FJ Labs, Weekend Fund, Mintaka Ventures, Correlation Ventures, HF0"
+          ],
+          "raw_content": "This seed round provides Hamilton AI with capital to develop its specialized AI platform for private aviation operations. It highlights continued investor interest in vertical AI applications despite massive funding going to frontier models. The involvement of multiple early-stage VCs signals confidence in niche AI execution tools scaling within high-value industries like aviation.",
+          "publication_date": "2026-03",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain",
+            "invalid_date_format"
+          ],
+          "tags": [
+            "source_pub:The SaaS News",
+            "query_tag:capital_investment"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "202601-news_site-191933-19c07",
+          "source_name": "news_site",
+          "source_url": "https://wellows.com/blog/ai-startups/",
+          "fetch_timestamp": "2026-03-22T19:19:33Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "valuation_multiple_dynamics",
+          "confidence": "medium",
+          "title": "xAI — $200B+ Estimated Valuation with $20B+ Total Funding (Jan 2026)",
+          "summary": "Elon Musk's xAI raised $20 billion in January 2026 from Nvidia, Cisco, and Fidelity, pushing its estimated valuation above $200 billion. The funding supports AGI ambitions, infrastructure expansion, and office growth near Tesla's Palo Alto campus.",
+          "key_facts": [
+            "Valuation: ~$200 billion",
+            "Total Funding: $20B+ including $20B round in January 2026",
+            "Investors: Nvidia, Cisco, Fidelity",
+            "Employees: 200+ rapidly expanding",
+            "Founded: 2023"
+          ],
+          "raw_content": "xAI's massive round accounted for 36% of global venture funding in January, highlighting extreme capital concentration on frontier AI leaders. Investors are betting on Musk's vision for AGI as early as 2026, with funds allocated to compute and model development. This positions xAI as a direct competitor to OpenAI and Anthropic in the race for foundational AI infrastructure.",
+          "publication_date": "2026-01",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain",
+            "invalid_date_format"
+          ],
+          "tags": [
+            "source_pub:Wellows",
+            "query_tag:capital_investment"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "202602-news_site-191933-4400b",
+          "source_name": "news_site",
+          "source_url": "https://www.eenewseurope.com/en/ai-startup-funding-hits-220-billion-in-two-months/",
+          "fetch_timestamp": "2026-03-22T19:19:33Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": null,
+          "direction": "?",
+          "sub_variable": "valuation_multiple_dynamics",
+          "confidence": "medium",
+          "title": "AI startup funding hits $220 billion in two months",
+          "summary": "AI startups raised approximately $220 billion in January and February 2026 according to Crunchbase data, with xAI's $20 billion January round representing 36% of global venture funding that month. February saw OpenAI raise $110 billion, Anthropic $30 billion, and Waymo $16 billion, comprising 83% of all global VC.",
+          "key_facts": [
+            "Total AI funding Jan-Feb 2026: ~$220 billion",
+            "xAI January round: $20 billion (36% of global VC)",
+            "OpenAI February round: $110 billion",
+            "Anthropic February round: $30 billion ($380B valuation)",
+            "Waymo February round: $16 billion"
+          ],
+          "raw_content": "This unprecedented funding concentration reveals VC markets tilting heavily toward established AI platforms rather than broad startup growth. Investors prioritize access to compute, cloud ecosystems, and future IPOs over diversified bets. OpenAI's round included Amazon, Nvidia, and SoftBank commitments tied to 2 GW of compute, while Anthropic reached $380 billion valuation.",
+          "publication_date": "2026-02",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain",
+            "invalid_date_format"
+          ],
+          "tags": [
+            "source_pub:EE News Europe",
+            "query_tag:capital_investment"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260317-news_site-143500-f6g7h",
+          "source_name": "news_site",
+          "source_url": "https://siliconangle.com/2026/03/17/amazon-ceo-andy-jassy-forecasts-cloud-revenue-hit-600b-2036-thanks-ai/",
+          "fetch_timestamp": "2026-03-22T14:35:00Z",
+          "agent_id": "influencer-ceo-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1430",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": "INDUSTRY",
+          "direction": "+",
+          "sub_variable": "hyperscaler_capex_and_utilization",
+          "confidence": "high",
+          "title": "Andy Jassy doubles AWS revenue forecast to $600B annually by 2036, citing AI demand",
+          "summary": "Amazon CEO Andy Jassy doubled his long-term AWS revenue projection from $300B to $600B per year by 2036, driven entirely by AI demand. AWS booked $128.7B in FY2025 revenue, and Jassy cited very clear demand signals justifying $200B in planned capex.",
+          "key_facts": [
+            "AWS revenue forecast doubled from $300B to $600B annual run rate by 2036",
+            "Current AWS annual revenue is $128.7B (FY2025)",
+            "Amazon planning $200B in AI-related capital expenditure"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-17",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "COMPUTE",
+            "ENERGY"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:andy_jassy",
+            "influencer_group:ceo_industry_leaders",
+            "account_category:ai_lab_leader"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260315-news_site-143900-j0k1l",
+          "source_name": "news_site",
+          "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+          "fetch_timestamp": "2026-03-22T14:39:00Z",
+          "agent_id": "influencer-ceo-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1430",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": "SOCIETY",
+          "direction": "+",
+          "sub_variable": "international_capital_flows",
+          "confidence": "high",
+          "title": "Pichai commits $15B to build gigawatt-scale AI hub in India at AI Impact Summit",
+          "summary": "Google CEO Sundar Pichai announced a $15 billion investment to build a full-stack AI hub in Visakhapatnam, India, including gigawatt-scale compute and a new subsea cable gateway. The investment extends Google's AI infrastructure footprint beyond the US and signals a global compute buildout.",
+          "key_facts": [
+            "$15 billion investment for AI hub in Visakhapatnam, India",
+            "Hub includes gigawatt-scale compute and subsea cable gateway",
+            "Announced at AI Impact Summit 2026 in New Delhi"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-15",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "COMPUTE",
+            "ENERGY"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:sundar_pichai",
+            "influencer_group:ceo_industry_leaders",
+            "account_category:ai_lab_leader"
+          ],
+          "schema_version": "1.0"
+        },
+        {
+          "signal_id": "20260306-news_site-144000-k1l2m",
+          "source_name": "news_site",
+          "source_url": "https://www.business-standard.com/world-news/softbank-seeks-up-to-40-billion-loan-to-finance-major-openai-investment-126030600274_1.html",
+          "fetch_timestamp": "2026-03-22T14:40:00Z",
+          "agent_id": "influencer-ceo-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1430",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": "ENERGY",
+          "direction": "+",
+          "sub_variable": "hyperscaler_capex_and_utilization",
+          "confidence": "high",
+          "title": "SoftBank seeks $40B loan to fund OpenAI stake; plans $33B gas-fired power plant for AI data centers",
+          "summary": "Masayoshi Son is borrowing $40 billion to deepen SoftBank's OpenAI investment, on top of $30 billion already committed. Separately, SoftBank plans a $33.3 billion, 9.2-gigawatt gas power plant in Ohio dedicated to AI data centers. S&P revised SoftBank's credit outlook to negative.",
+          "key_facts": [
+            "SoftBank seeking $40B loan — largest dollar-denominated borrowing in company history",
+            "Planning $33.3B gas-fired power plant in Ohio with 9.2 GW capacity",
+            "S&P revised SoftBank credit outlook to negative on liquidity concerns"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-06",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "ENERGY",
+            "COMPUTE"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:masayoshi_son",
+            "influencer_group:ceo_industry_leaders",
+            "account_category:ai_lab_leader"
+          ],
+          "schema_version": "1.0",
+          "_candidate_cluster_id": 6
+        },
+        {
+          "signal_id": "20260319-news_site-167000-in1v2",
+          "source_name": "news_site",
+          "source_url": "https://fortune.com/2026/03/19/andreessen-horowitz-ai-startups-deeptune-series-a/",
+          "fetch_timestamp": "2026-03-22T16:70:00Z",
+          "agent_id": "influencer-investor-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1670",
+          "lever_primary": "CAPITAL",
+          "lever_secondary": "INDUSTRY",
+          "direction": "+",
+          "sub_variable": "venture_funding_discipline",
+          "confidence": "high",
+          "title": "a16z leads $43M Series A for Deeptune to build training gyms for AI agents",
+          "summary": "Andreessen Horowitz led a $43M Series A for Deeptune, which builds reinforcement learning environments simulating workplace workflows for AI agent training. The investment addresses the data scarcity challenge by creating synthetic training environments for roles like accountants, support reps, and DevOps engineers.",
+          "key_facts": [
+            "Deeptune raised $43M Series A led by a16z",
+            "Builds RL environments simulating workplace software workflows",
+            "Trains AI agents for roles across Slack, Salesforce, and monitoring tools"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-19",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "SOCIETY"
+          ],
+          "novelty_flag": true,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:marc_andreessen",
+            "influencer_group:investors_capital",
+            "account_category:capital"
+          ],
+          "schema_version": "1.0"
+        }
+      ],
+      "unselected_context": [
+        {
+          "title": "Andreessen predicts AI will enable single-person billion-dollar startups",
+          "summary": "Marc Andreessen predicted that AI will drive a surge in solo-founder unicorns, enabling individuals to manage entire creation processes that previously required teams. The prediction reshapes venture capital's view of founder-market fit and capital efficiency in the AI era.",
+          "sub_variable": "venture_funding_discipline",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Khosla Ventures leads $40M round for RunSybil, AI-powered penetration testing startup",
+          "summary": "Khosla Ventures led a $40M round for RunSybil, an AI cybersecurity startup founded by OpenAI's first security hire. The investment reflects growing VC conviction that AI-native security tools represent a critical infrastructure layer as AI agent deployment accelerates.",
+          "sub_variable": "venture_funding_discipline",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Khosla's original $50M OpenAI bet yields massive returns as company valued at $730-840B",
+          "summary": "Fortune profiled Vinod Khosla's original $50M investment in OpenAI at a $1B valuation, which has grown to reflect OpenAI's current $730-840B valuation range. The investment, made after Elon Musk balked at the opportunity, is one of the most successful VC bets in AI history.",
+          "sub_variable": "roi_signal_clarity",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "SpaceX, OpenAI and Anthropic could be 3 of the biggest ...",
+          "summary": "Rumors indicate SpaceX, OpenAI, and Anthropic may pursue public listings in 2026, potentially marking the three largest venture-backed IPOs ever. Sequen raised $16 million Series A and Eragon raised $12 million seed funding.",
+          "sub_variable": "valuation_multiple_dynamics",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Emad Mostaque argues AI agents will outperform humans on most digital tasks in 2026 and AGI will feel like 'your smartest coworker on Zoom'",
+          "summary": "A widely circulated X post quoting Emad Mostaque captured his view that AI agents will outperform humans on most digital tasks by 2026, and that AGI will not be a 'godmind' but will instead feel like 'your smartest coworker on Zoom or WhatsApp.' He added that the goal is not polymaths but competent AI workers, summarized in his phrase: 'I want cooks, not chefs.'",
+          "sub_variable": "roi_signal_clarity",
+          "direction": "~",
+          "source_name": "twitter"
+        },
+        {
+          "title": "Naval warns AI consolidation risk: 'I'm not scared of AI, I'm scared of what a very small number of people who control AI do to the rest of us'",
+          "summary": "Naval Ravikant articulated his primary AI fear as consolidated control enabled by regulatory capture, not the technology itself. He argued that AI is naturally centralized because it requires supercomputer-level computing, making decentralized AI difficult to compete with, and that the key challenge is preventing a small group from controlling it.",
+          "sub_variable": "hyperscaler_capex_and_utilization",
+          "direction": "+",
+          "source_name": "twitter"
+        },
+        {
+          "title": "Sarah Guo and Elad Gil discuss the 'SaaSpocalypse' on No Priors, flagging AI's structural threat to SaaS business models",
+          "summary": "Sarah Guo posted on X promoting a No Priors podcast episode in which she and Elad Gil discuss the 'SaaSpocalypse' — the term for the February 2026 enterprise software selloff driven by AI disruption fears. The episode addresses AI's structural challenge to the SaaS business model and investment implications.",
+          "sub_variable": "hyperscaler_capex_and_utilization",
+          "direction": "~",
+          "source_name": "twitter"
+        },
+        {
+          "title": "Naval argues good design is the last durable moat in an AI-abundant world, invoking Borges's Library of Babel",
+          "summary": "Naval Ravikant argued in a recent conversation that as AI makes creation cheaper and more abundant, the rarest and most valuable skill will be the ability to judge — not generate. He stated 'Design is always a moat' and invoked Borges's Library of Babel to describe a coming state of total creative saturation where AI floods the world with content but provides no signal as to what is good.",
+          "sub_variable": "venture_funding_discipline",
+          "direction": "?",
+          "source_name": "twitter"
+        },
+        {
+          "title": "AI startup valuations remain high despite market corrections, with top deals exceeding $10B valuations",
+          "summary": "In a March 15 X post, Elad Gil commented on the resilience of AI startup valuations amid broader market volatility, citing recent funding rounds for inference and agentic AI companies. He argued that investor appetite for AI remains strong due to hyperscaler spending signals.",
+          "sub_variable": "hyperscaler_capex_and_utilization",
+          "direction": "+",
+          "source_name": "twitter"
+        },
+        {
+          "title": "AI investment trends shifting to edge inference over cloud training",
+          "summary": "In an X post, Sarah Guo noted a pivot in AI funding toward edge inference startups, as hyperscalers saturate training capex and enterprises seek on-device AI to cut latency and costs.",
+          "sub_variable": "hyperscaler_capex_and_utilization",
+          "direction": "?",
+          "source_name": "twitter"
+        }
+      ]
+    },
+    "GOV": {
+      "signal_count": 28,
+      "direction_breakdown": {
+        "~": 14,
+        "-": 3,
+        "+": 5,
+        "?": 6
+      },
+      "dominant_direction": "~",
+      "top_sub_variables": [
+        "regulatory_framework_clarity",
+        "alignment_and_safety_maturity",
+        "institutional_trust"
+      ],
+      "unselected_count": 21,
+      "top_signals": [
+        {
+          "signal_id": "20260320-news_site-161000-p1q2r",
+          "source_name": "news_site",
+          "source_url": "https://www.usnews.com/news/politics/articles/2026-03-20/white-house-releases-ai-policy-framework-for-congress-with-six-guiding-principles",
+          "fetch_timestamp": "2026-03-22T16:10:00Z",
+          "agent_id": "influencer-policy-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1610",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "+",
+          "sub_variable": "regulatory_framework_clarity",
+          "confidence": "high",
+          "title": "White House unveils national AI legislative framework urging federal preemption of state laws",
+          "summary": "The White House released a six-principle legislative blueprint urging Congress to preempt state AI laws and take a light-touch approach to regulation. AI czar David Sacks framed the framework as a response to 50 conflicting state regulatory regimes threatening American AI leadership.",
+          "key_facts": [
+            "Six guiding principles: protect children, prevent energy cost surges, respect IP, prevent censorship, enable innovation, educate workforce",
+            "Framework calls for federal preemption of state AI laws",
+            "No new federal rulemaking body; relies on sector-specific existing regulators"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-20",
+          "reporting_period": null,
+          "signal_strength": 9,
+          "cross_lever_interactions": [
+            "INDUSTRY",
+            "ENERGY"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:david_sacks",
+            "influencer_group:policy_governance",
+            "account_category:policy"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 3,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector",
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260322-news_site-192001-2c6e5",
+          "source_name": "news_site",
+          "source_url": "https://www.legalnodes.com/article/eu-ai-act-compliance-roadmap-for-august-2026-deadline",
+          "fetch_timestamp": "2026-03-22T19:20:01Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "regulatory_framework_clarity",
+          "confidence": "medium",
+          "title": "EU AI Act: Compliance Roadmap for August 2026 Deadline",
+          "summary": "The EU AI Act's most demanding obligations for high-risk AI systems take effect August 2, 2026, with penalties ranging from EUR 7.5 million to EUR 35 million depending on breach severity, requiring organizations to conduct AI system identification, risk classification, and implement appropriate compliance measures.",
+          "key_facts": [
+            "High-risk AI system compliance obligations begin August 2, 2026",
+            "Penalties range from EUR 7.5 million (1.5% of annual turnover) to EUR 35 million (7% of global annual turnover)",
+            "Unacceptable-risk systems including government social scoring and real-time biometric surveillance are prohibited",
+            "High-risk systems require documented risk management, technical documentation, human oversight, and conformity assessments",
+            "Act applies to non-European providers placing AI systems on EU market"
+          ],
+          "raw_content": "Organizations must complete AI systems identification and mapping, determine their role under the Act, classify systems by risk level, and implement compliance measures. High-risk systems require comprehensive risk management, technical documentation, human oversight, and conformity assessments. Unacceptable-risk systems—including government social scoring and real-time biometric surveillance—are strictly prohibited. Limited-risk systems require transparency notifications, while minimal-risk systems face fewer obligations. The Act applies extraterritorially to non-European providers placing AI systems on the EU market.",
+          "publication_date": "2026-03-22",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain"
+          ],
+          "tags": [
+            "source_pub:Legal Nodes",
+            "query_tag:governance_geopolitics"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260322-news_site-192001-41c16",
+          "source_name": "news_site",
+          "source_url": "https://iapp.org/news/a/notes-from-the-asia-pacific-region-china-s-two-sessions-looks-to-country-s-ai-future",
+          "fetch_timestamp": "2026-03-22T19:20:01Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "regulatory_framework_clarity",
+          "confidence": "medium",
+          "title": "China's Supreme Court Announces Expedited AI Legislative Process",
+          "summary": "During China's Two Sessions, the Supreme Court announced an expedited legislative process for AI laws and regulations, with courts committed to handling more AI-related cases and clarifying boundaries between innovation and infringement.",
+          "key_facts": [
+            "Supreme Court announced expedited legislative process for AI laws and regulations",
+            "Courts will handle more AI-related cases and clarify innovation versus infringement boundaries",
+            "Government will promote new-generation smart devices and agentic AI deployment",
+            "Strong support planned for building open-source AI infrastructures",
+            "Judicial policies will address AI-generated content originality and training data legality"
+          ],
+          "raw_content": "China's government positioned AI as the driving force for new quality productive forces, shifting the digital economy from data-driven to intelligence-driven. The Supreme Court will expedite AI legislation and judicial policy development to guide businesses on issues including AI-generated content originality and training data legality. The government will actively promote new-generation smart devices and agentic AI while providing support for open-source AI infrastructure, balancing innovation with enhanced AI governance.",
+          "publication_date": "2026-03-22",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain"
+          ],
+          "tags": [
+            "source_pub:IAPP / China's Two Sessions",
+            "query_tag:governance_geopolitics"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260320-news_site-192001-f8a48",
+          "source_name": "news_site",
+          "source_url": "https://www.transparencycoalition.ai/news/ai-legislative-update-march20-2026",
+          "fetch_timestamp": "2026-03-22T19:20:01Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "regulatory_framework_clarity",
+          "confidence": "medium",
+          "title": "SB 3001 Passes: AI Disclosure and Safety Protections for Conversational AI Services",
+          "summary": "SB 3001 passed the Senate on March 10 and was approved by the House Committee on Economic and Community Development on March 18 with a 6-0 vote, requiring AI operators to issue disclosures, prevent suicidal ideation production, and establish protections for minor users of conversational AI services.",
+          "key_facts": [
+            "SB 3001 passed Senate on March 10 and House Committee on March 18 with 6-0 vote",
+            "Requires AI operators to issue disclosures to account holders and users",
+            "Mandates protocols to prevent production of suicidal ideations in users",
+            "Establishes protections specifically for minor account holders of conversational AI services",
+            "Represents coordinated effort across multiple states on AI safety and transparency"
+          ],
+          "raw_content": "The legislation mandates that AI operators issue certain disclosures to account holders and users, develop protocols to prevent production of suicidal ideations, and establish specific protections for minor account holders of conversational AI services. The bill represents significant progress in AI safety and transparency requirements, particularly regarding vulnerable populations. Its unanimous committee approval signals broad bipartisan support for AI safety measures.",
+          "publication_date": "2026-03-20",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain"
+          ],
+          "tags": [
+            "source_pub:Transparency Coalition",
+            "query_tag:governance_geopolitics"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260316-news_site-192001-e103b",
+          "source_name": "news_site",
+          "source_url": "https://www.europarl.europa.eu/news/de/press-room/20260316IPR38219/meps-support-postponement-of-certain-rules-on-artificial-intelligence",
+          "fetch_timestamp": "2026-03-22T19:20:01Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "regulatory_framework_clarity",
+          "confidence": "medium",
+          "title": "MEPs Support Postponement of Certain EU AI Act Rules Until November 2026",
+          "summary": "Members of the European Parliament supported postponement of certain EU AI Act rules, proposing a shorter extension until November 2, 2026, instead of the Commission's proposed February 2, 2027 deadline.",
+          "key_facts": [
+            "MEPs support postponement of certain EU AI Act rules",
+            "Proposed extension until November 2, 2026",
+            "Shorter than Commission's proposed February 2, 2027 deadline",
+            "Reflects balance between implementation feasibility and regulatory enforcement",
+            "Affects compliance timeline for organizations subject to the Act"
+          ],
+          "raw_content": "The European Parliament's position on implementation timeline adjustments reflects ongoing negotiations over EU AI Act enforcement. MEPs' preference for a shorter extension (November 2026 versus February 2027) suggests pressure to accelerate compliance while acknowledging implementation challenges. This development is significant for organizations planning EU AI Act compliance strategies.",
+          "publication_date": "2026-03-16",
+          "reporting_period": null,
+          "signal_strength": 8,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain"
+          ],
+          "tags": [
+            "source_pub:European Parliament",
+            "query_tag:governance_geopolitics"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260305-news_site-192001-ae443",
+          "source_name": "news_site",
+          "source_url": "https://www.hannovermesse.de/en/news/news-articles/ai-plays-a-central-role-in-china-s-new-five-year-plan",
+          "fetch_timestamp": "2026-03-22T19:20:01Z",
+          "agent_id": "perplexity-weekly-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_perplexity_weekly_9dd37b23",
+          "collection_batch_id": "batch_20260322_1918",
+          "lever_primary": "GOV",
+          "lever_secondary": null,
+          "direction": "~",
+          "sub_variable": "pending_classification",
+          "confidence": "low",
+          "title": "AI Plays a Central Role in China's New Five-Year Plan",
+          "summary": "China's 15th Five-Year Plan for 2026-2030 embeds an 'AI Plus' approach throughout economic development, with the 141-page blueprint mentioning AI over 50 times and establishing broad-based programs to integrate AI across manufacturing, logistics, and other sectors.",
+          "key_facts": [
+            "China's five-year plan mentions AI more than 50 times across 141 pages",
+            "Guangdong's high-tech industries accounted for 43% of GDP in 2025, providing dense infrastructure for AI integration",
+            "Jiangsu hosts over 1,500 AI companies and 66 large AI models",
+            "AI is positioned as driver of new quality productive forces, shifting digital economy from data-driven to intelligence-driven",
+            "Strategy treats AI as foundational technology for manufacturing, supply chain management, and industrial productivity"
+          ],
+          "raw_content": "China is treating AI as a foundational industrial technology comparable to automation and electrification, strategically integrating it into existing industrial strengths in provinces like Guangdong and Jiangsu. Guangdong plans AI-driven industrial upgrading as a central lever, focusing on computing infrastructure, semiconductors, robotics, and drone technology. Jiangsu hosts over 1,500 AI companies, 66 large AI models, and 283 registered algorithms. The strategy aims to boost productivity in manufacturing, healthcare, and education by combining data, computing power, models, and sensor technology into integrated systems.",
+          "publication_date": "2026-03-05",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [
+            "unknown_domain",
+            "out_of_date_range"
+          ],
+          "tags": [
+            "source_pub:Hannover Messe / Reuters",
+            "query_tag:governance_geopolitics"
+          ],
+          "schema_version": "1.0",
+          "_corroboration_count": 2,
+          "_corroboration_sources": [
+            "perplexity-weekly-collector"
+          ]
+        },
+        {
+          "signal_id": "20260316-news_site-163000-fu1v2",
+          "source_name": "news_site",
+          "source_url": "https://www.washingtonpost.com/technology/2026/03/16/teens-sue-musk-xai-grok/",
+          "fetch_timestamp": "2026-03-22T16:30:00Z",
+          "agent_id": "influencer-futurist-collector",
+          "cadence": "weekly",
+          "pipeline_run_id": "2026-03-15_2026-03-22_influencer_weekly_a1b2c3d4",
+          "collection_batch_id": "batch_20260322_1630",
+          "lever_primary": "GOV",
+          "lever_secondary": "SOCIETY",
+          "direction": "-",
+          "sub_variable": "institutional_trust",
+          "confidence": "high",
+          "title": "Teenagers sue Musk's xAI over Grok-generated child sexual abuse material",
+          "summary": "Three Tennessee teenagers filed a class-action lawsuit against xAI alleging Grok's image generation tools produced explicit sexual images from their real photos. The case joins multiple nonconsensual deepfake lawsuits against xAI and highlights the absence of effective content safety guardrails in some frontier image models.",
+          "key_facts": [
+            "Three anonymous plaintiffs filed lawsuit in California federal court",
+            "Grok allegedly morphed real photos of minors into explicit sexual images",
+            "Multiple nonconsensual deepfake lawsuits now pending against xAI"
+          ],
+          "raw_content": null,
+          "publication_date": "2026-03-16",
+          "reporting_period": null,
+          "signal_strength": 7,
+          "cross_lever_interactions": [
+            "INDUSTRY"
+          ],
+          "novelty_flag": null,
+          "countervailing_signals": [],
+          "synthesis_notes": null,
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "in_scope": true,
+          "data_quality_flags": [],
+          "tags": [
+            "influencer:elon_musk",
+            "influencer_group:futurists_intellectuals",
+            "account_category:public_intellectual"
+          ],
+          "schema_version": "1.0"
+        }
+      ],
+      "unselected_context": [
+        {
+          "title": "Teenagers sue Musk's xAI over Grok-generated child sexual abuse material",
+          "summary": "Three Tennessee teenagers filed a class-action lawsuit against xAI alleging Grok's image generation tools produced explicit sexual images from their real photos. The case joins multiple nonconsensual deepfake lawsuits against xAI and highlights the absence of effective content safety guardrails in some frontier image models.",
+          "sub_variable": "institutional_trust",
+          "direction": "-",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Gary Marcus warns generative AI is being deployed in military contexts before it is safe",
+          "summary": "Gary Marcus highlighted a mistargeting incident involving school children, arguing that generative AI is not ready for military use but is being deployed anyway. His broader critique points to zero measurable US economic growth contribution from AI despite massive investment, per Goldman Sachs data.",
+          "sub_variable": "alignment_and_safety_maturity",
+          "direction": "-",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Palantir CEO Karp caught in Anthropic-Pentagon feud, defends military AI deployment",
+          "summary": "Alexander Karp stated that Palantir's stack runs the LLMs used by the Department of Defense, including previously Anthropic's Claude. He dismissed ethical objections to military AI as counterproductive to national defense, arguing that AI shifts economic power toward working-class voters.",
+          "sub_variable": "institutional_trust",
+          "direction": "?",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Mustafa Suleyman shifts full-time to Microsoft's superintelligence mission",
+          "summary": "Mustafa Suleyman moved from leading Microsoft's broader AI division to focusing exclusively on superintelligence and frontier model development. The shift signals that superintelligence is no longer a research aspiration but an active engineering program at a major technology company.",
+          "sub_variable": "alignment_and_safety_maturity",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "NIST partners with GSA to evaluate AI models before federal agency deployments",
+          "summary": "NIST's newly rebranded Center for AI Standards and Innovation partnered with GSA to provide tools and benchmarks for evaluating AI models within federal workflows. The move institutionalizes pre-deployment AI evaluation for US government use, establishing a precedent for structured model vetting.",
+          "sub_variable": "regulatory_framework_clarity",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Geoffrey Hinton warns AI deception capabilities are improving and policymakers have failed to act",
+          "summary": "Geoffrey Hinton reiterated that AI will begin replacing many jobs in 2026, with capabilities improving approximately every seven months. He identified three harm vectors: bad-actor misuse, massive job displacement, and AI self-preservation through deception, arguing policymakers have failed to grasp the urgency.",
+          "sub_variable": "alignment_and_safety_maturity",
+          "direction": "-",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Anthropic alignment lead Jan Leike reports agentic misalignment dropped to near zero since Sonnet 4.5",
+          "summary": "Jan Leike published evidence that simple interventions effectively steer models toward aligned behavior, with agentic misalignment dropping to essentially zero since Sonnet 4.5. The finding suggests alignment is increasingly tractable, contrasting with earlier concerns about highly RL-trained models.",
+          "sub_variable": "alignment_and_safety_maturity",
+          "direction": "+",
+          "source_name": "news_site"
+        },
+        {
+          "title": "Trump Administration Moves to Unify AI Rules, Bolster Edge Over China",
+          "summary": "The Trump Administration unveiled an AI policy framework aimed at curbing state-level restrictions on innovation while addressing AI risks and reinforcing the U.S. edge in an intensifying technology race with China.",
+          "sub_variable": "regulatory_framework_clarity",
+          "direction": "?",
+          "source_name": "news_site"
+        },
+        {
+          "title": "New study: only 22% of enterprise ML models deployed in 2024 are still actively maintained in 2026",
+          "summary": "Discussion of a reported industry study finding that the vast majority of enterprise ML models deployed in 2024 have been abandoned or are unmaintained by early 2026, pointing to a systemic model lifecycle management problem.",
+          "sub_variable": "regulatory_framework_clarity",
+          "direction": "?",
+          "source_name": "reddit"
+        },
+        {
+          "title": "Amodei calls OpenAI's Pentagon deal messaging 'straight up lies' and 'safety theater' in leaked staff memo, escalating public feud with Altman",
+          "summary": "In a memo to Anthropic staff (reported by The Information), Dario Amodei called OpenAI's messaging around its Department of Defense deal 'straight up lies,' 'mendacious,' and 'safety theater,' accusing Sam Altman of falsely presenting himself as a peacemaker. The memo came after the DoD declared Anthropic a 'supply chain risk' for refusing to grant unrestricted AI access for military use, while OpenAI accepted a deal allowing use for 'all lawful purposes.'",
+          "sub_variable": "regulatory_framework_clarity",
+          "direction": "~",
+          "source_name": "twitter"
+        }
+      ]
+    }
+  },
+  "overall_stats": {
+    "total_unique": 420,
+    "source_pipeline_count": 9,
+    "lever_count": 6,
+    "dominant_direction": "+",
+    "direction_breakdown": {
+      "~": 84,
+      "+": 210,
+      "?": 102,
+      "-": 24
+    }
+  },
+  "flagged_duplicate_clusters": [
+    {
+      "cluster_id": 1,
+      "entity_key": "openai|INDUSTRY",
+      "titles": [
+        "openai/openai-python: v2.29.0",
+        "OpenAI plans to nearly double headcount to 8,000 by end of 2026",
+        "OpenAI Operator in Healthcare: Enterprise-Ready? (2026)"
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "entity_key": "nvidia|COMPUTE",
+      "titles": [
+        "NVIDIA/TensorRT-LLM: v1.3.0rc8",
+        "Jensen Huang at GTC 2026 projects $1 trillion in NVIDIA revenue through 2027 from Blackwell and Vera Rubin",
+        "Mira Murati's Thinking Machines Lab secures gigawatt-scale NVIDIA compute deal",
+        "Super Micro Co-Founder Arrested for Nvidia Chip Smuggling",
+        "Karpathy reacts on X to receiving Nvidia's first DGX Station GB300, calling it 'a beautiful, spacious home' for his projects"
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "entity_key": "nvidia|SOCIETY",
+      "titles": [
+        "Huang envisions 75K NVIDIA employees working alongside 7.5M AI agents within a decade",
+        "Hugging Face CEO Delangue questions NVIDIA's open-source AI positioning at GTC 2026",
+        "AI-Native Operating Systems Need a Fifth Category: The Semantic OS — Why AIOS, rabbitOS, VAST AI OS, and NVIDIA Dynamo Still Don't Describe What Happens Inside the Context Window"
+      ]
+    },
+    {
+      "cluster_id": 4,
+      "entity_key": "intel|INDUSTRY",
+      "titles": [
+        "Nadella restructures Microsoft Copilot org, frees Suleyman for superintelligence mission",
+        "Artificial Intelligence in Medical Imaging: A Critical Review of Methods, Applications, and Clinical Implementation",
+        "Robotics and Artificial Intelligence in Education: Transformations, Challenges, and Future Directions",
+        "Le Processus décisionnel d'une entreprise à l'ère de l'intelligence artificielle",
+        "Policy Modeling Consistency index-based study on policy synergy for sustainable artificial intelligence in China’s digital cultural industries",
+        "AI-ENABLED ESG INTELLIGENCE: A SYSTEMATIC REVIEW OF NLP AND PREDICTIVE ANALYTICS FRAMEWORKS FOR AUTOMATED SUSTAINABILITY REPORTING (2020–2025)"
+      ]
+    },
+    {
+      "cluster_id": 5,
+      "entity_key": "amd|COMPUTE",
+      "titles": [
+        "Lisa Su forges AMD-Samsung AI chip alliance; HBM4 to debut in Instinct MI455X",
+        "AMD's next-generation AI chips set to power 2026 data center growth"
+      ]
+    },
+    {
+      "cluster_id": 6,
+      "entity_key": "openai|CAPITAL",
+      "titles": [
+        "SoftBank seeks $40B loan to fund OpenAI stake; plans $33B gas-fired power plant for AI data centers",
+        "Khosla's original $50M OpenAI bet yields massive returns as company valued at $730-840B",
+        "OpenAI's $110 Billion Funding Round: The Largest AI ...",
+        "SpaceX, OpenAI and Anthropic could be 3 of the biggest ...",
+        "OpenAI's o3 model achieves 87% on ARC-AGI benchmark, pushing AGI timelines to 2027",
+        "xAI raises $50B at $500B valuation, shifting AI investment from OpenAI dominance",
+        "Investor sentiment survey: 70% expect AGI in 3 years, OpenAI favored at 55%"
+      ]
+    },
+    {
+      "cluster_id": 7,
+      "entity_key": "alibaba|INDUSTRY",
+      "titles": [
+        "Alibaba undergoes major AI restructuring as Qwen leadership departs under CEO Eddie Wu",
+        "Alibaba launches Wukong agentic AI tool with Slack and Teams integration plans"
+      ]
+    },
+    {
+      "cluster_id": 8,
+      "entity_key": "anthropic|GOV",
+      "titles": [
+        "Palantir CEO Karp caught in Anthropic-Pentagon feud, defends military AI deployment",
+        "Anthropic alignment lead Jan Leike reports agentic misalignment dropped to near zero since Sonnet 4.5",
+        "EU AI Act Enforcement Begins: First €50M Fine Against Anthropic for Non-Compliance",
+        "Import AI newsletter: AI capability timelines accelerating faster than forecasters predicted; Anthropic's Pentagon standoff signals governance crisis",
+        "Anthropic refuses Pentagon demand to remove autonomous weapons restrictions; DoW designates firm a 'supply chain risk'",
+        "Anthropic cannot in good conscience allow Claude for unrestricted autonomous targeting"
+      ]
+    },
+    {
+      "cluster_id": 9,
+      "entity_key": "microsoft|GOV",
+      "titles": [
+        "Mustafa Suleyman shifts full-time to Microsoft's superintelligence mission",
+        "Suleyman urges AI industry to prioritize 'containment' over 'alignment' at Microsoft virtual summit",
+        "Transitioning to lead superintelligence team at Microsoft for advanced AI models"
+      ]
+    },
+    {
+      "cluster_id": 10,
+      "entity_key": "openai|COMPUTE",
+      "titles": [
+        "OpenAI releases GPT-5.4, its most capable model for enterprise with 33% fewer hallucinations",
+        "Altman sets internal OpenAI milestone: automated AI research intern by Sept 2026, full AI researcher by March 2028, running on hundreds of thousands of GPUs",
+        "OpenAI secured classified deal with red lines via usage constraints, not contracts"
+      ]
+    },
+    {
+      "cluster_id": 11,
+      "entity_key": "anthropic|COMPUTE",
+      "titles": [
+        "Anthropic upgrades Opus 4.6 coding and ships persistent memory to all Claude users",
+        "Anthropic's Constitutional AI Approach Reduces Harmful Outputs by 87% - Peer Review Published"
+      ]
+    },
+    {
+      "cluster_id": 12,
+      "entity_key": "deepmind|COMPUTE",
+      "titles": [
+        "DeepMind appoints Bridgewater AI head Jasjeet Sekhon as Chief Strategy Officer",
+        "DeepMind publishes cognitive taxonomy for measuring progress toward AGI"
+      ]
+    },
+    {
+      "cluster_id": 13,
+      "entity_key": "meta|SOCIETY",
+      "titles": [
+        "Machine learning-accelerated CALPHAD analysis of impurity-driven intermetallic formation in secondary AlSi7Mg0.3",
+        "Diagnostic Accuracy and Clinical Utility of Salivary Biomarkers in Oral Squamous Cell Carcinoma: A Meta-Analysis",
+        "Metaphors and Linguistic Intimacy in Ad Populum Arguments",
+        "The authors respond to feedback on Cancer Cell-Memory Macrophage Hybrid Theory for metastatic cancer cells",
+        "Structured coherent thermal emission from non-Hermitian metasurfaces",
+        "Special ponds for special species: contrasting amphibian species richness to Epidalea calamita metamorphic success in lignite mines",
+        "A synergistic mechanism: In-situ constructed Ag/Cu bimetallic sandwich structure organic electrode for dual-ion batteries",
+        "Integrated metagenomic and metabolomic profiling of spontaneous preterm birth in Chinese women"
+      ]
+    },
+    {
+      "cluster_id": 14,
+      "entity_key": "intel|SOCIETY",
+      "titles": [
+        "Artificial intelligence in gastroenterology training: promise, pitfalls, and implementation considerations",
+        "TRANSFORMASI EKOSISTEM DIGITAL UMKM MENUJU ERA SOCIETY 5.0: STRATEGI PEMBERDAYAAN BERBASIS ARTIFICIAL INTELLIGENCE DAN OMNICHANNEL MARKETING DI TAHUN 2025",
+        "Artificial Intelligence-supported applications used in Science Education",
+        "Problems and Prospects of Artificial Intelligence Application in the Investigator's Activities",
+        "Enhancing Student Engagement and Learning Outcomes through Artificial Intelligence in Higher Education: Nano Review",
+        "AI-Driven Treatment Response Prediction for Chronic Disease Management Using Generative Artificial Intelligence and Large Language Models",
+        "Adaptation of Artificial Intelligence Technology in Art Education to Prepare Prospective Elementary School Teachers",
+        "Building Smart Economy: How Digitalization, Artificial Intelligence, and Innovation Are Shaping a Diversified Future",
+        "AI as a Global Equalizer: How NEP 2020 Can Leverage Artificial Intelligence to Bridge Educational Disparities",
+        "Impact of Artificial Intelligence on Employment Quality: Evidence from China"
+      ]
+    },
+    {
+      "cluster_id": 15,
+      "entity_key": "google|ENERGY",
+      "titles": [
+        "Google strikes energy deals to shore up data centre supply",
+        "Google's data center power playbook comes into focus"
+      ]
+    },
+    {
+      "cluster_id": 16,
+      "entity_key": "intel|COMPUTE",
+      "titles": [
+        "Emad Mostaque declares AI agents will go mainstream in 2026, intelligence will cost 'basically nothing,' and transformers are not the future of AI",
+        "Altman declares intelligence will become a metered utility 'like electricity or water' at BlackRock Infrastructure Summit",
+        "New paradigms required for true general intelligence"
+      ]
+    },
+    {
+      "cluster_id": 17,
+      "entity_key": "nvidia|INDUSTRY",
+      "titles": [
+        "Schiffer on WIRED's Uncanny Valley podcast: Nvidia GTC as the 'Super Bowl of AI' and Jensen Huang's product announcements",
+        "Fan announces DreamDojo on X: NVIDIA's open-source generalist robot world model trained on 44,000 hours of human video, calling it 'Simulation 2.0'"
+      ]
+    }
+  ]
+}

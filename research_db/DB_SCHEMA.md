@@ -89,7 +89,7 @@ Every signal record contains the following fields. Fields marked **Required** mu
 | `collection_batch_id` | string | Required | Batch ID from the collection phase. Format: `batch_YYYYMMDD_HHMM`. Used for tracing multi-stage processing. |
 
 **Allowed `source_name` values:**
-`linkedin` · `twitter` · `reddit` · `rss_feed` · `academic_paper` · `earnings_call` · `regulatory_filing` · `news_site` · `company_announcement` · `other`
+`linkedin` · `twitter` · `reddit` · `rss_feed` · `academic_paper` · `earnings_call` · `regulatory_filing` · `news_site` · `company_announcement` · `government_statistics` · `other`
 
 ---
 
@@ -156,6 +156,8 @@ Every signal record contains the following fields. Fields marked **Required** mu
 | `in_scope` | boolean | Required | `true` if signal falls within espresso·ai content scope per `CLAUDE.md`. `false` for general tech news, startup gossip, day-to-day market moves. Out-of-scope records are excluded before synthesis. |
 | `data_quality_flags` | array of strings | Optional | Operational issues with this record. Values: `missing_key_facts`, `unverified_claim`, `paywalled_source`, `translation_needed`, `low_source_credibility`, `ambiguous_date`. Records with flags are included but deprioritized in synthesis. |
 | `tags` | array of strings | Optional | Freeform labels for filtering and ad-hoc queries. Use `namespace:value` format where possible. Examples: `vendor_name:nvidia`, `region:eu`, `deployment_domain:healthcare`, `market_structure:consolidation`. |
+| `fact_check_status` | enum | Post-publish | Fact-check verdict assigned by the `/fact-check` skill. Values: `CONFIRMED`, `PARTIALLY_CONFIRMED`, `UNVERIFIABLE`, `INACCURATE`, `CONFIRMED_BUT_STALE`. Null until fact-checked. |
+| `fact_check_note` | string | Post-publish | Explanation of the fact-check finding, including sources consulted and specific issues found. Null until fact-checked. |
 | `schema_version` | string | Required | Schema version this record conforms to. Current: `1.0`. Enables backward-compatible parsing as schema evolves. |
 
 ---
@@ -239,6 +241,109 @@ Signals collected from Reddit via Claude web search or Perplexity web search use
 - Reddit post citing a primary source (paper, article, announcement) → no penalty
 - Original analysis/experience/research post (no primary source) → cap at `medium`
 - Discussion thread with no primary source → cap at `low`
+
+### GitHub / Open-Source (`source_name: "company_announcement"` with `agent_id: "github-oss-collector"`)
+
+Signals collected from GitHub releases, trending repos, and Hugging Face models use `source_name: "company_announcement"` (already in the enum).
+
+**Signal ID format:** `YYYYMMDD-company_announcement-HHMMSS-[5char]`
+
+**Source URL format:** `https://github.com/{owner}/{repo}/releases/tag/{tag}` for releases; `https://github.com/{owner}/{repo}` for trending repos; `https://huggingface.co/{model_id}` for HF models.
+
+**Standard tags:**
+- `repo:{owner/repo}` — repository or model identifier
+- `source_type:{type}` — one of: `release`, `trending`, `hf_model`
+- `category:{category}` — one of: `framework`, `model`, `infrastructure`, `agent_framework`, `evaluation`, `trending`
+- `release_tag:{version}` — release tag/version (releases only)
+- `github_stars:{count}` — star count at collection time (trending only)
+- `license:{spdx_id}` — license identifier (trending only)
+- `hf_downloads:{count}` — download count (HF models only)
+- `pipeline_tag:{tag}` — HF pipeline tag (HF models only)
+
+**Quality flags specific to GitHub:**
+- `no_release_notes` — release has empty body/description
+- `low_stars` — star count below cadence threshold but included for completeness
+
+**Confidence:** Based on keyword classification strength. No capping rules apply — all sources are primary (official releases).
+
+### Regulatory (`source_name: "regulatory_filing"`)
+
+Signals collected from government regulatory sources use `source_name: "regulatory_filing"` (already in the enum).
+
+**Signal ID format:** `YYYYMMDD-regulatory_filing-HHMMSS-[5char]`
+
+**Source URL format:** `https://www.federalregister.gov/documents/{number}/{slug}` for Federal Register; varies for other jurisdictions.
+
+**Standard tags:**
+- `jurisdiction:{value}` — one of: `us_federal`, `eu`, `uk`, `china`, `international`
+- `document_type:{value}` — one of: `executive_order`, `regulation`, `proposed_rule`, `notice`, `guidance`, `bill`, `enforcement_action`, `framework`, `standard`
+- `agency:{name}` — issuing agency or body (e.g., `NIST`, `FTC`, `European Commission`)
+- `regulatory_id:{doc_number}` — document number (Federal Register) or bill number (Congress)
+- `source_api:{value}` — one of: `federal_register`, `claude_web_search`
+- `significant:true` — Federal Register "significant" designation
+
+**Quality flags specific to Regulatory:**
+- `indirect_source` — found via Claude web search, not direct API (applies to all non-Federal Register signals)
+- `unknown_domain` — source URL domain not in the known regulatory domain list
+
+**Confidence:**
+- Federal Register direct API results → `high` (primary government source)
+- Claude web search results → `medium` (indirect discovery)
+
+### EIA / Energy Statistics (`source_name: "government_statistics"` with `agent_id: "eia-energy-collector"`)
+
+Signals collected from the US Energy Information Administration API v2 use `source_name: "government_statistics"`.
+
+**Signal ID format:** `YYYYMMDD-government_statistics-HHMMSS-[5char]`
+
+**Source URL format:** `https://www.eia.gov/electricity/monthly/` or `https://www.eia.gov/electricity/data/state/`
+
+**Standard tags:**
+- `fuel_source:{id}` — fuel type code (sun, wnd, ng, nuc, col)
+- `period:{YYYY-MM}` — data period (monthly)
+- `data_type:{type}` — one of: `generation_mix`, `retail_sales`, `capacity`, `renewable_share`
+- `geography:{value}` — US or state name
+- `state:{code}` — state code (for state-level data)
+- `sector:{code}` — com (commercial) or ind (industrial)
+- `milestone:{N}pct` — renewable share milestone crossed
+- `trend:month_over_month` — MoM trend signal
+- `source_api:eia_v2`
+
+**Quality flags specific to EIA:**
+- `out_of_date_range` — data period falls outside the expanded lookback window (EIA data lags ~2 months)
+
+**Confidence:** `high` for well-classified signals with multiple keyword matches; `medium` otherwise. EIA is a primary government statistical source.
+
+**Note:** Unlike other collectors that find individual articles/events, the EIA collector generates signals from **trend analysis** (YoY/MoM changes, milestone crossings). Each signal represents a data-derived trend, not a news article.
+
+### OpenAlex / Cross-Discipline Academic Papers (`source_name: "academic_paper"` with `agent_id: "openalex-cross-discipline-collector"`)
+
+Signals collected from the OpenAlex API for AI papers in non-CS fields use `source_name: "academic_paper"` (same as ArXiv).
+
+**Signal ID format:** `YYYYMMDD-academic_paper-HHMMSS-[5char]`
+
+**Source URL format:** `https://doi.org/{doi}` (preferred) or `https://openalex.org/W{id}`
+
+**Standard tags:**
+- `domain:{value}` — research domain (healthcare, legal, energy, finance, education, manufacturing, materials, ethics, labor)
+- `cited_by:{count}` — citation count at collection time
+- `open_access:{bool}` — whether the paper is open access
+- `data_type:cross_discipline_paper`
+- `query:{query_name}` — which cross-discipline query found this paper
+- `journal:{name}` — journal or source name
+- `institution:{name}` — authoring institution(s)
+- `source_api:openalex`
+
+**Quality flags specific to OpenAlex:**
+- `missing_url` — no DOI or OpenAlex URL available
+- `out_of_date_range` — publication date falls outside the query window
+
+**Confidence:**
+- Papers with 50+ citations → `high`
+- Papers with 10-49 citations → at least `medium`
+- Otherwise based on keyword classification strength
+
+**Note:** This collector complements ArXiv by targeting AI concepts in non-CS fields (medicine, law, energy, finance, education, manufacturing). ArXiv covers CS/ML papers (COMPUTE lever); OpenAlex covers cross-sector AI diffusion (SOCIETY + INDUSTRY levers). Papers are sorted by citation count.
 
 ---
 

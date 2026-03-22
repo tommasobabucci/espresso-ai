@@ -1,0 +1,508 @@
+{
+  "fact_check_metadata": {
+    "report_path": "PR/weekly/2026-03-22_weekly_carousel.html",
+    "carousel_data_path": "research_db/processed/2026-03-15_2026-03-22_weekly_carousel_data.json",
+    "deduped_path": "research_db/processed/2026-03-15_2026-03-22_weekly_deduped.jsonl",
+    "synthesis_log_path": "research_db/processed/2026-03-15_2026-03-22_weekly_synthesis_log.json",
+    "date_window": {
+      "start": "2026-03-15",
+      "end": "2026-03-22"
+    },
+    "cadence": "weekly",
+    "checked_at": "2026-03-22T21:30:00Z",
+    "checker": "fact-check-orchestrator",
+    "total_signals_checked": 29,
+    "verdict_summary": {
+      "CONFIRMED": 18,
+      "PARTIALLY_CONFIRMED": 7,
+      "CONFIRMED_BUT_STALE": 3,
+      "UNVERIFIABLE": 1,
+      "INACCURATE": 0
+    }
+  },
+  "verdicts": [
+    {
+      "signal_id": "20260322-company_announcement-191921-f747f",
+      "lever": "COMPUTE",
+      "title": "llama.cpp b8474 BF16 Flash Attention fix for CUDA",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "The llama.cpp repository confirms release b8474 with CUDA BF16 Flash Attention compilation fix (PR #20865). GitHub release page resolves correctly. BF16 FA CUDA work is well-documented across multiple PRs.",
+      "sources_consulted": [
+        "https://github.com/ggml-org/llama.cpp/releases",
+        "https://github.com/ggml-org/llama.cpp/pull/15261"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260301-twitter-194806-ed429",
+      "lever": "COMPUTE",
+      "title": "Patel: semiconductor fabs now the binding constraint on AI growth",
+      "verdict": "CONFIRMED_BUT_STALE",
+      "fact_check_note": "Patel's Latent Space interview is confirmed and URL resolves. The bottleneck sequence (CoWoS -> data centers/power -> fabs) is accurately represented. SemiAnalysis is confirmed as a ~60-person firm. However, the publication date of 2026-03-01 is outside the 3/15-3/22 window, and the interview itself references analysis from earlier periods. The signal's data_quality_flags already note 'out_of_date_range'.",
+      "sources_consulted": [
+        "https://www.latent.space/p/dylanpatel-cooking",
+        "https://news.futunn.com/en/post/70104367/"
+      ],
+      "issues_found": [
+        {
+          "type": "date_staleness",
+          "detail": "Publication date 2026-03-01 is outside the 2026-03-15 to 2026-03-22 window but within 30-day lookback",
+          "original_text": "",
+          "corrected_text": ""
+        }
+      ]
+    },
+    {
+      "signal_id": "20260305-news_site-160000-la1b2",
+      "lever": "COMPUTE",
+      "title": "OpenAI releases GPT-5.4 with 33% fewer hallucinations",
+      "verdict": "CONFIRMED_BUT_STALE",
+      "fact_check_note": "OpenAI's GPT-5.4 release on March 5, 2026 is confirmed by TechCrunch, OpenAI's own blog, and multiple outlets. The 33% reduction in false claims and 18% fewer error-containing responses versus GPT-5.2 are confirmed. Mini and nano variants confirmed. Publication date of March 5 is outside the 3/15-3/22 window but within 30-day lookback.",
+      "sources_consulted": [
+        "https://techcrunch.com/2026/03/05/openai-launches-gpt-5-4-with-pro-and-thinking-versions/",
+        "https://openai.com/index/introducing-gpt-5-4/"
+      ],
+      "issues_found": [
+        {
+          "type": "date_staleness",
+          "detail": "Publication date 2026-03-05 is outside the 2026-03-15 to 2026-03-22 window but within 30-day lookback",
+          "original_text": "",
+          "corrected_text": ""
+        }
+      ]
+    },
+    {
+      "signal_id": "20260310-news_site-150100-s2t3u",
+      "lever": "COMPUTE",
+      "title": "LeCun's AMI Labs raises $1.03B for world models",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "AMI Labs $1.03B seed round confirmed by TechCrunch, Bloomberg, Crunchbase, and LeCun's own X post. $3.5B pre-money valuation confirmed. Investors include Bezos Expeditions, Cathay Innovation, and others. Note: search results mention HV Capital and Greycroft as lead investors rather than NVIDIA -- the signal's claim that NVIDIA was a backer needs attention but NVIDIA participation is mentioned in some sources. Europe's largest seed round designation confirmed.",
+      "sources_consulted": [
+        "https://techcrunch.com/2026/03/09/yann-lecuns-ami-labs-raises-1-03-billion-to-build-world-models/",
+        "https://x.com/ylecun/status/2031268686984527936",
+        "https://news.crunchbase.com/venture/world-model-ai-lab-ami-raises-europes-largest-seed-round/"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260317-news_site-150200-t3u4v",
+      "lever": "COMPUTE",
+      "title": "Karpathy's AutoResearch runs 700 ML experiments in 2 days",
+      "verdict": "PARTIALLY_CONFIRMED",
+      "fact_check_note": "AutoResearch open-source release confirmed. 700 experiments and 20 optimizations confirmed across Fortune, VentureBeat, MarkTechPost. However, the '2 days' timeframe is imprecise: the Fortune article and other sources describe ~700 experiments in 8 hours (not 2 days), with the agent running experiments continuously. The claim 'not written code manually since December 2025' is confirmed by Fortune (March 21, 2026) where Karpathy states he hasn't typed a line of code since December.",
+      "sources_consulted": [
+        "https://fortune.com/2026/03/17/andrej-karpathy-loop-autonomous-ai-agents-future/",
+        "https://www.marktechpost.com/2026/03/08/andrej-karpathy-open-sources-autoresearch/",
+        "https://fortune.com/2026/03/21/andrej-karpathy-openai-cofounder-ai-agents-coding-state-of-psychosis-openclaw/"
+      ],
+      "issues_found": [
+        {
+          "type": "quantitative_inaccuracy",
+          "detail": "The carousel states '700 ML experiments in two days' but sources indicate ~700 experiments in approximately 8 hours, not 2 days. The Fortune headline says '2 days' but the body describes 8 hours for the core experiment run.",
+          "original_text": "Single-GPU framework discovered 20 training optimizations autonomously.",
+          "corrected_text": "Single-GPU framework discovered 20 training optimizations autonomously."
+        }
+      ]
+    },
+    {
+      "signal_id": "202603-news_site-191838-08c98",
+      "lever": "ENERGY",
+      "title": "Microsoft 20-year nuclear PPA for Three Mile Island restart",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Microsoft's 20-year PPA with Constellation Energy for Three Mile Island Unit 1 restart confirmed by CNBC, World Nuclear News, Utility Dive, and Constellation's own press release. DOE $1 billion loan confirmed by NucNet. BYOG model details confirmed. The plant is now called Crane Clean Energy Center. Constellation investing $1.6B in restart.",
+      "sources_consulted": [
+        "https://www.constellationenergy.com/news/2024/Constellation-to-Launch-Crane-Clean-Energy-Center.html",
+        "https://www.cnbc.com/2024/09/20/constellation-energy-to-restart-three-mile-island-and-sell-the-power-to-microsoft.html",
+        "https://www.nucnet.org/news/constellation-secures-usd1-billion-federal-loann-for-three-mile-island-restart-11-3-2025"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "202603-news_site-191838-fbd04",
+      "lever": "ENERGY",
+      "title": "Meta Hyperion needs 5 GW, three times New Orleans",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Meta's Hyperion data center in Richland Parish, Louisiana confirmed to require up to 5 GW. The 'three times New Orleans' comparison confirmed by Wikipedia, Fortune, and multiple data center publications. Initial 2 GW scaling to 5 GW confirmed. Entergy Louisiana partnership and $1.2B transmission expansion confirmed.",
+      "sources_consulted": [
+        "https://en.wikipedia.org/wiki/Hyperion_(data_center)",
+        "https://fortune.com/2025/08/24/meta-data-center-rural-louisiana-framework-ai-power-boom/",
+        "https://www.datacenterdynamics.com/en/news/meta-forms-27-billion-joint-venture-with-blue-owl/"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260317-news_site-191838-4c4ee",
+      "lever": "ENERGY",
+      "title": "Google's data center power playbook comes into focus",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "TechCrunch article confirmed published March 17, 2026. Google's Clean Transition Tariff, Michigan data center deal with 1 GW capacity, 20-year power contract, and $10M Energy Impact Fund all confirmed. Long-term PPAs and on-site generation strategy confirmed.",
+      "sources_consulted": [
+        "https://techcrunch.com/2026/03/17/googles-data-center-power-playbook-comes-into-focus/",
+        "https://www.bloomberg.com/news/articles/2026-03-18/google-ties-data-center-to-20-year-power-deal-solar-investment"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260318-twitter-194115-f1f4f",
+      "lever": "ENERGY",
+      "title": "Data center capex growth decelerates for first time since 2023",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Wood Mackenzie report confirmed: 25 GW added in Q4 2025 (half prior quarter), capex growth decelerating for first time since 2023, matching only 58% of prior year's growth. Fortune, Bloomberg, and Wood Mackenzie's own press release all confirm. Oracle's behind-the-meter natural gas strategy for Stargate confirmed.",
+      "sources_consulted": [
+        "https://www.woodmac.com/press-releases/newly-added-us-data-center-capacity-slows-down-considerably-in-q4-2025/",
+        "https://fortune.com/2026/03/18/power-grids-snags-electricity-limits-data-centers/",
+        "https://www.bloomberg.com/news/articles/2026-03-16/us-data-center-boom-slows-due-to-power-grid-limits-wood-mackenzie-says"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260322-academic_paper-191910-9aa73",
+      "lever": "SOCIETY",
+      "title": "AI in higher education: chatbots, analytics, and adaptive learning",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Academic paper on Zenodo confirmed via DOI. Published March 16, 2026. The three mechanisms (conversational support, formative assessment, learning analytics) match the abstract. Nano review format confirmed.",
+      "sources_consulted": [
+        "https://doi.org/10.5281/zenodo.18264369"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260322-company_announcement-191921-89347",
+      "lever": "SOCIETY",
+      "title": "Ollama v0.18.2 ships OpenClaw integration and local Claude Code speedups",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Ollama v0.18.2 release confirmed on March 19, 2026. OpenClaw installation optimization (npm/git dependency checks), Claude Code local speedups (cache breakage prevention), websearch plugin registration, and model switching fixes all confirmed. GitHub releases page and Chinese tech coverage corroborate.",
+      "sources_consulted": [
+        "https://github.com/ollama/ollama/releases",
+        "https://www.53ai.com/news/OpenSourceLLM/2026032096254.html"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "2026-news_site-191940-aa9cf",
+      "lever": "SOCIETY",
+      "title": "Deloitte: 84% of firms have not redesigned jobs or workflows for AI",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Deloitte's 2026 'State of AI in the Enterprise' report confirmed. The 84% statistic is confirmed across Deloitte's official press release and multiple outlets. Survey of 3,000+ director-to-C-suite leaders confirmed. The report's finding that fewer than half adjusted talent strategies is consistent with search results.",
+      "sources_consulted": [
+        "https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html",
+        "https://www.unite.ai/state-of-ai-in-the-enterprise-2026-deloitte-maps-the-untapped-edge-of-enterprise-ai/"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20250609-twitter-193320-8ef8c",
+      "lever": "SOCIETY",
+      "title": "11 ways AI projects die before launch: operational, not technical",
+      "verdict": "CONFIRMED_BUT_STALE",
+      "fact_check_note": "Santiago Valdarrama's X post confirmed at the exact URL. The 11 failure modes match the signal description. Audience of 600K+ followers confirmed via his website. However, publication date is June 9, 2025, which is well outside the 2026-03-15 to 2026-03-22 window and outside the 30-day lookback. The data_quality_flags already note 'out_of_date_range'.",
+      "sources_consulted": [
+        "https://x.com/svpino/status/1931973038150713721",
+        "https://www.svpino.com/collaborations/"
+      ],
+      "issues_found": [
+        {
+          "type": "date_staleness",
+          "detail": "Publication date June 9, 2025 is over 9 months outside the report window. This is a notable staleness issue even with the 30-day lookback allowance.",
+          "original_text": "",
+          "corrected_text": ""
+        }
+      ]
+    },
+    {
+      "signal_id": "20260322-academic_paper-191910-cb059",
+      "lever": "SOCIETY",
+      "title": "ML models predict groundwater dynamics in stressed watersheds",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Academic paper confirmed via DOI in Environmental Earth Sciences journal. Published March 17, 2026. Shahrekord University and Isfahan University of Technology confirmed as institutions. Paper applies ML to groundwater prediction in the Khanmirza watershed. Note: the domain tag says 'healthcare' but the paper is in environmental/earth sciences -- a minor classification issue in the raw data, not a fact-check failure.",
+      "sources_consulted": [
+        "https://doi.org/10.1007/s12665-025-12801-4"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260322-company_announcement-191921-8e25b",
+      "lever": "INDUSTRY",
+      "title": "LiteLLM v1.82.6 fixes cross-provider routing for Anthropic and Gemini",
+      "verdict": "PARTIALLY_CONFIRMED",
+      "fact_check_note": "LiteLLM releases around v1.82.x confirmed on GitHub. The Anthropic thinking.summary routing fix and Gemini image token fix are confirmed in the raw changelog data. However, the specific version 'v1.82.6-nightly' could not be independently verified as the exact release tag -- search results show v1.82.3-stable and v1.82.0-stable but not v1.82.6 specifically. The editorial headline 'fixes cross-provider routing' is a fair characterization of the thinking.summary routing between Claude and OpenAI Responses API.",
+      "sources_consulted": [
+        "https://github.com/BerriAI/litellm/releases",
+        "https://docs.litellm.ai/release_notes"
+      ],
+      "issues_found": [
+        {
+          "type": "version_unverifiable",
+          "detail": "The exact release tag v1.82.6-nightly could not be independently confirmed via search; closest confirmed versions are v1.82.3-stable and v1.82.0-stable. The source URL points to GitHub which should resolve.",
+          "original_text": "",
+          "corrected_text": ""
+        }
+      ]
+    },
+    {
+      "signal_id": "20260322-company_announcement-191921-381bd",
+      "lever": "INDUSTRY",
+      "title": "LangChain Core 1.2.20 hardens SSRF protection, adds LangSmith metadata",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "LangChain Core 1.2.20 is confirmed on PyPI. SSRF hardening (anti-SSRF feature in commit referenced in raw_content) and LangSmith integration metadata features confirmed. The raw_content in the signal matches the actual changelog entries.",
+      "sources_consulted": [
+        "https://github.com/langchain-ai/langchain/releases",
+        "https://pypi.org/project/langchain-core/"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260322-company_announcement-191921-0f6c2",
+      "lever": "INDUSTRY",
+      "title": "CrewAI 1.11.0 adds plan-execute pattern and A2A enterprise auth",
+      "verdict": "PARTIALLY_CONFIRMED",
+      "fact_check_note": "CrewAI 1.11.0rc1 confirmed on GitHub and PyPI. The plan-execute pattern feature and Plus API token authentication for A2A enterprise are confirmed in the release notes. However, this is a release candidate (rc1), not a stable release. The editorial headline presents it as a shipped feature when it is pre-release software.",
+      "sources_consulted": [
+        "https://github.com/crewAIInc/crewAI/releases",
+        "https://pypi.org/project/crewai/"
+      ],
+      "issues_found": [
+        {
+          "type": "editorial_overstatement",
+          "detail": "The signal correctly notes 'Pre-release' in key_facts but the editorial headline 'CrewAI 1.11.0 adds...' omits the rc1 designation, implying a stable release.",
+          "original_text": "CrewAI 1.11.0 adds plan-execute pattern and A2A enterprise auth",
+          "corrected_text": "CrewAI 1.11.0rc1 adds plan-execute pattern and A2A enterprise auth"
+        }
+      ]
+    },
+    {
+      "signal_id": "20260322-company_announcement-191921-94af3",
+      "lever": "INDUSTRY",
+      "title": "Anthropic SDK v0.86.0 ships filesystem memory tools",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Anthropic SDK Python v0.86.0 confirmed released March 18, 2026. Filesystem memory tools feature confirmed (PR #1247, commit 235d218). Other fixes including AsyncAnthropic error handling confirmed. GitHub releases page and PyPI both confirm.",
+      "sources_consulted": [
+        "https://github.com/anthropics/anthropic-sdk-python/releases",
+        "https://pypi.org/project/anthropic/"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260317-news_site-143300-d4e5f",
+      "lever": "INDUSTRY",
+      "title": "Nadella splits Copilot product from Suleyman's superintelligence mission",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Microsoft Copilot restructuring confirmed by CNBC, Microsoft's official blog, GeekWire, The Register. Jacob Andreou (ex-Snap SVP) confirmed as new Copilot leader. Suleyman's refocus on superintelligence confirmed via his own memo. March 17, 2026 date confirmed. Nadella's 'doubling down on superintelligence' framing confirmed.",
+      "sources_consulted": [
+        "https://blogs.microsoft.com/blog/2026/03/17/announcing-copilot-leadership-update/",
+        "https://www.cnbc.com/2026/03/17/microsoft-copilot-ai-suleyman.html",
+        "https://www.geekwire.com/2026/microsoft-revamps-copilot-structure/"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "202602-news_site-191933-4400b",
+      "lever": "CAPITAL",
+      "title": "$220B in AI startup funding in two months. Four firms took 83%.",
+      "verdict": "PARTIALLY_CONFIRMED",
+      "fact_check_note": "The $220B total for Jan-Feb 2026 is confirmed by EE News Europe, Electronics Weekly, and Crunchbase. However, the headline claim 'Four firms took 83%' is inaccurate. Per Crunchbase and other sources, three firms (OpenAI $110B, Anthropic $30B, Waymo $16B) captured 83% of February's global VC. xAI's $20B was in January. The editorial conflates January and February concentration ratios. Additionally, the $189B February figure from Crunchbase means three firms took 83% of February alone, not of the combined two months.",
+      "sources_consulted": [
+        "https://www.eenewseurope.com/en/ai-startup-funding-hits-220-billion-in-two-months/",
+        "https://news.crunchbase.com/venture/record-setting-global-funding-february-2026-openai-anthropic/"
+      ],
+      "issues_found": [
+        {
+          "type": "quantitative_inaccuracy",
+          "detail": "Editorial headline says 'Four firms took 83%' but the 83% figure applies to three firms in February only (OpenAI, Anthropic, Waymo). xAI's round was in January. The signal correctly lists the four companies but the 83% concentration ratio is specific to the three February deals.",
+          "original_text": "$220B in AI startup funding in two months. Four firms took 83%.",
+          "corrected_text": "$220B in AI startup funding in two months. Three firms took 83% of February's global VC."
+        }
+      ]
+    },
+    {
+      "signal_id": "202601-news_site-191933-19c07",
+      "lever": "CAPITAL",
+      "title": "xAI raises $20B at $200B+ valuation from NVIDIA, Cisco, Fidelity",
+      "verdict": "PARTIALLY_CONFIRMED",
+      "fact_check_note": "xAI's $20B Series E raise confirmed by CNBC, Bloomberg, Yahoo Finance. Investors NVIDIA, Cisco, Fidelity confirmed alongside Qatar Investment Authority, MGX, Baron Capital, and others. However, the valuation was approximately $230B (not '$200B+' as stated). The $200B figure was xAI's valuation from the September 2025 round. The January 2026 round valued xAI at ~$230B post-money.",
+      "sources_consulted": [
+        "https://www.cnbc.com/2026/01/06/elon-musk-xai-raises-20-billion-from-nvidia-cisco-investors.html",
+        "https://www.bloomberg.com/news/articles/2026-01-06/musk-s-xai-closed-20-billion-funding-round-with-nvidia-backing",
+        "https://techfundingnews.com/xai-nears-a-230b-valuation-with-20b-funding-from-nvidia-and-others/"
+      ],
+      "issues_found": [
+        {
+          "type": "quantitative_inaccuracy",
+          "detail": "Signal and editorial state '$200B+ valuation' but the January 2026 round valued xAI at approximately $230B. The $200B figure was from the prior September 2025 round.",
+          "original_text": "xAI raises $20B at $200B+ valuation from NVIDIA, Cisco, Fidelity",
+          "corrected_text": "xAI raises $20B at ~$230B valuation from NVIDIA, Cisco, Fidelity"
+        }
+      ]
+    },
+    {
+      "signal_id": "20260317-news_site-143500-f6g7h",
+      "lever": "CAPITAL",
+      "title": "Jassy doubles AWS revenue forecast to $600B by 2036 on AI demand",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Andy Jassy's forecast confirmed by SiliconANGLE, Reuters, and multiple outlets. $600B annual run rate by 2036 (doubled from $300B prior estimate). AWS FY2025 revenue of $128.7B confirmed. $200B in planned AI capex confirmed. Announcement made at internal all-hands meeting on March 17, 2026.",
+      "sources_consulted": [
+        "https://siliconangle.com/2026/03/17/amazon-ceo-andy-jassy-forecasts-cloud-revenue-hit-600b-2036-thanks-ai/",
+        "https://www.investing.com/news/stock-market-news/amazon-ceo-sees-ai-doubling-his-prior-aws-sales-projections-to-600-billion-by-2036-4566479"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260315-news_site-143900-j0k1l",
+      "lever": "CAPITAL",
+      "title": "Pichai commits $15B to build gigawatt-scale AI hub in India",
+      "verdict": "PARTIALLY_CONFIRMED",
+      "fact_check_note": "Pichai's $15B investment in Visakhapatnam confirmed. Gigawatt-scale compute and subsea cable gateway confirmed. However, the signal states 'Announced at AI Impact Summit 2026 in New Delhi' with publication_date 2026-03-15, but the AI Impact Summit actually took place February 16-21, 2026. Pichai's keynote was on February 19. The signal's publication date and the implication it falls within the 3/15-3/22 window is inaccurate -- the announcement was made nearly a month earlier.",
+      "sources_consulted": [
+        "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+        "https://indiacurrents.com/sundar-pichai-announces-15-billion-ai-investment-in-visakhapatnam/",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2234343"
+      ],
+      "issues_found": [
+        {
+          "type": "date_inaccuracy",
+          "detail": "The AI Impact Summit 2026 was held February 16-21, 2026, not in mid-March. Pichai's keynote was February 19. Signal publication_date of 2026-03-15 does not match the actual event date.",
+          "original_text": "Announced at AI Impact Summit 2026 in New Delhi",
+          "corrected_text": "Announced at AI Impact Summit 2026 in New Delhi (February 19, 2026)"
+        }
+      ]
+    },
+    {
+      "signal_id": "202603-news_site-191933-36f29",
+      "lever": "CAPITAL",
+      "title": "Hamilton AI raises $7.5M seed for vertical AI in private aviation",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Hamilton AI's $7.5M seed round confirmed by GlobeNewsWire, The SaaS News, Yahoo Finance, and PitchBook. TTV Capital as lead investor confirmed. Co-investors Bling Capital, Cambrian Ventures, FJ Labs, Weekend Fund, Mintaka Ventures, Correlation Ventures, HF0 all confirmed. March 19, 2026 announcement date confirmed. Private aviation vertical confirmed.",
+      "sources_consulted": [
+        "https://www.globenewswire.com/news-release/2026/03/19/3259301/0/en/Hamilton-AI-Raises-7-5M-Seed-Round.html",
+        "https://www.thesaasnews.com/news/hamilton-ai-raises-7-5m-seed-round"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260320-news_site-161000-p1q2r",
+      "lever": "GOV",
+      "title": "White House releases six-principle AI framework, urges federal preemption",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "White House AI legislative framework confirmed by US News, Roll Call, Fox News, Nextgov, and multiple outlets. Six principles confirmed: protect children, prevent energy cost surges, respect IP, prevent censorship, enable innovation, educate workforce. Federal preemption of state AI laws confirmed. David Sacks' role confirmed. March 20, 2026 date confirmed. No new federal rulemaking body confirmed.",
+      "sources_consulted": [
+        "https://www.usnews.com/news/politics/articles/2026-03-20/white-house-releases-ai-policy-framework-for-congress-with-six-guiding-principles",
+        "https://rollcall.com/2026/03/20/white-house-ai-framework-calls-for-preemption-of-state-laws/"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260322-news_site-192001-2c6e5",
+      "lever": "GOV",
+      "title": "EU AI Act high-risk compliance deadline: August 2, 2026",
+      "verdict": "PARTIALLY_CONFIRMED",
+      "fact_check_note": "The August 2, 2026 deadline for high-risk AI system compliance is confirmed. Penalty tiers confirmed. However, the penalty range stated in the signal ('EUR 7.5 million to EUR 35 million') is imprecise. The actual structure is: up to EUR 35M (7% turnover) for prohibited practices, up to EUR 15M (3% turnover) for high-risk non-compliance, and EUR 7.5M (1.5% turnover) for incorrect information. The signal conflates the lowest and highest tiers. Additionally, MEPs are proposing to postpone some high-risk rules to December 2027, which may change this deadline.",
+      "sources_consulted": [
+        "https://secureprivacy.ai/blog/eu-ai-act-2026-compliance",
+        "https://artificialintelligenceact.eu/article/99/",
+        "https://ai2.work/economics/eu-ai-act-high-risk-rules-hit-august-2026-your-compliance-countdown/"
+      ],
+      "issues_found": [
+        {
+          "type": "editorial_imprecision",
+          "detail": "The penalty range 'EUR 7.5 million to EUR 35 million' conflates different violation tiers. EUR 35M is for prohibited practices, EUR 15M for high-risk non-compliance, and EUR 7.5M for incorrect information.",
+          "original_text": "Penalties range from EUR 7.5M to EUR 35M.",
+          "corrected_text": "Penalties range from EUR 7.5M (1.5% turnover, incorrect info) to EUR 15M (3%, high-risk non-compliance) to EUR 35M (7%, prohibited practices)."
+        }
+      ]
+    },
+    {
+      "signal_id": "20260322-news_site-192001-41c16",
+      "lever": "GOV",
+      "title": "China's Supreme Court expedites AI legislation during Two Sessions",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "Confirmed via IAPP, South China Morning Post, and multiple outlets. Supreme Court announced expedited legislative process for AI laws. Courts committed to handling more AI-related cases. Open-source AI infrastructure support confirmed. Training data legality and AI-generated content originality judicial policies confirmed.",
+      "sources_consulted": [
+        "https://iapp.org/news/a/notes-from-the-asia-pacific-region-china-s-two-sessions-looks-to-country-s-ai-future",
+        "https://www.scmp.com/news/china/politics/article/3345999/chinas-top-court-says-it-treats-ai-cases-care-without-stifling-growth-or-innovation"
+      ],
+      "issues_found": []
+    },
+    {
+      "signal_id": "20260316-news_site-192001-e103b",
+      "lever": "GOV",
+      "title": "MEPs vote shorter EU AI Act delay: November 2026 instead of February 2027",
+      "verdict": "UNVERIFIABLE",
+      "fact_check_note": "MEPs' support for postponement is confirmed by European Parliament's official press release. However, the November 2, 2026 date specifically applies to watermarking rules on AI-created content, not all high-risk rules. For high-risk AI systems, MEPs actually proposed December 2, 2027 (not November 2026). The signal conflates the watermarking postponement with the broader high-risk rules discussion. The editorial implication that this is a 'shorter delay' is only accurate for the specific watermarking provision.",
+      "sources_consulted": [
+        "https://www.europarl.europa.eu/news/en/press-room/20260316IPR38219/meps-support-postponement-of-certain-rules-on-artificial-intelligence",
+        "https://ieu-monitoring.com/editorial/meps-back-ai-act-simplification/"
+      ],
+      "issues_found": [
+        {
+          "type": "conflation",
+          "detail": "The November 2, 2026 date applies specifically to watermarking/transparency rules, not all high-risk AI rules. MEPs proposed December 2, 2027 for Annex III high-risk systems and August 2, 2028 for sectoral high-risk systems.",
+          "original_text": "MEPs vote shorter EU AI Act delay: November 2026 instead of February 2027",
+          "corrected_text": "MEPs vote shorter delay on EU AI Act watermarking rules: November 2026 instead of February 2027"
+        }
+      ]
+    },
+    {
+      "signal_id": "20260320-news_site-192001-f8a48",
+      "lever": "GOV",
+      "title": "SB 3001 passes: AI disclosure and safety rules for minors clear committee 6-0",
+      "verdict": "CONFIRMED",
+      "fact_check_note": "SB 3001 confirmed via Transparency Coalition, Maui Now, and Troutman privacy law blog. Passed Senate March 10, approved by House Committee on Economic and Community Development March 18 with 6-0 vote. Disclosure requirements, anti-suicidal ideation protocols, and minor protections confirmed. This is Hawaii state legislation (Artificial Intelligence Disclosure and Safety Act).",
+      "sources_consulted": [
+        "https://www.transparencycoalition.ai/news/ai-legislative-update-march20-2026",
+        "https://mauinow.com/2026/02/11/bill-advances-for-disclosure-and-safeguards-on-conversational-ai-services-in-hawai%CA%BBi/"
+      ],
+      "issues_found": []
+    }
+  ],
+  "remediation_actions": [
+    {
+      "action_id": 1,
+      "signal_id": "20260317-news_site-150200-t3u4v",
+      "lever": "COMPUTE",
+      "type": "add_fact_check_annotation",
+      "description": "Add fact_check_status PARTIALLY_CONFIRMED to Karpathy AutoResearch signal. The '2 days' timeframe is imprecise (sources indicate ~8 hours for core run)."
+    },
+    {
+      "action_id": 2,
+      "signal_id": "202602-news_site-191933-4400b",
+      "lever": "CAPITAL",
+      "type": "correct_editorial_text",
+      "description": "Correct '4 firms took 83%' to '3 firms took 83% of February VC'. The 83% figure applies to three February deals only."
+    },
+    {
+      "action_id": 3,
+      "signal_id": "202601-news_site-191933-19c07",
+      "lever": "CAPITAL",
+      "type": "correct_valuation",
+      "description": "Correct xAI valuation from '$200B+' to '~$230B'. The $200B figure was from September 2025, not January 2026."
+    },
+    {
+      "action_id": 4,
+      "signal_id": "20260315-news_site-143900-j0k1l",
+      "lever": "CAPITAL",
+      "type": "correct_date",
+      "description": "Note that AI Impact Summit was February 16-21, 2026, not mid-March. Publication_date of 2026-03-15 does not match actual event date."
+    },
+    {
+      "action_id": 5,
+      "signal_id": "20260322-company_announcement-191921-0f6c2",
+      "lever": "INDUSTRY",
+      "type": "add_rc_designation",
+      "description": "Note that CrewAI 1.11.0rc1 is a release candidate, not a stable release."
+    },
+    {
+      "action_id": 6,
+      "signal_id": "20260322-news_site-192001-2c6e5",
+      "lever": "GOV",
+      "type": "correct_penalty_range",
+      "description": "Clarify that EUR 35M is for prohibited practices, EUR 15M for high-risk non-compliance, EUR 7.5M for incorrect information."
+    },
+    {
+      "action_id": 7,
+      "signal_id": "20260316-news_site-192001-e103b",
+      "lever": "GOV",
+      "type": "correct_scope",
+      "description": "Clarify that November 2026 postponement applies to watermarking rules specifically, not all high-risk AI rules."
+    }
+  ]
+}

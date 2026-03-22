@@ -7,7 +7,7 @@ allowed-tools: Bash, Read, Agent, WebSearch, Write
 
 # Brew Espresso — Full Research Collection
 
-Run all 7 espresso·ai research collectors in parallel for a given cadence. Skips collectors whose API keys are not configured. Presents a unified summary when complete.
+Run all 9 espresso·ai research collectors in parallel for a given cadence. Skips collectors whose API keys are not configured. Presents a unified summary when complete.
 
 ## Arguments
 
@@ -55,6 +55,7 @@ python3 -c "
 from dotenv import load_dotenv; load_dotenv('.env/.env'); import os
 print('ANTHROPIC_API_KEY=' + ('SET' if os.getenv('ANTHROPIC_API_KEY') else 'MISSING'))
 print('PERPLEXITY_API_KEY=' + ('SET' if os.getenv('PERPLEXITY_API_KEY') else 'MISSING'))
+print('EIA_API_KEY=' + ('SET' if os.getenv('EIA_API_KEY') else 'MISSING'))
 "
 ```
 
@@ -68,6 +69,10 @@ Based on results, determine which collectors to **run** vs **skip**:
 | X / Perplexity | `PERPLEXITY_API_KEY` | No |
 | Reddit / Claude | `ANTHROPIC_API_KEY` | No |
 | Reddit / Perplexity | `PERPLEXITY_API_KEY` | No |
+| GitHub | None (optional `GITHUB_TOKEN`) | Yes |
+| Regulatory | `ANTHROPIC_API_KEY` | No (Federal Register always runs; Claude web search requires key) |
+| EIA Energy | `EIA_API_KEY` (free registration) | No |
+| OpenAlex | None | Yes |
 | Influencer | None (uses WebSearch) | Yes |
 
 If any collectors will be skipped, tell the user which ones and why, then proceed with the available collectors.
@@ -106,6 +111,11 @@ Use these specific parameters per collector:
 | `x-perplexity-collector` | `collect_x_perplexity_signals.py` | 300000 |
 | `reddit-claude-collector` | `collect_reddit_claude_signals.py` | 600000 |
 | `reddit-perplexity-collector` | `collect_reddit_perplexity_signals.py` | 300000 |
+| `github-collector` | `collect_github_signals.py` | 120000 |
+| `regulatory-collector` | `collect_regulatory_signals.py` | 120000 |
+| `edgar-collector` | `collect_edgar_signals.py` | 120000 |
+| `eia-collector` | `collect_eia_signals.py` | 120000 |
+| `openalex-collector` | `collect_openalex_signals.py` | 120000 |
 
 ### Influencer collector
 
@@ -147,9 +157,14 @@ After all agents return, present a single consolidated summary:
 | X / Perplexity | success | NN | LEVER |
 | Reddit / Claude | success | NN | LEVER |
 | Reddit / Perplexity | success | NN | LEVER |
+| GitHub | success | NN | LEVER |
+| Regulatory | success | NN | LEVER |
+| EDGAR | success | NN | LEVER |
+| EIA Energy | success | NN | LEVER |
+| OpenAlex | success | NN | LEVER |
 | Influencer | success | NN | LEVER |
 
-**Total signals:** NNN across N/7 sources
+**Total signals:** NNN across N/12 sources
 
 ### Aggregate Lever Distribution
 
@@ -182,7 +197,7 @@ After all agents return, present a single consolidated summary:
 - `research_db/raw/{file2}`
 - ...
 
-**Next step:** Run `/weekly-carousel` to synthesize these signals into a LinkedIn carousel.
+**Next step:** Run `/carousel {cadence}` to synthesize these signals into a LinkedIn carousel.
 ```
 
 Compute aggregate distributions by summing across all successful collectors. Calculate shares as percentages of total signals.

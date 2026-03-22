@@ -1,0 +1,86 @@
+{
+  "pipeline_run_id": "2026-03-21_weekly_49496872",
+  "collection_batch_id": "batch_20260321_2021",
+  "cadence": "weekly",
+  "source": "regulatory_government",
+  "started_at": "2026-03-21T20:21:52Z",
+  "completed_at": "2026-03-21T20:29:10Z",
+  "date_range": {
+    "start": "2026-03-14",
+    "end": "2026-03-21"
+  },
+  "test_mode": false,
+  "source_filter": null,
+  "total_results_raw": 56,
+  "duplicates_removed": 5,
+  "records_written": 51,
+  "jurisdiction_distribution": {
+    "us_federal": 36,
+    "eu": 6,
+    "international": 3,
+    "china": 6
+  },
+  "document_type_distribution": {
+    "notice": 19,
+    "executive_order": 1,
+    "proposed_rule": 10,
+    "regulation": 5,
+    "framework": 6,
+    "bill": 5,
+    "guidance": 3,
+    "standard": 2
+  },
+  "source_distribution": {
+    "federal_register": 27,
+    "claude_web_search": 24
+  },
+  "direction_distribution": {
+    "~": 45,
+    "+": 5,
+    "?": 1
+  },
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-14_2026-03-21_regulatory_weekly_signals.jsonl",
+  "api_usage": {
+    "model": "claude-sonnet-4-6",
+    "total_input_tokens": 278358,
+    "total_output_tokens": 14821,
+    "max_web_searches_per_group": 5,
+    "estimated_cost_usd": 1.0574,
+    "group_stats": [
+      {
+        "group_name": "congress",
+        "input_tokens": 52910,
+        "output_tokens": 3778,
+        "signals_parsed": 6,
+        "estimated_cost_usd": 0.2154
+      },
+      {
+        "group_name": "eu",
+        "input_tokens": 74691,
+        "output_tokens": 3666,
+        "signals_parsed": 6,
+        "estimated_cost_usd": 0.2791
+      },
+      {
+        "group_name": "uk_intl",
+        "input_tokens": 80067,
+        "output_tokens": 3718,
+        "signals_parsed": 6,
+        "estimated_cost_usd": 0.296
+      },
+      {
+        "group_name": "china",
+        "input_tokens": 70690,
+        "output_tokens": 3659,
+        "signals_parsed": 6,
+        "estimated_cost_usd": 0.267
+      }
+    ]
+  },
+  "quality_metrics": {
+    "unknown_domain_count": 12,
+    "missing_url_count": 0,
+    "out_of_date_count": 15,
+    "indirect_source_count": 24
+  }
+}

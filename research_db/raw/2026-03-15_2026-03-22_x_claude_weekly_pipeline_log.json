@@ -1,0 +1,120 @@
+{
+  "pipeline_run_id": "2026-03-15_2026-03-22_x_claude_weekly_1a75cb4a",
+  "collection_batch_id": "batch_20260322_1918",
+  "cadence": "weekly",
+  "source": "x_twitter_via_claude",
+  "date_window": {
+    "start": "2026-03-15",
+    "end": "2026-03-22"
+  },
+  "started_at": "2026-03-22T19:18:53Z",
+  "completed_at": "2026-03-22T19:48:06Z",
+  "queries_executed": 6,
+  "accounts_tracked": 28,
+  "accounts_with_signals": 21,
+  "signals_collected": 46,
+  "duplicates_removed": 2,
+  "signals_written": 44,
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-15_2026-03-22_x_claude_weekly_signals.jsonl",
+  "api_usage": {
+    "model": "claude-sonnet-4-6",
+    "total_input_tokens": 545463,
+    "total_output_tokens": 29855,
+    "max_web_searches_per_group": 5,
+    "estimated_cost_usd": 2.0842,
+    "group_stats": [
+      {
+        "group_name": "ai_lab_leaders",
+        "input_tokens": 109965,
+        "output_tokens": 5078,
+        "signals_parsed": 8,
+        "estimated_cost_usd": 0.4061
+      },
+      {
+        "group_name": "researchers",
+        "input_tokens": 90289,
+        "output_tokens": 5862,
+        "signals_parsed": 8,
+        "estimated_cost_usd": 0.3588
+      },
+      {
+        "group_name": "policy_safety",
+        "input_tokens": 100914,
+        "output_tokens": 5555,
+        "signals_parsed": 8,
+        "estimated_cost_usd": 0.3861
+      },
+      {
+        "group_name": "industry_enterprise",
+        "input_tokens": 64446,
+        "output_tokens": 3232,
+        "signals_parsed": 5,
+        "estimated_cost_usd": 0.2418
+      },
+      {
+        "group_name": "capital_infrastructure",
+        "input_tokens": 93747,
+        "output_tokens": 4901,
+        "signals_parsed": 8,
+        "estimated_cost_usd": 0.3548
+      },
+      {
+        "group_name": "journalists_analysts",
+        "input_tokens": 86102,
+        "output_tokens": 5227,
+        "signals_parsed": 9,
+        "estimated_cost_usd": 0.3367
+      }
+    ]
+  },
+  "quality_metrics": {
+    "direct_post_count": 8,
+    "indirect_source_count": 36,
+    "unattributed_count": 0,
+    "unknown_domain_count": 29,
+    "aggregator_title_count": 0,
+    "out_of_date_count": 13,
+    "missing_url_count": 0,
+    "url_not_in_citations_count": 44,
+    "direction_distribution": {
+      "+": 10,
+      "-": 0,
+      "~": 20,
+      "?": 14
+    },
+    "lever_distribution": {
+      "COMPUTE": 15,
+      "GOV": 8,
+      "SOCIETY": 9,
+      "INDUSTRY": 6,
+      "CAPITAL": 4,
+      "ENERGY": 2
+    },
+    "account_distribution": {
+      "sama": 4,
+      "DarioAmodei": 2,
+      "demishassabis": 1,
+      "satyanadella": 1,
+      "ylecun": 2,
+      "karpathy": 3,
+      "DrJimFan": 2,
+      "fchollet": 1,
+      "mustafasuleyman": 2,
+      "jackclarkSF": 2,
+      "timnitGebru": 1,
+      "GaryMarcus": 3,
+      "bindureddy": 3,
+      "emad": 1,
+      "svpino": 1,
+      "naval": 4,
+      "saranormous": 1,
+      "eladgil": 1,
+      "datacenterdynamics": 2,
+      "karaswisher": 2,
+      "CaseyNewton": 1,
+      "zoeschiffer": 2,
+      "dyaborlanpatel": 1,
+      "EmanuelMaiberg": 1
+    }
+  }
+}

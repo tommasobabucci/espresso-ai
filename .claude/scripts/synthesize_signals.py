@@ -35,7 +35,7 @@ VALID_DIRECTIONS = {"+", "-", "~", "?"}
 LEVER_ORDER = ["COMPUTE", "ENERGY", "SOCIETY", "INDUSTRY", "CAPITAL", "GOV"]
 
 # Signals per lever in the carousel
-SIGNALS_PER_LEVER = 5
+SIGNALS_PER_LEVER = 7
 
 # Stopwords for title similarity
 STOPWORDS = {
@@ -523,13 +523,49 @@ def write_outputs(
     for lever in LEVER_ORDER:
         records_for_lever = lever_records.get(lever, [])
         breakdown = compute_direction_breakdown(records_for_lever)
+
+        # Sub-variable distribution for signal depth line
+        sub_var_counts: dict[str, int] = defaultdict(int)
+        for r in records_for_lever:
+            sv = r.get("sub_variable", "")
+            if sv:
+                sub_var_counts[sv] += 1
+        top_sub_vars = sorted(
+            sub_var_counts.items(), key=lambda x: x[1], reverse=True
+        )[:3]
+
+        selected_count = len(selections.get(lever, []))
+
+        # Next-ranked signals for depth line editorial context
+        all_lever_sorted = sorted(
+            records_for_lever,
+            key=lambda r: (
+                r.get("signal_strength", 0),
+                r.get("_corroboration_count", 1),
+            ),
+            reverse=True,
+        )
+        unselected_context = [
+            {
+                "title": clean_record_for_output(s).get("title", ""),
+                "summary": clean_record_for_output(s).get("summary", ""),
+                "sub_variable": s.get("sub_variable", ""),
+                "direction": s.get("direction", ""),
+                "source_name": s.get("source_name", ""),
+            }
+            for s in all_lever_sorted[selected_count:selected_count + 10]
+        ]
+
         lever_summaries[lever] = {
             "signal_count": len(records_for_lever),
             "direction_breakdown": breakdown,
             "dominant_direction": dominant_direction(breakdown),
+            "top_sub_variables": [sv for sv, _ in top_sub_vars],
+            "unselected_count": len(records_for_lever) - selected_count,
             "top_signals": [
                 clean_record_for_output(s) for s in selections.get(lever, [])
             ],
+            "unselected_context": unselected_context,
         }
 
     # Overall stats

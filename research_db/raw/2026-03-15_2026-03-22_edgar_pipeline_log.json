@@ -1,0 +1,38 @@
+{
+  "pipeline_run_id": "2026-03-22_weekly_0a94b330",
+  "collection_batch_id": "batch_20260322_1918",
+  "cadence": "weekly",
+  "source": "sec_edgar",
+  "started_at": "2026-03-22T19:18:55Z",
+  "completed_at": "2026-03-22T19:19:05Z",
+  "date_range": {
+    "start": "2026-03-15",
+    "end": "2026-03-22"
+  },
+  "test_mode": false,
+  "total_results_raw": 7,
+  "duplicates_removed": 4,
+  "records_written": 3,
+  "form_type_distribution": {
+    "10-K": 1,
+    "8-K": 2
+  },
+  "lever_distribution": {
+    "INDUSTRY": 2,
+    "CAPITAL": 1
+  },
+  "direction_distribution": {
+    "~": 3
+  },
+  "company_distribution": {
+    "Snowflake": 1,
+    "Amazon": 1,
+    "Salesforce": 1
+  },
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-15_2026-03-22_edgar_weekly_signals.jsonl",
+  "quality_metrics": {
+    "missing_url_count": 0,
+    "ai_content_inferred_count": 2,
+    "out_of_date_count": 0
+  }
+}

@@ -1,34 +1,51 @@
 ---
-name: weekly-carousel
-description: Synthesize raw signals into a weekly LinkedIn carousel. Deduplicates across sources, scores signals, selects top 5 per lever, writes editorial content in espresso·ai voice, and generates the final 7-slide HTML carousel.
-argument-hint: [--start-date YYYY-MM-DD] [--end-date YYYY-MM-DD]
+name: carousel
+description: Synthesize raw signals into a LinkedIn carousel for any cadence (daily, weekly, monthly, quarterly, annual). Deduplicates across sources, scores signals, selects top 5 per lever, writes editorial content in espresso·ai voice, and generates the final 8-slide HTML carousel.
+argument-hint: [daily|weekly|monthly|quarterly|annual] [--start-date YYYY-MM-DD] [--end-date YYYY-MM-DD]
 allowed-tools: Bash, Read, Write
 ---
 
-# Weekly Carousel — Signal Synthesis & Output Generation
+# Carousel — Signal Synthesis & Output Generation
 
-Synthesize raw JSONL signals into a publication-ready weekly LinkedIn carousel (7 slides, 1080x1080px).
+Synthesize raw JSONL signals into a publication-ready LinkedIn carousel (8 slides, 1080x1350px) for any cadence.
 
 ## Arguments
 
-**--start-date** (optional): Start of the reporting window. Defaults to 7 days before today.
+**cadence** (required, positional): First argument. Must be one of: `daily`, `weekly`, `monthly`, `quarterly`, `annual`.
+
+**--start-date** (optional): Start of the reporting window. Defaults to cadence-specific lookback from today.
 
 **--end-date** (optional): End of the reporting window. Defaults to today.
 
+## Cadence Configuration
+
+This table defines all cadence-specific values. Only the cover slide changes — lever slides are identical across cadences.
+
+| Cadence | Nav Right Text | Date Eyebrow Format | Section Label | Default Lookback |
+|---|---|---|---|---|
+| daily | `A strong sip of today's AI news` | `{Month} {DD}, {YYYY}` | `Today` | 1 day |
+| weekly | `A strong sip of this week's AI news` | `Week of {Month} {DD}–{DD}, {YYYY}` | `This Week` | 7 days |
+| monthly | `A strong sip of this month's AI news` | `{Month} {YYYY}` | `This Month` | 31 days |
+| quarterly | `A strong sip of this quarter's AI news` | `Q{N} {YYYY}` | `This Quarter` | 92 days |
+| annual | `A strong sip of this year's AI news` | `{YYYY}` | `This Year` | 366 days |
+
+**Quarterly eyebrow logic:** If start_date is in Jan–Mar → Q1, Apr–Jun → Q2, Jul–Sep → Q3, Oct–Dec → Q4.
+
 ## Step 1: Validate Arguments & Compute Date Window
 
-Parse `$ARGUMENTS` for `--start-date` and `--end-date`.
+Parse `$ARGUMENTS` for cadence (first positional arg), `--start-date`, and `--end-date`.
 
-- If not provided, compute from today's date: `end_date = today`, `start_date = today - 7 days`
-- Validate format is `YYYY-MM-DD`
-- Set `CADENCE = weekly`
+- Cadence is **required**. If missing or invalid, **stop** and report: `"Please specify a cadence: /carousel daily|weekly|monthly|quarterly|annual"`
+- If dates not provided, compute from today's date: `end_date = today`, `start_date = today - {lookback days from cadence table}`
+- Validate date format is `YYYY-MM-DD`
+- Set `CADENCE` from the validated argument
 
 ## Step 2: Pre-flight Checks
 
 Verify:
 1. The synthesis script exists: `.claude/scripts/synthesize_signals.py`
 2. Raw JSONL files exist in `research_db/raw/` matching the date window
-3. The template spec exists: `brand_assets/linkedin_templates/weekly_carousel_spec.md`
+3. The template spec exists: `brand_assets/linkedin_templates/carousel_spec.md`
 4. The brand guide exists: `brand_assets/design/BRAND.md`
 
 If any are missing, **stop** and report the issue.
@@ -39,7 +56,7 @@ Execute the Python synthesis pipeline:
 
 ```bash
 python3 .claude/scripts/synthesize_signals.py \
-  --cadence weekly \
+  --cadence {CADENCE} \
   --start-date {START_DATE} \
   --end-date {END_DATE}
 ```
@@ -49,26 +66,26 @@ This script:
 2. Deduplicates signals across sources (URL normalization + title similarity + entity co-reference)
 3. Scores each signal on a 1-10 scale
 4. Selects top 5 signals per Scale Lever with direction and source diversity
-5. Writes intermediate JSON to `research_db/processed/{start}_{end}_weekly_carousel_data.json`
-6. Writes deduped JSONL to `research_db/processed/{start}_{end}_weekly_deduped.jsonl`
+5. Writes intermediate JSON to `research_db/processed/{start}_{end}_{cadence}_carousel_data.json`
+6. Writes deduped JSONL to `research_db/processed/{start}_{end}_{cadence}_deduped.jsonl`
 
 Review the script output for errors. Report the total loaded, duplicates removed, and unique signal counts.
 
 ## Step 4: Read Intermediate Data
 
-Read the carousel data JSON file from `research_db/processed/{start}_{end}_weekly_carousel_data.json`.
+Read the carousel data JSON file from `research_db/processed/{start}_{end}_{cadence}_carousel_data.json`.
 
 Extract:
 - `meta.total_signals_loaded` — total signals collected
 - `meta.unique_signals` — after deduplication
 - `meta.source_files` — list of source pipelines
 - `overall_stats.direction_breakdown` — overall direction counts
-- For each lever in `lever_summaries`: `signal_count`, `direction_breakdown`, `dominant_direction`, `top_signals`
+- For each lever in `lever_summaries`: `signal_count`, `direction_breakdown`, `dominant_direction`, `top_sub_variables`, `unselected_count`, `unselected_context`, `top_signals`
 
 ## Step 5: Read Template Spec & Brand Guide
 
 Read both files:
-- `brand_assets/linkedin_templates/weekly_carousel_spec.md` — structural rules, CSS, content slots
+- `brand_assets/linkedin_templates/carousel_spec.md` — structural rules, CSS, content slots
 - `brand_assets/design/BRAND.md` — voice, tone, anti-patterns
 
 These are your authoritative references for generating the HTML. Follow every rule.
@@ -101,18 +118,19 @@ These rules are **mandatory** and override voice/style preferences when they con
 
 ### Cover Slide (Slide 1)
 
-The cover is a navy slide with two sections separated by a divider: brand identity at top, then this week's data below.
+The cover is a navy slide with two sections separated by a divider: brand identity at top, then the period's data below.
 
 **Brand section** (static content, do not modify):
 - **Wordmark**: Large `espresso·ai` at 56px
 - **Tagline**: `AI news. Concentrated.`
-- **Description**: Static text describing the multi-agent pipeline and Scale Levers framework (see template spec for exact text)
+- **Description**: Semi-static text describing the multi-agent pipeline and Scale Levers framework (see template spec for exact text; update when active collectors change)
 - **Curator credit**: `Curated by Tommaso Babucci`
 
-**This Week section** (dynamic content):
+**This Period section** (dynamic content — adapt based on cadence):
+- **Nav right text**: Use the cadence-specific value from the Cadence Configuration table
 - **Issue badge**: `Issue {N}` — use the issue number provided by the user, or increment from the last issue
-- **Date eyebrow**: `Week of {Month} {DD}–{DD}, {YYYY}`
-- **Headline**: 3 short declarative phrases, each on its own line. Max 60 chars total. Capture the week's dominant tensions. Examples: "Models compress. / Capital concentrates. / Governance fragments."
+- **Date eyebrow**: Use the cadence-specific format from the Cadence Configuration table
+- **Headline**: 3 short declarative phrases, each on its own line. Max 60 chars total. Capture the period's dominant tensions. Examples: "Models compress. / Capital concentrates. / Governance fragments."
 - **Stat cards**: Use actual numbers from `meta.total_signals_loaded`, `meta.source_files` count, and always 6 for scale levers.
 - **Lever dashboard** (compact, no per-lever summaries): For each of the 6 levers:
   - Use the lever's `dominant_direction` for the direction badge
@@ -122,10 +140,11 @@ The cover is a navy slide with two sections separated by a divider: brand identi
 ### Lever Slides (Slides 2-7)
 
 For each lever, write:
-- **Editorial title (H2)**: 10-15 words. Declarative. Captures the lever's story this week.
+- **Editorial title (H2)**: 10-15 words. Declarative. Captures the lever's story for this period.
 - **Lever description**: 1-2 sentences contextualizing the lever with data. Max 200 chars.
-- **Stats row**: Total signal count + top 2 direction counts (by volume).
-- **Signal cards (4-5)**: For each selected signal:
+- **Stats row**: Total signal count + all non-zero direction counts (ordered: positive, negative, neutral, ambiguous). Show every direction that has at least 1 signal.
+- **Signal depth line**: If `unselected_count` > 0, write a signal depth paragraph. Start with `+{N} more signals tracked this {period}.` followed by 2-3 sentences that editorially summarize themes and notable events from `unselected_context`. Reference specific companies, products, or findings. Max 300 characters. Follow espresso voice rules.
+- **Signal cards (6-7)**: For each selected signal:
   - **Headline**: Rewrite the raw `title` in espresso voice. Max 80 chars. Declarative, insight-first.
   - **Summary**: Rewrite the raw `summary`. Max 180 chars. Explain what the signal means, not just what happened.
   - **Source**: Use the signal's `source_name` field.
@@ -136,38 +155,42 @@ For each lever, write:
 Using the template spec as your structural guide:
 
 1. Copy the complete CSS from the template spec (all variables, classes, print rules)
-2. Build each of the 7 slides following the exact HTML structure documented in the spec
+2. Build each of the 8 slides following the exact HTML structure documented in the spec
 3. Apply:
    - Cover slide (slide 1) has navy background
    - Lever slides alternate white/cream backgrounds (2=W, 3=C, 4=W, 5=C, 6=W, 7=C)
+   - About slide (slide 8) has navy background with brand identity, levers grid, and author
    - Correct direction badge CSS classes (`+`→`dir-pos`, `-`→`dir-neg`, `~`→`dir-neu`, `?`→`dir-amb`)
-   - Correct page numbers (1/7 through 7/7)
+   - Correct page numbers (1/8 through 8/8)
    - Escape `&` as `&amp;` in all HTML content
    - Use `−` (minus sign entity) for negative direction badges, not a hyphen
    - Include source attribution (`<span class="signal-source">`) on every signal card
+   - Use `cover-period` as the class name for the period section (not `cover-week`)
+   - Use cadence-specific nav right text from the Cadence Configuration table
+   - Use cadence-specific date eyebrow format from the Cadence Configuration table
 4. Include Google Fonts `<link>` in `<head>`
 5. Include `@media print` and `@page` rules
 
-**Reference template**: `brand_assets/linkedin_templates/weekly_carousel_template.html` — compare your output to this for visual fidelity.
+**Reference template**: `brand_assets/linkedin_templates/weekly_carousel_template.html` — compare your output to this for visual fidelity (note: the reference shows a weekly example; adapt cover content per the Cadence Configuration table).
 
 ## Step 9: Write Output
 
-Write the HTML carousel to: `PR/weekly/{YYYY-MM-DD}_weekly_carousel.html`
+Write the HTML carousel to: `PR/{CADENCE}/{YYYY-MM-DD}_{CADENCE}_carousel.html`
 
 Use `end_date` as the `YYYY-MM-DD` in the filename.
 
-Also write a synthesis log to `research_db/processed/{start}_{end}_weekly_synthesis_log.json` containing:
+Also write a synthesis log to `research_db/processed/{start}_{end}_{cadence}_synthesis_log.json` containing:
 ```json
 {
   "pipeline_run_id": "{from carousel_data.meta}",
-  "cadence": "weekly",
+  "cadence": "{CADENCE}",
   "date_window": {"start": "{start}", "end": "{end}"},
   "generated_at": "{ISO timestamp}",
   "total_signals_loaded": N,
   "duplicates_removed": N,
   "unique_signals": N,
   "signals_selected": N,
-  "output_file": "PR/weekly/{date}_weekly_carousel.html",
+  "output_file": "PR/{CADENCE}/{date}_{CADENCE}_carousel.html",
   "editorial_decisions": {
     "headline": "{the 3-phrase headline you wrote}",
     "signals_per_lever": {
@@ -182,6 +205,7 @@ Also write a synthesis log to `research_db/processed/{start}_{end}_weekly_synthe
 ## Step 10: Post-Run Summary
 
 Present to the user:
+- Cadence and date window used
 - Total signals processed and unique count
 - Duplicates removed
 - Selected signals per lever (titles only, in a table)
@@ -191,11 +215,17 @@ Present to the user:
 ## Pre-Output Checklist
 
 Before writing the final HTML, verify:
-- [ ] Exactly 7 slides in correct order (1 cover + 6 lever)
-- [ ] Cover is navy with brand identity section (wordmark, tagline, description, curator) then this-week section (issue badge, date, headline, stats, dashboard)
+- [ ] Exactly 8 slides in correct order (1 cover + 6 lever + 1 about)
+- [ ] Cover is navy with brand identity section (wordmark, tagline, description, curator) then period section (issue badge, date, headline, stats, dashboard)
+- [ ] Cover nav right text matches the cadence from the Cadence Configuration table
+- [ ] Cover date eyebrow uses the correct cadence-specific format
+- [ ] Cover period section uses class `cover-period`
 - [ ] Lever slides alternate white/cream backgrounds (2=W, 3=C, 4=W, 5=C, 6=W, 7=C)
-- [ ] All page numbers correct (1/7 through 7/7)
-- [ ] 4-5 signal cards per lever slide
+- [ ] Lever stats row shows all non-zero direction counts (positive, negative, neutral, ambiguous)
+- [ ] Signal depth line present on each lever slide with unselected_count > 0
+- [ ] About slide (slide 8) is navy with brand identity, levers grid, and author
+- [ ] All page numbers correct (1/8 through 8/8)
+- [ ] 6-7 signal cards per lever slide
 - [ ] Every signal card includes source attribution
 - [ ] No AI writing giveaways in any editorial text
 - [ ] All `&` escaped as `&amp;`

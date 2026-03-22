@@ -1,0 +1,181 @@
+{
+  "pipeline_metadata": {
+    "cadence": "weekly",
+    "date_window": {
+      "start": "2026-03-15",
+      "end": "2026-03-22"
+    },
+    "issue_number": 4,
+    "source_data_file": "research_db/processed/2026-03-15_2026-03-22_weekly_carousel_data.json",
+    "output_html_file": "PR/weekly/2026-03-22_weekly_carousel.html",
+    "generated_at": "2026-03-22T20:30:00Z",
+    "generator": "carousel-html-generator",
+    "carousel_spec_version": "v5.0",
+    "slide_dimensions": "1080x1350px",
+    "slide_count": 8
+  },
+  "input_stats": {
+    "total_signals_loaded": 525,
+    "duplicates_removed": 105,
+    "unique_signals": 420,
+    "source_files_count": 9,
+    "source_files": [
+      "2026-03-15_2026-03-22_x_perplexity_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_openalex_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_influencer_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_edgar_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_x_claude_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_perplexity_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_github_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_reddit_claude_weekly_signals.jsonl",
+      "2026-03-15_2026-03-22_reddit_perplexity_weekly_signals.jsonl"
+    ]
+  },
+  "signals_per_lever": {
+    "COMPUTE": {
+      "total": 64,
+      "selected": 5,
+      "unselected": 59,
+      "dominant_direction": "+",
+      "selected_signals": [
+        "GPT-5.4 cuts hallucinations 33%, ships mini and nano variants [FACT-CHECK: CONFIRMED_BUT_STALE]",
+        "Patel: semiconductor fabs now the binding constraint on AI growth [FACT-CHECK: CONFIRMED_BUT_STALE]",
+        "LeCun's AMI Labs raises $1.03B for world models as LLM alternative [FACT-CHECK: CONFIRMED]",
+        "Karpathy's AutoResearch runs 700 ML experiments in two days [FACT-CHECK: PARTIALLY_CONFIRMED]",
+        "llama.cpp b8474 ships BF16 Flash Attention fix for CUDA [FACT-CHECK: CONFIRMED]"
+      ]
+    },
+    "ENERGY": {
+      "total": 10,
+      "selected": 4,
+      "unselected": 5,
+      "dominant_direction": "~",
+      "selected_signals": [
+        "Microsoft signs 20-year nuclear PPA for Three Mile Island restart [FACT-CHECK: CONFIRMED]",
+        "Meta Hyperion needs 5 GW. That is three times New Orleans. [FACT-CHECK: CONFIRMED]",
+        "Google evolves clean power procurement as AI demand surges [FACT-CHECK: CONFIRMED]",
+        "Data center capex growth decelerates for first time since 2023 [FACT-CHECK: CONFIRMED]"
+      ]
+    },
+    "SOCIETY": {
+      "total": 174,
+      "selected": 5,
+      "unselected": 169,
+      "dominant_direction": "+",
+      "selected_signals": [
+        "AI in higher education: chatbots, analytics, and adaptive learning scale [FACT-CHECK: CONFIRMED]",
+        "Ollama v0.18.2 ships OpenClaw integration and local Claude Code speedups [FACT-CHECK: CONFIRMED]",
+        "Deloitte: 84% of firms have not redesigned jobs or workflows for AI [FACT-CHECK: CONFIRMED]",
+        "11 ways AI projects die before launch: operational, not technical [FACT-CHECK: CONFIRMED_BUT_STALE]",
+        "ML models predict groundwater dynamics in stressed watersheds [FACT-CHECK: CONFIRMED]"
+      ]
+    },
+    "INDUSTRY": {
+      "total": 107,
+      "selected": 5,
+      "unselected": 102,
+      "dominant_direction": "+",
+      "selected_signals": [
+        "LiteLLM v1.82.6 fixes cross-provider routing for Anthropic and Gemini [FACT-CHECK: PARTIALLY_CONFIRMED]",
+        "LangChain Core 1.2.20 hardens SSRF protection, adds LangSmith metadata [FACT-CHECK: CONFIRMED]",
+        "CrewAI 1.11.0 adds plan-execute pattern and A2A enterprise auth [FACT-CHECK: PARTIALLY_CONFIRMED]",
+        "Anthropic SDK v0.86.0 ships filesystem memory tools [FACT-CHECK: CONFIRMED]",
+        "Nadella splits Copilot product from Suleyman's superintelligence mission [FACT-CHECK: CONFIRMED]"
+      ]
+    },
+    "CAPITAL": {
+      "total": 37,
+      "selected": 5,
+      "unselected": 32,
+      "dominant_direction": "+",
+      "selected_signals": [
+        "$220B in AI startup funding in two months. Three firms took 83% of February. [FACT-CHECK: PARTIALLY_CONFIRMED]",
+        "xAI raises $20B at ~$230B valuation from NVIDIA, Cisco, Fidelity [FACT-CHECK: PARTIALLY_CONFIRMED]",
+        "Jassy doubles AWS revenue forecast to $600B by 2036 on AI demand [FACT-CHECK: CONFIRMED]",
+        "Pichai commits $15B to build gigawatt-scale AI hub in India [FACT-CHECK: PARTIALLY_CONFIRMED]",
+        "Hamilton AI raises $7.5M seed for vertical AI in private aviation [FACT-CHECK: CONFIRMED]"
+      ]
+    },
+    "GOV": {
+      "total": 28,
+      "selected": 5,
+      "unselected": 23,
+      "dominant_direction": "~",
+      "selected_signals": [
+        "White House releases six-principle AI framework, urges federal preemption [FACT-CHECK: CONFIRMED]",
+        "EU AI Act high-risk compliance deadline: August 2, 2026 [FACT-CHECK: PARTIALLY_CONFIRMED]",
+        "China's Supreme Court expedites AI legislation during Two Sessions [FACT-CHECK: CONFIRMED]",
+        "MEPs vote shorter EU AI Act delay: November 2026 instead of February 2027 [FACT-CHECK: UNVERIFIABLE]",
+        "SB 3001 passes: AI disclosure and safety rules for minors clear committee 6-0 [FACT-CHECK: CONFIRMED]"
+      ]
+    }
+  },
+  "editorial_decisions": {
+    "cover_headline": "Fabs replace grids. Capital concentrates. Regulation fragments.",
+    "headline_rationale": "Three dominant structural tensions across the six levers: the COMPUTE bottleneck migration from power to fabs, extreme CAPITAL concentration at the frontier, and divergent GOV approaches across US, EU, and China.",
+    "duplicate_cluster_decisions": [
+      {
+        "cluster_id": 4,
+        "entity_key": "intel|INDUSTRY",
+        "decision": "Kept Nadella/Suleyman restructuring signal. Other titles in cluster are unrelated academic papers incorrectly grouped. False positive due to broad entity matching.",
+        "action": "no_change"
+      },
+      {
+        "cluster_id": 10,
+        "entity_key": "openai|COMPUTE",
+        "decision": "Kept GPT-5.4 signal. Other OpenAI COMPUTE signals (Altman milestone, classified deal) are thematically distinct. No true duplicates among selected signals.",
+        "action": "no_change"
+      },
+      {
+        "cluster_id": 13,
+        "entity_key": "meta|SOCIETY",
+        "decision": "False positive. Cluster contains OpenAlex papers with 'meta' in titles (meta-analysis, metamorphic, etc.), not Meta the company. No action needed.",
+        "action": "no_change"
+      },
+      {
+        "cluster_id": 14,
+        "entity_key": "intel|SOCIETY",
+        "decision": "False positive. Academic papers about AI in various fields, not Intel-related. Entity matching too broad.",
+        "action": "no_change"
+      },
+      {
+        "cluster_id": 15,
+        "entity_key": "google|ENERGY",
+        "decision": "Two Google energy signals in top candidates. Kept 'Google's data center power playbook' (TechCrunch, more recent, broader scope). The Financial Times version covers same underlying deals.",
+        "action": "kept_techcrunch_version"
+      }
+    ],
+    "energy_lever_note": "Only 4 signal cards on ENERGY slide (10 total signals, 5 top candidates available, one was a misclassified Naval Ravikant quote about app-building that belongs in SOCIETY/INDUSTRY). Selected the 4 strongest energy-specific signals.",
+    "voice_checks": [
+      "No em dashes used as connectors",
+      "No lists of three in headlines or summaries",
+      "No transitional openers (Additionally, Furthermore, Moreover)",
+      "No meta-commentary (It's worth noting...)",
+      "No AI vocabulary (delve, tapestry, landscape as metaphor)",
+      "No rhetorical questions as hooks",
+      "No hype language (game-changing, revolutionary, unprecedented)",
+      "No hedging (might, could potentially, seems to suggest)",
+      "Declarative sentences throughout",
+      "All ampersands escaped as &amp; in HTML",
+      "Minus sign entity used for negative badges"
+    ]
+  },
+  "output_checklist": {
+    "slide_count": 8,
+    "slide_sequence": ["cover", "COMPUTE", "ENERGY", "SOCIETY", "INDUSTRY", "CAPITAL", "GOV", "about"],
+    "page_numbers": ["1/8", "2/8", "3/8", "4/8", "5/8", "6/8", "7/8", "8/8"],
+    "backgrounds": ["navy", "white", "cream", "white", "cream", "white", "cream", "navy"],
+    "cover_class": "cover-period",
+    "google_fonts_included": true,
+    "print_css_included": true,
+    "signal_depth_lines": {
+      "COMPUTE": "+59 more signals",
+      "ENERGY": "+5 more signals",
+      "SOCIETY": "+169 more signals",
+      "INDUSTRY": "+102 more signals",
+      "CAPITAL": "+32 more signals",
+      "GOV": "+23 more signals"
+    },
+    "total_signal_cards": 29
+  }
+}

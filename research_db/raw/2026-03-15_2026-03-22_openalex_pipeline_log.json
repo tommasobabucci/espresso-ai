@@ -1,0 +1,56 @@
+{
+  "pipeline_run_id": "2026-03-22_weekly_dd7bdfc1",
+  "collection_batch_id": "batch_20260322_1918",
+  "cadence": "weekly",
+  "source": "openalex",
+  "started_at": "2026-03-22T19:18:56Z",
+  "completed_at": "2026-03-22T19:19:10Z",
+  "date_range": {
+    "start": "2026-03-15",
+    "end": "2026-03-22"
+  },
+  "total_results_raw": 450,
+  "duplicates_removed": 233,
+  "records_written": 217,
+  "lever_distribution": {
+    "SOCIETY": 149,
+    "INDUSTRY": 68
+  },
+  "domain_distribution": {
+    "ethics": 30,
+    "legal": 46,
+    "labor": 14,
+    "healthcare": 50,
+    "education": 9,
+    "materials": 10,
+    "energy": 27,
+    "finance": 12,
+    "manufacturing": 19
+  },
+  "sub_variable_distribution": {
+    "incident_impact_on_trust": 25,
+    "ai_literacy_distribution": 41,
+    "high_stakes_domain_adoption": 49,
+    "professional_displacement_signals": 9,
+    "researcher_and_engineer_stock": 9,
+    "productivity_measurement_transparency": 19,
+    "skill_diffusion_rate": 4,
+    "enterprise_penetration_depth": 12,
+    "production_deployment_rate": 26,
+    "cross_sector_diffusion": 18,
+    "workflow_integration_depth": 2,
+    "business_model_reinvention": 3
+  },
+  "direction_distribution": {
+    "-": 19,
+    "+": 135,
+    "?": 63
+  },
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-15_2026-03-22_openalex_weekly_signals.jsonl",
+  "quality_metrics": {
+    "out_of_date_count": 0,
+    "missing_url_count": 0,
+    "max_citations": 15,
+    "median_citations": 0
+  }
+}

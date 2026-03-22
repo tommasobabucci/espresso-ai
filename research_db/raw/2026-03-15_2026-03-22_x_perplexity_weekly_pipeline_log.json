@@ -1,0 +1,56 @@
+{
+  "pipeline_run_id": "2026-03-15_2026-03-22_x_perplexity_weekly_3919b2e0",
+  "collection_batch_id": "batch_20260322_1918",
+  "cadence": "weekly",
+  "source": "x_twitter_via_perplexity",
+  "date_window": {
+    "after": "03/15/2026",
+    "before": "03/22/2026"
+  },
+  "started_at": "2026-03-22T19:18:54Z",
+  "completed_at": "2026-03-22T19:20:22Z",
+  "queries_executed": 7,
+  "accounts_tracked": 28,
+  "accounts_with_signals": 11,
+  "signals_collected": 25,
+  "duplicates_removed": 2,
+  "signals_written": 23,
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-15_2026-03-22_x_perplexity_weekly_signals.jsonl",
+  "quality_metrics": {
+    "direct_post_count": 13,
+    "indirect_source_count": 10,
+    "unattributed_count": 0,
+    "unknown_domain_count": 9,
+    "aggregator_title_count": 0,
+    "out_of_date_count": 3,
+    "missing_url_count": 4,
+    "url_not_in_citations_count": 10,
+    "direction_distribution": {
+      "+": 8,
+      "-": 0,
+      "~": 11,
+      "?": 4
+    },
+    "lever_distribution": {
+      "ENERGY": 1,
+      "COMPUTE": 6,
+      "GOV": 4,
+      "SOCIETY": 4,
+      "CAPITAL": 7,
+      "INDUSTRY": 1
+    },
+    "account_distribution": {
+      "sama": 3,
+      "DarioAmodei": 2,
+      "ylecun": 1,
+      "mustafasuleyman": 2,
+      "timnitGebru": 1,
+      "svpino": 2,
+      "bindureddy": 3,
+      "emad": 2,
+      "eladgil": 3,
+      "saranormous": 2,
+      "naval": 2
+    }
+  }
+}

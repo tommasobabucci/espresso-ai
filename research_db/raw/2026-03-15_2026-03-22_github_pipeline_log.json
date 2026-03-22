@@ -1,0 +1,35 @@
+{
+  "pipeline_run_id": "2026-03-22_weekly_12930d16",
+  "collection_batch_id": "batch_20260322_1918",
+  "cadence": "weekly",
+  "source": "github_oss",
+  "started_at": "2026-03-22T19:18:54Z",
+  "completed_at": "2026-03-22T19:19:58Z",
+  "date_range": {
+    "start": "2026-03-15",
+    "end": "2026-03-22"
+  },
+  "github_token_set": false,
+  "star_threshold": 500,
+  "test_mode": false,
+  "repos_checked": 25,
+  "search_queries": 5,
+  "total_results_raw": 35,
+  "total_results_unique": 35,
+  "records_written": 35,
+  "type_distribution": {
+    "release": 34,
+    "hf_model": 1
+  },
+  "lever_distribution": {
+    "COMPUTE": 13,
+    "INDUSTRY": 20,
+    "SOCIETY": 2
+  },
+  "direction_distribution": {
+    "+": 12,
+    "~": 21,
+    "?": 2
+  },
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-15_2026-03-22_github_weekly_signals.jsonl"
+}

@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>espresso·ai — Weekly Intelligence Brief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #162B4E;
+      --navy-mid:   #1E3A65;
+      --red:        #BF3A2B;
+      --red-light:  #D94E3C;
+      --white:      #FFFFFF;
+      --cream:      #FAF9F7;
+      --gray-100:   #F4F3F1;
+      --gray-200:   #E8E6E3;
+      --gray-400:   #A09D99;
+      --gray-600:   #6B6760;
+      --ink:        #111827;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'Inter', -apple-system, sans-serif;
+      --slide-w: 1080px;
+      --slide-h: 1350px;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      background: #e0ddd8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+      font-family: var(--sans);
+    }
+
+    .slide {
+      width: var(--slide-w);
+      height: var(--slide-h);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--white);
+    }
+
+    /* ─── Nav bar ────────────────────────────────── */
+    .slide-nav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      z-index: 10;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .slide-nav-logo {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .slide-nav-logo .dot { color: var(--red); }
+    .slide-nav-right {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    /* ─── Footer ─────────────────────────────────── */
+    .slide-footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      z-index: 10;
+      border-top: 1px solid var(--gray-200);
+    }
+    .slide-footer-left {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-400);
+    }
+    .slide-footer-right {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-400);
+    }
+
+    /* ─── Content area ───────────────────────────── */
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      padding: 52px 56px 44px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── Utilities ───────────────────────────────── */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ─── Direction badges ────────────────────────── */
+    .dir-pos { background: #E8F5E9; color: #2E7D32; }
+    .dir-neg { background: #FFEBEE; color: #C62828; }
+    .dir-neu { background: var(--gray-100); color: var(--gray-600); }
+    .dir-amb { background: #FFF8E1; color: #F57F17; }
+
+    /* ─── SLIDE 1 — COVER (NAVY) ────────────────── */
+    .slide-title {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .slide-title .slide-nav {
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    .slide-title .slide-nav-logo { color: var(--white); }
+    .slide-title .slide-nav-logo .dot { color: var(--red-light); }
+    .slide-title .slide-nav-right { color: rgba(255,255,255,0.35); }
+    .slide-title .slide-footer {
+      border-top-color: rgba(255,255,255,0.08);
+    }
+    .slide-title .slide-footer-left { color: rgba(255,255,255,0.3); }
+    .slide-title .slide-footer-right { color: rgba(255,255,255,0.3); }
+
+    .title-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding-top: 16px;
+    }
+    .title-rule {
+      width: 56px;
+      height: 3px;
+      background: var(--red-light);
+      margin-bottom: 18px;
+    }
+    .title-headline {
+      font-family: var(--serif);
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+
+    /* Stats row */
+    .title-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 20px;
+      border-radius: 2px;
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* Lever dashboard */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 36px;
+    }
+    .dashboard-item {
+      padding: 10px 0;
+    }
+    .dashboard-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 3px;
+    }
+    .dashboard-lever-code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--red-light);
+      background: rgba(217,78,60,0.12);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .dashboard-dir {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .dashboard-count {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+    }
+    .dashboard-lever-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2px;
+    }
+
+    /* Brand hero section (top of cover) */
+    .cover-brand {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 28px;
+    }
+    .cover-wordmark {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .cover-wordmark .dot { color: var(--red-light); }
+    .cover-tagline {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+    .cover-desc {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.55;
+      max-width: 920px;
+    }
+    .cover-curated {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--red-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 14px;
+    }
+
+    /* Period section */
+    .cover-period {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .cover-issue-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .cover-issue-badge {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--red-light);
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+
+    /* ─── LEVER SLIDES ───────────────────────────── */
+    .slide-lever .slide-content {
+      padding-top: 64px;
+    }
+    .lever-header {
+      margin-bottom: 20px;
+    }
+    .lever-code {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .lever-title {
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .lever-subtitle {
+      font-size: 16px;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .lever-stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 24px;
+      margin-bottom: 20px;
+    }
+    .lever-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lever-stat-num {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .lever-stat-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .lever-stat-dir {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .lever-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--gray-200);
+      margin-bottom: 16px;
+    }
+    .lever-accent {
+      position: absolute;
+      top: 52px; left: 0;
+      width: 4px;
+      height: 80px;
+      background: var(--red);
+    }
+
+    /* ─── Signal cards ───────────────────────────── */
+    .signal-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .signal-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .signal-item:last-child { border-bottom: none; }
+    .signal-dir {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      font-size: 15px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .signal-body { flex: 1; }
+    .signal-headline {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .signal-summary {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+    .signal-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .signal-source {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      opacity: 0.5;
+    }
+    .signal-tag {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    /* Signal depth line */
+    .signal-depth-line {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gray-600);
+      line-height: 1.5;
+      padding-top: 14px;
+      margin-top: 0;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    /* ─── SLIDE 8 — ABOUT (NAVY) ─────────────────── */
+    .slide-navy {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .slide-navy .slide-nav {
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    .slide-navy .slide-nav-logo { color: var(--white); }
+    .slide-navy .slide-nav-logo .dot { color: var(--red-light); }
+    .slide-navy .slide-nav-right { color: rgba(255,255,255,0.35); }
+    .slide-navy .slide-footer {
+      border-top-color: rgba(255,255,255,0.08);
+    }
+    .slide-navy .slide-footer-left { color: rgba(255,255,255,0.3); }
+    .slide-navy .slide-footer-right { color: rgba(255,255,255,0.3); }
+
+    .about-logo {
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .about-logo .dot { color: var(--red-light); }
+    .about-tagline {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 24px;
+    }
+    .about-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--red-light);
+      margin-bottom: 24px;
+    }
+    .about-desc {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .about-levers-label {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 16px;
+    }
+    .about-levers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 36px;
+      margin-bottom: 36px;
+    }
+    .about-lever-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .about-lever-code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--red-light);
+      background: rgba(217,78,60,0.15);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .about-lever-name {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+    }
+    .about-author {
+      margin-top: auto;
+    }
+    .about-author-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .about-author-role {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 12px;
+    }
+    .about-cta {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--red-light);
+    }
+
+    /* ─── Print / PDF ────────────────────────────── */
+    @media print {
+      body { background: none; gap: 0; padding: 0; }
+      .slide { page-break-after: always; page-break-inside: avoid; }
+      .slide:last-child { page-break-after: auto; }
+    }
+    @page { size: 1080px 1350px; margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ SLIDE 1 — COVER ═══ -->
+<div class="slide slide-title">
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">A strong sip of this week's AI news</div>
+  </div>
+  <div class="slide-content">
+    <div class="title-inner">
+      <!-- Brand identity section -->
+      <div class="cover-brand">
+        <div class="cover-wordmark">espresso<span class="dot">·</span>ai</div>
+        <div class="cover-tagline">AI news. Concentrated.</div>
+        <div class="cover-desc">A multi-agent intelligence pipeline that collects signals from research papers, news, regulatory filings, corporate disclosures, open-source releases, energy data, social media, and 71 key influencers. Every signal is classified against six structural levers that determine whether AI reaches transformational scale or stalls before it gets there.</div>
+        <div class="cover-curated">Curated by Tommaso Babucci</div>
+      </div>
+
+      <!-- This week section -->
+      <div class="cover-period">
+        <div class="cover-issue-row">
+          <span class="cover-issue-badge">Issue 4</span>
+          <div class="eyebrow" style="color: var(--red-light);">Week of March 15–22, 2026</div>
+        </div>
+        <div class="title-rule"></div>
+        <h1 class="title-headline">Fabs replace grids.<br/>Capital concentrates.<br/>Regulation fragments.</h1>
+        <div class="title-stats">
+          <div class="stat-card">
+            <div class="stat-num">525</div>
+            <div class="stat-label">Signals collected</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">9</div>
+            <div class="stat-label">Source pipelines</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">6</div>
+            <div class="stat-label">Scale levers</div>
+          </div>
+        </div>
+        <div class="dashboard-grid">
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">COMPUTE</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">64 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Chips, Fabs, Data Centers, Supply Chain</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">ENERGY</span>
+              <span class="dashboard-dir dir-neu">~</span>
+              <span class="dashboard-count">10 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Power Demand, Grid, Renewables, Cooling</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">SOCIETY</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">174 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Adoption, Talent, Workforce, Trust</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">INDUSTRY</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">107 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Enterprise ROI, Deployments, Business Models</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">CAPITAL</span>
+              <span class="dashboard-dir dir-pos">+</span>
+              <span class="dashboard-count">37 signals</span>
+            </div>
+            <div class="dashboard-lever-name">VC, Hyperscaler Capex, Valuations, ROI</div>
+          </div>
+          <div class="dashboard-item">
+            <div class="dashboard-header">
+              <span class="dashboard-lever-code">GOV</span>
+              <span class="dashboard-dir dir-neu">~</span>
+              <span class="dashboard-count">28 signals</span>
+            </div>
+            <div class="dashboard-lever-name">Regulation, Export Controls, Safety, Geopolitics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">1 / 8</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 2 — COMPUTE ═══ -->
+<div class="slide slide-lever">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 1 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">COMPUTE — Compute &amp; Infrastructure</div>
+      <h2 class="lever-title">Fabs become the binding constraint. Autonomous research arrives.</h2>
+      <p class="lever-subtitle">64 signals this week. The bottleneck migrated from data centers to semiconductor fabrication. Autonomous ML experimentation crossed from concept to working code.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">64</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">27 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neg">&minus;</span>
+        <div class="lever-stat-label">1 negative</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neu">~</span>
+        <div class="lever-stat-label">27 neutral</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">9 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">llama.cpp b8474 ships BF16 Flash Attention fix for CUDA</div>
+          <div class="signal-summary">Steady incremental progress on local inference. The open-source runtime layer keeps pace with model releases, ensuring compute access stays decentralized.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">custom_silicon_adoption</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">Patel: semiconductor fabs now the binding constraint on AI growth</div>
+          <div class="signal-summary">The bottleneck sequence moved from packaging to power to fabs. Diesel generators break grid constraints in the interim, but fabrication capacity sets the ceiling on compute supply through 2027.</div>
+          <div class="signal-meta"><span class="signal-source">Latent Space / SemiAnalysis</span><span class="signal-tag">manufacturing_capacity</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">GPT-5.4 cuts hallucinations 33%, ships mini and nano variants</div>
+          <div class="signal-summary">Measurable reliability gains lower the enterprise adoption barrier. The model family now spans from subagent-scale nano to full reasoning.</div>
+          <div class="signal-meta"><span class="signal-source">Fortune</span><span class="signal-tag">cost_per_flop</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">LeCun's AMI Labs raises $1.03B for world models as LLM alternative</div>
+          <div class="signal-summary">Europe's largest seed round at $3.5B pre-money. Backed by NVIDIA, Bezos, Temasek. A billion-dollar bet that language models are the wrong architecture for general intelligence.</div>
+          <div class="signal-meta"><span class="signal-source">US News</span><span class="signal-tag">architectural_diversity</span></div>
+        </div>
+      </div>
+      <!-- FACT-CHECK: PARTIALLY_CONFIRMED — 700 experiments confirmed but core run was ~8 hours, not 2 days. 20 optimizations and no-code-since-December confirmed. -->
+      <div class="signal-item" data-fact-check="PARTIALLY_CONFIRMED">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Karpathy's AutoResearch runs 700 ML experiments in two days</div>
+          <div class="signal-summary">Single-GPU framework discovered 20 training optimizations autonomously. Karpathy has not written code manually since December 2025. Autonomous AI research is no longer speculative.</div>
+          <div class="signal-meta"><span class="signal-source">Fortune</span><span class="signal-tag">architectural_diversity</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">vLLM v0.18.0 ships gRPC serving and GPU-less preprocessing</div>
+          <div class="signal-summary">445 commits from 213 contributors. The inference stack separates multimodal preprocessing from GPU execution, a design that cuts cost per served token.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">cost_per_flop</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">NVIDIA TensorRT-LLM v1.3.0rc8 adds Nemotron 3 Super and mixed quantization</div>
+          <div class="signal-summary">Pre-release broadens model support and quantization options. The inference optimization layer thickens with each release, compressing the gap between frontier models and deployable systems.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">architectural_diversity</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="signal-depth-line">+57 more signals tracked this week. Huang projected $1T in NVIDIA revenue through 2027 at GTC. AMD's Su secured Samsung HBM4 for MI455X, positioning a credible alternative in inference. Murati's Thinking Machines Lab committed to gigawatt-scale NVIDIA compute. Anthropic upgraded Opus 4.6 coding and shipped persistent memory across all Claude tiers.</div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">2 / 8</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 3 — ENERGY ═══ -->
+<div class="slide slide-lever" style="background: var(--cream);">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 2 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">ENERGY — Energy &amp; Environment</div>
+      <h2 class="lever-title">Power grids hit limits. Hyperscalers go behind the meter.</h2>
+      <p class="lever-subtitle">10 signals this week. Data center capex growth decelerates for the first time since 2023. Grid constraints force a split: on-grid players slow down, off-grid players push ahead.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">10</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">3 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neu">~</span>
+        <div class="lever-stat-label">5 neutral</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">2 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">Microsoft signs 20-year nuclear PPA for Three Mile Island restart</div>
+          <div class="signal-summary">DOE backed the deal with a $1B loan. BYOG model eliminates grid delivery infrastructure. Tech giants are vertically integrating baseload power into their compute strategy.</div>
+          <div class="signal-meta"><span class="signal-source">ThinkBRG</span><span class="signal-tag">renewable_allocation</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Meta Hyperion needs 5 GW. That is three times New Orleans.</div>
+          <div class="signal-summary">GW-scale campuses strain regional grids and force behind-the-meter generation. The scale of single-site power demand has no precedent outside heavy industry.</div>
+          <div class="signal-meta"><span class="signal-source">Consumer Reports</span><span class="signal-tag">renewable_allocation</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Google evolves clean power procurement as AI demand surges</div>
+          <div class="signal-summary">Long-term PPAs and on-site generation replace spot procurement. The strategy assumes grid capacity will not keep pace with AI load growth.</div>
+          <div class="signal-meta"><span class="signal-source">TechCrunch</span><span class="signal-tag">data_center_power_intensity</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">Naval calls app-building "the new starting a podcast" as AI lowers barriers</div>
+          <div class="signal-summary">Ravikant's framing signals AI tools have compressed the gap between idea and deployed software. The creator-developer line is dissolving.</div>
+          <div class="signal-meta"><span class="signal-source">Startuppedia</span><span class="signal-tag">renewable_allocation</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">Data center capex growth decelerates for first time since 2023</div>
+          <div class="signal-summary">Pipeline additions fell to 25 GW in Q4 2025, half the prior quarter. Power availability, not capital or demand, is now the binding constraint on AI infrastructure buildout.</div>
+          <div class="signal-meta"><span class="signal-source">Fortune / Wood Mackenzie</span><span class="signal-tag">grid_capacity_utilization</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">Altman dismisses AI water usage claims as "totally insane," urges nuclear pivot</div>
+          <div class="signal-summary">OpenAI no longer uses water cooling. Altman compared 20 years of human training energy to AI efficiency. The rhetorical shift frames AI as energy-positive, not energy-hungry.</div>
+          <div class="signal-meta"><span class="signal-source">The Express</span><span class="signal-tag">renewable_allocation</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Google signs new utility deals with Entergy Arkansas, Minnesota Power, DTE</div>
+          <div class="signal-summary">Diverse utility partnerships secure multi-gigawatt capacity. The strategy diversifies supply risk across regions rather than concentrating on single grid connections.</div>
+          <div class="signal-meta"><span class="signal-source">Mobile World Live</span><span class="signal-tag">renewable_allocation</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="signal-depth-line">+3 more signals tracked this week. S&amp;P Global forecasts 12-16% annual data center power demand growth through 2030. The NPC released a report urging improved gas-electric coordination for AI loads. IER analysis found no statistical link between data center density and electricity price increases.</div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">3 / 8</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 4 — SOCIETY ═══ -->
+<div class="slide slide-lever">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 3 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">SOCIETY — Society &amp; Human Capital</div>
+      <h2 class="lever-title">84% of organizations have not redesigned work around AI. The tools are ready.</h2>
+      <p class="lever-subtitle">174 signals this week. The highest-volume lever. Research papers dominate, but the dominant theme cuts across all sources: adoption depth lags capability by years.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">174</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">104 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neg">&minus;</span>
+        <div class="lever-stat-label">17 negative</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neu">~</span>
+        <div class="lever-stat-label">5 neutral</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">48 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">AI in higher education: chatbots, analytics, and adaptive learning scale</div>
+          <div class="signal-summary">Three mechanisms dominate: conversational support, formative assessment, and learning analytics. AI literacy is entering the pipeline through institutions, not individuals.</div>
+          <div class="signal-meta"><span class="signal-source">Zenodo / Academic Paper</span><span class="signal-tag">ai_literacy_distribution</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Ollama v0.18.2 ships OpenClaw integration and local Claude Code speedups</div>
+          <div class="signal-summary">Local inference tools keep lowering the skill floor. When installation is a single command, the barrier to AI access becomes bandwidth, not expertise.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">skill_diffusion_rate</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">Deloitte: 84% of firms have not redesigned jobs or workflows for AI</div>
+          <div class="signal-summary">Forrester projects AI affects 6% of jobs by 2030, mostly augmentation. The gap between AI capability and organizational readiness is the defining friction of 2026.</div>
+          <div class="signal-meta"><span class="signal-source">NC Tech / Deloitte</span><span class="signal-tag">enterprise_penetration_depth</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">11 ways AI projects die before launch: operational, not technical</div>
+          <div class="signal-summary">Valdarrama's practitioner diagnostic reaches 600K+ developers daily. No clear metrics, no feedback loops, problems that never needed AI. The failure modes are organizational.</div>
+          <div class="signal-meta"><span class="signal-source">X @svpino</span><span class="signal-tag">enterprise_penetration_depth</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">ML models predict groundwater dynamics in stressed watersheds</div>
+          <div class="signal-summary">AI application in environmental science expands. Cross-discipline adoption signals that AI literacy is spreading beyond tech into earth sciences and resource management.</div>
+          <div class="signal-meta"><span class="signal-source">Environmental Earth Sciences</span><span class="signal-tag">ai_literacy_distribution</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Q1 2026 tech layoffs exceed 45,000 while AI hiring surges 92%</div>
+          <div class="signal-summary">Meta, Intel, Microsoft, Amazon restructure to fund AI capex. AI roles carry a 56% wage premium. The labor market is bifurcating along an AI skills line.</div>
+          <div class="signal-meta"><span class="signal-source">TechTimes</span><span class="signal-tag">professional_displacement_signals</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">Reddy: GPT 5.3 Instant and Gemini 3.1 Flash drop amid global instability</div>
+          <div class="signal-summary">Enterprise model adoption accelerates regardless of macro turbulence. Abacus.AI onboards frontier models within days, acting as a multi-model aggregation layer for production deployments.</div>
+          <div class="signal-meta"><span class="signal-source">X @bindureddy</span><span class="signal-tag">enterprise_penetration_depth</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="signal-depth-line">+167 more signals tracked this week. Cross-discipline AI research dominated volume, with papers spanning medical diagnostics, food safety, and education systems. Fairness perception studies signal growing attention to ML equity in organizational contexts. The Human Layer Architecture specification proposed a formal design framework for human-AI systems.</div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">4 / 8</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 5 — INDUSTRY ═══ -->
+<div class="slide slide-lever" style="background: var(--cream);">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 4 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">INDUSTRY — Industry &amp; Business Transformation</div>
+      <h2 class="lever-title">Agent frameworks ship weekly. Nadella splits product from frontier.</h2>
+      <p class="lever-subtitle">107 signals this week. Open-source agent tooling releases dominate volume. Microsoft's Copilot reorg separates product distribution from model research for the first time.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">107</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">54 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neg">&minus;</span>
+        <div class="lever-stat-label">3 negative</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neu">~</span>
+        <div class="lever-stat-label">20 neutral</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">30 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <!-- FACT-CHECK: PARTIALLY_CONFIRMED — Anthropic/Gemini fixes confirmed in changelog. Exact v1.82.6-nightly tag not independently verified. -->
+      <div class="signal-item" data-fact-check="PARTIALLY_CONFIRMED">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">LiteLLM v1.82.6 fixes cross-provider routing for Anthropic and Gemini</div>
+          <div class="signal-summary">Multi-provider orchestration matures. Thinking summaries route between Claude and OpenAI Responses API. The middleware layer enabling model-agnostic enterprise deployment keeps compounding.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">workflow_integration_depth</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">LangChain Core 1.2.20 hardens SSRF protection, adds LangSmith metadata</div>
+          <div class="signal-summary">Security and observability upgrades signal enterprise production requirements are driving open-source roadmaps. The framework is past experimentation.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">workflow_integration_depth</span></div>
+        </div>
+      </div>
+      <!-- FACT-CHECK: PARTIALLY_CONFIRMED — Features confirmed but this is a release candidate (1.11.0rc1), not a stable release. -->
+      <div class="signal-item" data-fact-check="PARTIALLY_CONFIRMED">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">CrewAI 1.11.0rc1 adds plan-execute pattern and A2A enterprise auth</div>
+          <div class="signal-summary">Agent frameworks converge on the plan-execute architecture. Enterprise authentication built in from the release candidate stage. The agentic stack standardizes fast.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">workflow_integration_depth</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Anthropic SDK v0.86.0 ships filesystem memory tools</div>
+          <div class="signal-summary">Persistent memory moves from research feature to SDK primitive. The infrastructure for stateful AI agents is being built into the core developer toolchain.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">workflow_integration_depth</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Nadella splits Copilot product from Suleyman's superintelligence mission</div>
+          <div class="signal-summary">Ex-Snap SVP Andreou takes Copilot. Suleyman focuses exclusively on frontier models. Microsoft now treats model-layer progress as existentially distinct from product distribution.</div>
+          <div class="signal-meta"><span class="signal-source">Microsoft Blog</span><span class="signal-tag">workflow_integration_depth</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">OpenAI Python SDK v2.29.0 adds GPT-5.4 nano/mini slugs and video endpoint</div>
+          <div class="signal-summary">SDK updates track model releases within days. The developer surface expands from text to video in batch endpoints, widening the API's production footprint.</div>
+          <div class="signal-meta"><span class="signal-source">GitHub</span><span class="signal-tag">workflow_integration_depth</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Digital twins in civil engineering: AI expands beyond software into physical infrastructure</div>
+          <div class="signal-summary">Cross-discipline research signals AI production deployments are reaching construction and industrial engineering. The diffusion pattern is moving from digital-native to physical sectors.</div>
+          <div class="signal-meta"><span class="signal-source">J. of IT in Construction</span><span class="signal-tag">production_deployment_rate</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="signal-depth-line">+100 more signals tracked this week. Siemens reported under-3-month ROI on preventive maintenance AI, saving $15M in excess inventory. Meta plans a 20% workforce cut to fund $115-135B in AI capex. Mistral launched Forge at GTC, targeting $1B ARR. Alibaba restructured its AI model division after Qwen leadership departed.</div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">5 / 8</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 6 — CAPITAL ═══ -->
+<div class="slide slide-lever">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 5 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">CAPITAL — Capital &amp; Investment</div>
+      <h2 class="lever-title">$220B in two months. Capital concentrates at the frontier.</h2>
+      <p class="lever-subtitle">37 signals this week. AI startup funding hit $220B in Jan-Feb 2026. Three companies captured 83% of global VC in February alone. The concentration ratio is structural.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">37</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">17 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neu">~</span>
+        <div class="lever-stat-label">13 neutral</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">7 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">Hamilton AI raises $7.5M seed for vertical AI in private aviation</div>
+          <div class="signal-summary">TTV Capital leads. Seven co-investors. Capital still flows to vertical AI startups, but the rounds are three orders of magnitude smaller than frontier bets. Two markets, one label.</div>
+          <div class="signal-meta"><span class="signal-source">The SaaS News</span><span class="signal-tag">venture_funding_discipline</span></div>
+        </div>
+      </div>
+      <!-- FACT-CHECK: PARTIALLY_CONFIRMED — Valuation was ~$230B, not $200B+. $200B was the September 2025 valuation. -->
+      <div class="signal-item" data-fact-check="PARTIALLY_CONFIRMED">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">xAI raises $20B at ~$230B valuation from NVIDIA, Cisco, Fidelity</div>
+          <div class="signal-summary">The round accounted for 36% of global VC in January 2026. Capital is concentrating on AGI-aspiring labs backed by compute-adjacent strategic investors.</div>
+          <div class="signal-meta"><span class="signal-source">Wellows</span><span class="signal-tag">valuation_multiple_dynamics</span></div>
+        </div>
+      </div>
+      <!-- FACT-CHECK: PARTIALLY_CONFIRMED — 83% applies to 3 firms in February only (OpenAI, Anthropic, Waymo). xAI was January. -->
+      <div class="signal-item" data-fact-check="PARTIALLY_CONFIRMED">
+        <span class="signal-dir dir-amb">?</span>
+        <div class="signal-body">
+          <div class="signal-headline">$220B in AI startup funding in two months. Three firms took 83% of February.</div>
+          <div class="signal-summary">OpenAI ($110B), Anthropic ($30B), Waymo ($16B) captured 83% of February's global VC. xAI added $20B in January. The capital flows to the same handful of companies.</div>
+          <div class="signal-meta"><span class="signal-source">EE News Europe / Crunchbase</span><span class="signal-tag">valuation_multiple_dynamics</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Jassy doubles AWS revenue forecast to $600B by 2036 on AI demand</div>
+          <div class="signal-summary">Current run rate: $128.7B. Amazon plans $200B in AI capex. The forecast implies a 5x revenue multiplier from AI workload growth over the next decade.</div>
+          <div class="signal-meta"><span class="signal-source">SiliconANGLE</span><span class="signal-tag">hyperscaler_capex_and_utilization</span></div>
+        </div>
+      </div>
+      <!-- FACT-CHECK: PARTIALLY_CONFIRMED — AI Impact Summit was February 16-21, 2026, not mid-March. Investment details confirmed. -->
+      <div class="signal-item" data-fact-check="PARTIALLY_CONFIRMED">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">Pichai commits $15B to build gigawatt-scale AI hub in India</div>
+          <div class="signal-summary">Includes subsea cable gateway and full-stack compute in Visakhapatnam. AI infrastructure buildout extends beyond the US. Compute geography is diversifying.</div>
+          <div class="signal-meta"><span class="signal-source">Google Blog</span><span class="signal-tag">international_capital_flows</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">SoftBank seeks $40B loan for OpenAI stake, plans 9.2 GW gas plant in Ohio</div>
+          <div class="signal-summary">The largest dollar-denominated borrowing in SoftBank's history. S&amp;P revised credit outlook to negative. The bet on AI infrastructure is now a balance-sheet-level commitment.</div>
+          <div class="signal-meta"><span class="signal-source">Business Standard</span><span class="signal-tag">hyperscaler_capex_and_utilization</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">a16z leads $43M Series A for Deeptune's AI agent training gyms</div>
+          <div class="signal-summary">Reinforcement learning environments simulating workplace workflows for accountants, support reps, and DevOps engineers. Synthetic training data is becoming a venture-backed infrastructure category.</div>
+          <div class="signal-meta"><span class="signal-source">Fortune</span><span class="signal-tag">venture_funding_discipline</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="signal-depth-line">+30 more signals tracked this week. Andreessen predicted AI will enable single-person billion-dollar startups. Khosla's original $50M OpenAI bet has yielded returns at a $730-840B valuation. Guo and Gil discussed the "SaaSpocalypse" on No Priors, flagging AI's structural threat to SaaS models. Funding is shifting toward edge inference over cloud training.</div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">6 / 8</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 7 — GOV ═══ -->
+<div class="slide slide-lever" style="background: var(--cream);">
+  <div class="lever-accent"></div>
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">Scale Lever 6 of 6</div>
+  </div>
+  <div class="slide-content">
+    <div class="lever-header">
+      <div class="lever-code">GOV — Governance &amp; Geopolitics</div>
+      <h2 class="lever-title">Three jurisdictions legislate in one week. None are converging.</h2>
+      <p class="lever-subtitle">28 signals this week. The White House urges federal preemption. The EU delays high-risk rules. China expedites AI legislation through the Supreme Court. Regulatory fragmentation accelerates.</p>
+    </div>
+    <div class="lever-stats-row">
+      <div class="lever-stat">
+        <div class="lever-stat-num">28</div>
+        <div class="lever-stat-label">Signals</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-pos">+</span>
+        <div class="lever-stat-label">5 positive</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neg">&minus;</span>
+        <div class="lever-stat-label">3 negative</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-neu">~</span>
+        <div class="lever-stat-label">14 neutral</div>
+      </div>
+      <div class="lever-stat">
+        <span class="lever-stat-dir dir-amb">?</span>
+        <div class="lever-stat-label">6 ambiguous</div>
+      </div>
+    </div>
+    <div class="lever-divider"></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <span class="signal-dir dir-pos">+</span>
+        <div class="signal-body">
+          <div class="signal-headline">White House releases six-principle AI framework, urges federal preemption</div>
+          <div class="signal-summary">AI czar Sacks frames the blueprint as a response to 50 conflicting state regimes. No new federal rulemaking body. The approach trusts sector-specific regulators over centralized AI oversight.</div>
+          <div class="signal-meta"><span class="signal-source">US News</span><span class="signal-tag">regulatory_framework_clarity</span></div>
+        </div>
+      </div>
+      <!-- FACT-CHECK: PARTIALLY_CONFIRMED — Penalty range conflates tiers: EUR 35M for prohibited practices, EUR 15M for high-risk non-compliance, EUR 7.5M for incorrect info. -->
+      <div class="signal-item" data-fact-check="PARTIALLY_CONFIRMED">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">EU AI Act high-risk compliance deadline: August 2, 2026</div>
+          <div class="signal-summary">Penalties reach EUR 35M (7% turnover) for prohibited practices, EUR 15M (3%) for high-risk non-compliance. Applies extraterritorially. Five months out, most organizations have not started conformity assessments.</div>
+          <div class="signal-meta"><span class="signal-source">Legal Nodes</span><span class="signal-tag">regulatory_framework_clarity</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">China's Supreme Court expedites AI legislation during Two Sessions</div>
+          <div class="signal-summary">Courts will handle more AI cases and clarify innovation-infringement boundaries. Open-source AI infrastructure gets explicit state backing. Judicial policy will address training data legality.</div>
+          <div class="signal-meta"><span class="signal-source">IAPP</span><span class="signal-tag">regulatory_framework_clarity</span></div>
+        </div>
+      </div>
+      <!-- FACT-CHECK: UNVERIFIABLE — November 2026 date applies to watermarking rules only, not all high-risk rules. MEPs proposed Dec 2027 for Annex III high-risk. -->
+      <div class="signal-item" data-fact-check="UNVERIFIABLE">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">MEPs vote shorter EU AI Act delay on watermarking rules: November 2026 instead of February 2027</div>
+          <div class="signal-summary">Parliament pushes back against the Commission's longer extension on transparency provisions. High-risk system rules face separate timelines. The regulatory ambiguity window is closing.</div>
+          <div class="signal-meta"><span class="signal-source">European Parliament</span><span class="signal-tag">regulatory_framework_clarity</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">SB 3001 passes: AI disclosure and safety rules for minors clear committee 6-0</div>
+          <div class="signal-summary">Mandates protocols against suicidal ideation production and minor-specific protections. State-level AI safety legislation advances while federal preemption remains aspirational.</div>
+          <div class="signal-meta"><span class="signal-source">Transparency Coalition</span><span class="signal-tag">regulatory_framework_clarity</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neu">~</span>
+        <div class="signal-body">
+          <div class="signal-headline">China's Five-Year Plan mentions AI 50+ times across 141 pages</div>
+          <div class="signal-summary">The 2026-2030 plan embeds an "AI Plus" approach throughout economic development. Guangdong's high-tech industries already account for 43% of GDP. Jiangsu hosts over 1,500 AI companies.</div>
+          <div class="signal-meta"><span class="signal-source">Hannover Messe / Reuters</span><span class="signal-tag">pending_classification</span></div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <span class="signal-dir dir-neg">&minus;</span>
+        <div class="signal-body">
+          <div class="signal-headline">Teenagers sue xAI over Grok-generated child sexual abuse material</div>
+          <div class="signal-summary">Three Tennessee plaintiffs allege Grok morphed real photos of minors into explicit images. Multiple deepfake lawsuits now pending. The case exposes the absence of effective content safety guardrails in some frontier image models.</div>
+          <div class="signal-meta"><span class="signal-source">Washington Post</span><span class="signal-tag">institutional_trust</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="signal-depth-line">+21 more signals tracked this week. Hinton warned AI deception capabilities are improving and policymakers have not kept pace. Anthropic's Leike reported agentic misalignment dropped to near zero since Sonnet 4.5. Amodei called OpenAI's Pentagon deal messaging "safety theater" in a leaked staff memo, escalating the public feud over military AI deployment.</div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">espresso·ai</div>
+    <div class="slide-footer-right">7 / 8</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 8 — ABOUT ═══ -->
+<div class="slide slide-navy">
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">About</div>
+  </div>
+  <div class="slide-content">
+    <div style="padding-top: 28px;"></div>
+    <div class="about-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="about-tagline">AI news. Concentrated.</div>
+    <div class="about-rule"></div>
+    <p class="about-desc">espresso·ai is an AI news agent that delivers concentrated, high-signal intelligence on artificial intelligence developments and long-term trends. Every signal is classified against six structural Scale Levers to answer one question: is AI accelerating toward transformational scale, or stalling before it gets there?</p>
+
+    <div class="about-levers-label">The Scale Levers Framework</div>
+    <div class="about-levers-grid">
+      <div class="about-lever-item">
+        <span class="about-lever-code">COMPUTE</span>
+        <span class="about-lever-name">Compute &amp; Infrastructure</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">ENERGY</span>
+        <span class="about-lever-name">Energy &amp; Environment</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">SOCIETY</span>
+        <span class="about-lever-name">Society &amp; Human Capital</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">INDUSTRY</span>
+        <span class="about-lever-name">Industry &amp; Business</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">CAPITAL</span>
+        <span class="about-lever-name">Capital &amp; Investment</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">GOV</span>
+        <span class="about-lever-name">Governance &amp; Geopolitics</span>
+      </div>
+    </div>
+
+    <div class="about-author">
+      <div class="about-author-info">
+        <div class="about-author-name">Curated By Tommaso Babucci</div>
+        <div class="about-author-role">AI Strategy &amp; Development Lead</div>
+        <div class="about-cta">espresso·ai</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">Dense signal. Zero noise.</div>
+    <div class="slide-footer-right">8 / 8</div>
+  </div>
+</div>
+
+</body>
+</html>

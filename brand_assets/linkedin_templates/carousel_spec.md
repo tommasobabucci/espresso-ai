@@ -1,17 +1,34 @@
-# espresso·ai — Weekly Carousel Template Specification
+# espresso·ai — Carousel Template Specification
 
-> **For Claude Code:** This is the authoritative specification for generating weekly LinkedIn carousel HTML files. Follow every rule exactly. When in doubt, match the reference template at `brand_assets/linkedin_templates/weekly_carousel_template.html`.
+> **For Claude Code:** This is the authoritative specification for generating LinkedIn carousel HTML files for any cadence. Follow every rule exactly. When in doubt, match the reference template at `brand_assets/linkedin_templates/weekly_carousel_template.html` (which shows a weekly example — adapt cover content per the Cadence Configuration table below).
 
 ---
 
 ## Overview
 
-The weekly carousel is a 7-slide HTML document sized at **1080 x 1080px per slide** (square LinkedIn carousel format). It synthesizes one week of AI signals into an editorial brief organized by the six Scale Levers.
+The carousel is an 8-slide HTML document sized at **1080 x 1350px per slide** (portrait LinkedIn carousel format). It synthesizes AI signals for a given cadence period into an editorial brief organized by the six Scale Levers.
 
 - **Slide 1**: Navy cover with headline, stats, lever dashboard, and about section
-- **Slides 2–7**: One lever per slide with 4–5 signal cards each
+- **Slides 2–7**: One lever per slide with 6–7 signal cards each
+- **Slide 8**: Navy about page with brand identity, Scale Levers framework, and author
 
-**Output path:** `PR/weekly/{YYYY-MM-DD}_weekly_carousel.html`
+**Output path:** `PR/{cadence}/{YYYY-MM-DD}_{cadence}_carousel.html`
+
+---
+
+## Cadence Configuration
+
+The cover slide adapts its text based on cadence. All other slides are identical across cadences.
+
+| Cadence | Nav Right Text | Date Eyebrow Format | Section Label |
+|---|---|---|---|
+| daily | `A strong sip of today's AI news` | `{Month} {DD}, {YYYY}` | `Today` |
+| weekly | `A strong sip of this week's AI news` | `Week of {Month} {DD}–{DD}, {YYYY}` | `This Week` |
+| monthly | `A strong sip of this month's AI news` | `{Month} {YYYY}` | `This Month` |
+| quarterly | `A strong sip of this quarter's AI news` | `Q{N} {YYYY}` | `This Quarter` |
+| annual | `A strong sip of this year's AI news` | `{YYYY}` | `This Year` |
+
+**Quarterly eyebrow logic:** If start_date is in Jan–Mar → Q1, Apr–Jun → Q2, Jul–Sep → Q3, Oct–Dec → Q4.
 
 ---
 
@@ -19,13 +36,14 @@ The weekly carousel is a 7-slide HTML document sized at **1080 x 1080px per slid
 
 | # | Slide Type | Background | Nav Right Label |
 |---|---|---|---|
-| 1 | Cover | Navy (`#162B4E`) | `A strong sip of this week's AI news` |
+| 1 | Cover | Navy (`#162B4E`) | `{NAV_RIGHT_TEXT}` (see Cadence Configuration) |
 | 2 | COMPUTE | White (`#FFFFFF`) | `Scale Lever 1 of 6` |
 | 3 | ENERGY | Cream (`#FAF9F7`) | `Scale Lever 2 of 6` |
 | 4 | SOCIETY | White | `Scale Lever 3 of 6` |
 | 5 | INDUSTRY | Cream | `Scale Lever 4 of 6` |
 | 6 | CAPITAL | White | `Scale Lever 5 of 6` |
 | 7 | GOV | Cream | `Scale Lever 6 of 6` |
+| 8 | About | Navy (`#162B4E`) | `About` |
 
 ---
 
@@ -57,7 +75,7 @@ Every carousel HTML file must include these exact CSS custom properties and font
   --sans:  'Inter', -apple-system, sans-serif;
 
   --slide-w: 1080px;
-  --slide-h: 1080px;
+  --slide-h: 1350px;
 }
 ```
 
@@ -80,12 +98,12 @@ Every slide uses this base structure:
   </div>
   <div class="slide-footer">
     <div class="slide-footer-left">espresso·ai</div>
-    <div class="slide-footer-right">{N} / 7</div>
+    <div class="slide-footer-right">{N} / 8</div>
   </div>
 </div>
 ```
 
-**Slide type classes:** `slide-title` (cover), `slide-lever` (lever slides)
+**Slide type classes:** `slide-title` (cover), `slide-lever` (lever slides), `slide-navy` (about)
 
 For cream-background slides, add inline style: `style="background: var(--cream);"`
 
@@ -100,7 +118,7 @@ For cream-background slides, add inline style: `style="background: var(--cream);
 
 - Fixed bottom, 56px horizontal padding
 - Left: `espresso·ai` (13px, weight 500, gray-400)
-- Right: page number `{N} / 7` (13px, weight 600, gray-400)
+- Right: page number `{N} / 8` (13px, weight 600, gray-400)
 - Top border: 1px solid `--gray-200` (or `rgba(255,255,255,0.08)` on navy cover)
 - On navy cover: both left and right text use `rgba(255,255,255,0.3)`
 
@@ -113,7 +131,7 @@ For cream-background slides, add inline style: `style="background: var(--cream);
 
 The cover slide has two sections separated by a horizontal divider:
 1. **Brand identity** (top) — large wordmark, tagline, description of espresso·ai, curator credit
-2. **This week** (bottom) — issue badge + date, editorial headline, stat cards, compact lever dashboard
+2. **This Period section** (bottom) — issue badge + date eyebrow, editorial headline, stat cards, compact lever dashboard. The section label and date eyebrow are cadence-dependent (see Cadence Configuration table).
 
 ### Structure
 
@@ -121,7 +139,7 @@ The cover slide has two sections separated by a horizontal divider:
 <div class="slide slide-title">
   <div class="slide-nav">
     <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
-    <div class="slide-nav-right">A strong sip of this week's AI news</div>
+    <div class="slide-nav-right">{NAV_RIGHT_TEXT}</div>
   </div>
   <div class="slide-content">
     <div class="title-inner">
@@ -129,15 +147,15 @@ The cover slide has two sections separated by a horizontal divider:
       <div class="cover-brand">
         <div class="cover-wordmark">espresso<span class="dot">·</span>ai</div>
         <div class="cover-tagline">AI news. Concentrated.</div>
-        <div class="cover-desc">A multi-agent intelligence pipeline that collects signals from research papers, news, social media, and 71 key influencers. Every signal is classified against six structural levers that determine whether AI reaches transformational scale or stalls before it gets there.</div>
+        <div class="cover-desc">A multi-agent intelligence pipeline that collects signals from research papers, news, regulatory filings, corporate disclosures, open-source releases, energy data, social media, and 71 key influencers. Every signal is classified against six structural levers that determine whether AI reaches transformational scale or stalls before it gets there.</div>
         <div class="cover-curated">Curated by Tommaso Babucci</div>
       </div>
 
-      <!-- This week section -->
-      <div class="cover-week">
+      <!-- This period section -->
+      <div class="cover-period">
         <div class="cover-issue-row">
           <span class="cover-issue-badge">Issue {N}</span>
-          <div class="eyebrow" style="color: var(--red-light);">Week of {MONTH} {DD}–{DD}, {YYYY}</div>
+          <div class="eyebrow" style="color: var(--red-light);">{DATE_EYEBROW}</div>
         </div>
         <div class="title-rule"></div>
         <h1 class="title-headline">{LINE_1}<br/>{LINE_2}<br/>{LINE_3}</h1>
@@ -172,7 +190,7 @@ The cover slide has two sections separated by a horizontal divider:
   </div>
   <div class="slide-footer">
     <div class="slide-footer-left">espresso·ai</div>
-    <div class="slide-footer-right">1 / 7</div>
+    <div class="slide-footer-right">1 / 8</div>
   </div>
 </div>
 ```
@@ -183,10 +201,10 @@ The cover slide has two sections separated by a horizontal divider:
 |---|---|---|
 | Wordmark | Text | Static: `espresso·ai` at 56px Playfair Display |
 | Tagline | Text | Static: `AI news. Concentrated.` |
-| Description | Paragraph | Static. Describes the multi-agent pipeline and Scale Levers framework. |
+| Description | Paragraph | Semi-static. Describes the multi-agent pipeline and Scale Levers framework. Update when active collectors materially change. |
 | Curator credit | Text | Static: `Curated by Tommaso Babucci` |
 | Issue badge | Badge | Format: `Issue {N}` — red background, white text |
-| Date eyebrow | Text | Format: `Week of March 12–19, 2026` |
+| Date eyebrow | Text | Cadence-dependent format (see Cadence Configuration table) |
 | Headline | 3 lines | 3 short declarative phrases via `<br/>`. Max 60 chars total. Capture dominant tensions. |
 | Stat cards | 3 cards | Total signals, source pipeline count, always 6 for scale levers. |
 | Dashboard items (x6) | 2-col grid | Lever code + direction badge + signal count + scope title. No per-lever summaries. |
@@ -194,7 +212,7 @@ The cover slide has two sections separated by a horizontal divider:
 ### Cover Brand Text (Static)
 
 **Description:**
-> A multi-agent intelligence pipeline that collects signals from research papers, news, social media, and 71 key influencers. Every signal is classified against six structural levers that determine whether AI reaches transformational scale or stalls before it gets there.
+> A multi-agent intelligence pipeline that collects signals from research papers, news, regulatory filings, corporate disclosures, open-source releases, energy data, social media, and 71 key influencers. Every signal is classified against six structural levers that determine whether AI reaches transformational scale or stalls before it gets there.
 
 ### Cover Lever Scope Titles
 
@@ -393,8 +411,8 @@ Each lever in the dashboard includes an expanded scope title:
   margin-top: 14px;
 }
 
-/* This Week section */
-.cover-week {
+/* Period section (cadence-dependent content) */
+.cover-period {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -444,18 +462,16 @@ Each lever in the dashboard includes an expanded scope title:
         <div class="lever-stat-num">{SIGNAL_COUNT}</div>
         <div class="lever-stat-label">Signals</div>
       </div>
+      <!-- Include one lever-stat for EACH direction with count > 0, ordered: pos, neg, neu, amb -->
       <div class="lever-stat">
         <span class="lever-stat-dir dir-{TYPE}">{SYMBOL}</span>
         <div class="lever-stat-label">{N} {direction_label}</div>
       </div>
-      <div class="lever-stat">
-        <span class="lever-stat-dir dir-{TYPE}">{SYMBOL}</span>
-        <div class="lever-stat-label">{N} {direction_label}</div>
-      </div>
+      <!-- repeat for each non-zero direction -->
     </div>
     <div class="lever-divider"></div>
     <div class="signal-list">
-      <!-- 4-5 signal cards -->
+      <!-- 6-7 signal cards -->
       <div class="signal-item">
         <span class="signal-dir dir-{TYPE}">{SYMBOL}</span>
         <div class="signal-body">
@@ -469,10 +485,12 @@ Each lever in the dashboard includes an expanded scope title:
       </div>
       <!-- repeat for each signal -->
     </div>
+    <!-- Signal depth line — only if unselected_count > 0 -->
+    <div class="signal-depth-line">+{N} more signals tracked this {period}. {2-3 sentences summarizing themes from unselected_context. Max 300 characters.}</div>
   </div>
   <div class="slide-footer">
     <div class="slide-footer-left">espresso·ai</div>
-    <div class="slide-footer-right">{N} / 7</div>
+    <div class="slide-footer-right">{N} / 8</div>
   </div>
 </div>
 ```
@@ -504,10 +522,11 @@ Each lever in the dashboard includes an expanded scope title:
 | Slot | Type | Constraints |
 |---|---|---|
 | Lever code line | Text | Format: `{CODE} — {Full Name}` (use `&amp;` for ampersand in HTML) |
-| Editorial title | H2 | 10-15 words. Declarative. Captures the lever's story this week. |
+| Editorial title | H2 | 10-15 words. Declarative. Captures the lever's story for this period. |
 | Lever description | Paragraph | 1-2 sentences. Contextualizes the lever with data. Max 200 chars. |
-| Stats row | 3 items | Total signal count + top 2 direction counts with badges |
-| Signal cards | 4-5 items | Direction badge + headline + summary + source + 1 tag |
+| Stats row | 2-5 items | Total signal count + all non-zero direction counts (ordered: positive, negative, neutral, ambiguous) |
+| Signal cards | 6-7 items | Direction badge + headline + summary + source + 1 tag |
+| Signal depth line | Text | Editorial paragraph. Start with `+{N} more signals tracked this {period}.` followed by 2-3 sentences summarizing themes from `unselected_context`. Max 300 characters. Only if N > 0. |
 
 ### Signal Card Content
 
@@ -534,6 +553,7 @@ Each lever in the dashboard includes an expanded scope title:
 | Signal summary | Inter | 15px | 400 | gray-600, line-height 1.45 |
 | Signal source | Inter | 13px | 600 | navy, opacity 0.5 |
 | Signal tag | Inter | 12px | 500 | gray-400, uppercase, 0.04em tracking |
+| Signal depth line | Inter | 13px | 400 | gray-600, line-height 1.5 |
 | Footer | Inter | 13px | 500/600 | gray-400 |
 
 ### Lever Slide CSS
@@ -569,8 +589,9 @@ Each lever in the dashboard includes an expanded scope title:
 }
 .lever-stats-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  gap: 16px 24px;
   margin-bottom: 20px;
 }
 .lever-stat {
@@ -624,7 +645,6 @@ Each lever in the dashboard includes an expanded scope title:
 .signal-list {
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 .signal-item {
   padding: 12px 0;
@@ -679,6 +699,229 @@ Each lever in the dashboard includes an expanded scope title:
   text-transform: uppercase;
   color: var(--gray-400);
 }
+
+/* Signal depth line */
+.signal-depth-line {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gray-600);
+  line-height: 1.5;
+  padding-top: 14px;
+  margin-top: 0;
+  border-top: 1px solid var(--gray-100);
+}
+```
+
+---
+
+## Slide 8 — About (Navy)
+
+**Class:** `slide-navy`
+**Background:** Navy (`#162B4E`)
+
+The about slide closes the carousel with brand identity, the Scale Levers framework, and author information.
+
+### Structure
+
+```html
+<div class="slide slide-navy">
+  <div class="slide-nav">
+    <div class="slide-nav-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="slide-nav-right">About</div>
+  </div>
+  <div class="slide-content">
+    <div style="padding-top: 28px;"></div>
+    <div class="about-logo">espresso<span class="dot">·</span>ai</div>
+    <div class="about-tagline">AI news. Concentrated.</div>
+    <div class="about-rule"></div>
+    <p class="about-desc">espresso·ai is an AI news agent that delivers concentrated, high-signal intelligence on artificial intelligence developments and long-term trends. Every signal is classified against six structural Scale Levers to answer one question: is AI accelerating toward transformational scale, or stalling before it gets there?</p>
+
+    <div class="about-levers-label">The Scale Levers Framework</div>
+    <div class="about-levers-grid">
+      <div class="about-lever-item">
+        <span class="about-lever-code">COMPUTE</span>
+        <span class="about-lever-name">Compute &amp; Infrastructure</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">ENERGY</span>
+        <span class="about-lever-name">Energy &amp; Environment</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">SOCIETY</span>
+        <span class="about-lever-name">Society &amp; Human Capital</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">INDUSTRY</span>
+        <span class="about-lever-name">Industry &amp; Business</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">CAPITAL</span>
+        <span class="about-lever-name">Capital &amp; Investment</span>
+      </div>
+      <div class="about-lever-item">
+        <span class="about-lever-code">GOV</span>
+        <span class="about-lever-name">Governance &amp; Geopolitics</span>
+      </div>
+    </div>
+
+    <div class="about-author">
+      <div class="about-author-info">
+        <div class="about-author-name">Curated By Tommaso Babucci</div>
+        <div class="about-author-role">AI Strategy &amp; Development Lead</div>
+        <div class="about-cta">espresso·ai</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <div class="slide-footer-left">Dense signal. Zero noise.</div>
+    <div class="slide-footer-right">8 / 8</div>
+  </div>
+</div>
+```
+
+### About Content Slots
+
+| Slot | Type | Constraints |
+|---|---|---|
+| Wordmark | Text | `espresso·ai` at 48px Playfair Display, white |
+| Tagline | Text | `AI news. Concentrated.` italic, 20px |
+| Divider rule | Decorative | 48px wide, 2px tall, red-light |
+| Description | Paragraph | Explains espresso·ai and the Scale Levers question. Semi-static. |
+| Levers label | Text | `The Scale Levers Framework` |
+| Levers grid | 2×3 grid | Lever code badges + full names for all 6 levers |
+| Author name | Text | `Curated By Tommaso Babucci` |
+| Author role | Text | `AI Strategy & Development Lead` |
+| CTA | Text | `espresso·ai` |
+
+### About Typography
+
+| Element | Font | Size | Weight | Color |
+|---|---|---|---|---|
+| Nav logo | Playfair Display | 16px | 600 | white (dot: red-light) |
+| Nav right | Inter | 13px | 500 | rgba(255,255,255,0.35), uppercase |
+| Wordmark | Playfair Display | 48px | 700 | white (dot: red-light) |
+| Tagline | Playfair Display | 20px | 400 | rgba(255,255,255,0.5), italic |
+| Divider rule | — | 48px wide, 2px tall | — | red-light |
+| Description | Inter | 16px | 400 | rgba(255,255,255,0.55), line-height 1.65 |
+| Levers label | Inter | 13px | 700 | red-light, uppercase, 0.1em tracking |
+| Lever code badge | SF Mono / Fira Code | 11px | 600 | red-light, bg: rgba(217,78,60,0.15), 3px 8px padding |
+| Lever name | Inter | 15px | 500 | rgba(255,255,255,0.7) |
+| Author name | Playfair Display | 22px | 700 | white |
+| Author role | Inter | 14px | 500 | rgba(255,255,255,0.5) |
+| CTA | Inter | 14px | 600 | red-light |
+| Footer left | Inter | 13px | 500 | rgba(255,255,255,0.3) |
+| Footer right | Inter | 13px | 600 | rgba(255,255,255,0.3) |
+
+### About CSS
+
+```css
+.slide-navy {
+  background: var(--navy);
+  color: var(--white);
+}
+.slide-navy .slide-nav {
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+.slide-navy .slide-nav-logo { color: var(--white); }
+.slide-navy .slide-nav-logo .dot { color: var(--red-light); }
+.slide-navy .slide-nav-right { color: rgba(255,255,255,0.35); }
+.slide-navy .slide-footer {
+  border-top-color: rgba(255,255,255,0.08);
+}
+.slide-navy .slide-footer-left { color: rgba(255,255,255,0.3); }
+.slide-navy .slide-footer-right { color: rgba(255,255,255,0.3); }
+
+.about-logo {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.about-logo .dot { color: var(--red-light); }
+.about-tagline {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 24px;
+}
+.about-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--red-light);
+  margin-bottom: 24px;
+}
+.about-desc {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+.about-levers-label {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red-light);
+  margin-bottom: 16px;
+}
+.about-levers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 36px;
+  margin-bottom: 36px;
+}
+.about-lever-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.about-lever-code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--red-light);
+  background: rgba(217,78,60,0.15);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.about-lever-name {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+}
+.about-author {
+  margin-top: auto;
+}
+.about-author-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.about-author-role {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 12px;
+}
+.about-cta {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red-light);
+}
 ```
 
 ---
@@ -707,16 +950,18 @@ Used in stats rows, signal cards, and the cover dashboard. Map the signal's `dir
 
 ## Stats Row Rules
 
-The stats row shows 3 items: total signal count + top 2 direction counts (by volume). Always show the two most common directions for that lever. Example:
+The stats row shows the total signal count plus **every direction that has at least 1 signal**, ordered: positive, negative, neutral, ambiguous. This ensures negative signals are always visible when present.
 
-- If a lever has 172 signals: 142 positive, 24 ambiguous, 4 neutral, 2 negative
-- Stats row shows: `172 Signals` | `+ 142 positive` | `? 24 ambiguous`
+Example:
+
+- If a lever has 172 signals: 142 positive, 4 negative, 2 neutral, 24 ambiguous
+- Stats row shows: `172 Signals` | `+ 142 positive` | `− 4 negative` | `~ 2 neutral` | `? 24 ambiguous`
 
 ---
 
 ## Print & PDF Rules
 
-These CSS rules must be included in every carousel for correct PDF export (Chrome Print → PDF, custom size 1080x1080px):
+These CSS rules must be included in every carousel for correct PDF export (Chrome Print → PDF, custom size 1080x1350px):
 
 ```css
 @media print {
@@ -734,7 +979,7 @@ These CSS rules must be included in every carousel for correct PDF export (Chrom
   }
 }
 @page {
-  size: 1080px 1080px;
+  size: 1080px 1350px;
   margin: 0;
 }
 ```
@@ -784,12 +1029,18 @@ All editorial text in the carousel must follow these rules:
 
 Before writing the final HTML file, verify:
 
-- [ ] Exactly 7 slides in correct order (1 cover + 6 lever)
+- [ ] Exactly 8 slides in correct order (1 cover + 6 lever + 1 about)
 - [ ] Cover is navy with headline, stats, dashboard, and about section
+- [ ] Cover nav right text matches the cadence from the Cadence Configuration table
+- [ ] Cover date eyebrow uses the correct cadence-specific format
+- [ ] Cover period section uses class `cover-period`
 - [ ] Lever slides alternate white/cream (2=W, 3=C, 4=W, 5=C, 6=W, 7=C)
-- [ ] All page numbers correct (1/7 through 7/7)
+- [ ] All page numbers correct (1/8 through 8/8)
 - [ ] 4-5 signal cards per lever slide (never fewer than 3, never more than 5)
 - [ ] Each signal card includes source attribution
+- [ ] Lever stats row shows all non-zero direction counts (positive, negative, neutral, ambiguous)
+- [ ] Signal depth line present on each lever slide with unselected_count > 0
+- [ ] About slide (slide 8) is navy with brand identity, levers grid, and author
 - [ ] No AI writing giveaways in any editorial text
 - [ ] All `&` characters escaped as `&amp;` in HTML
 - [ ] Direction badge classes match signal direction values
@@ -801,4 +1052,4 @@ Before writing the final HTML file, verify:
 
 ---
 
-*espresso·ai Weekly Carousel Spec · v3.0 · March 2026*
+*espresso·ai Carousel Spec · v5.0 · March 2026*

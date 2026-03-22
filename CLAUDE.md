@@ -96,10 +96,18 @@ JSONL file naming: `YYYY-MM-DD_[cadence]_signals.jsonl` (daily), `YYYY-W[WW]_wee
 | Reddit Claude Research | `/reddit-claude-research [cadence]` | Collect AI signals from curated Reddit subreddits via Claude API web search, classify by Scale Lever, write JSONL to `research_db/raw/` |
 | Reddit Perplexity Research | `/reddit-perplexity-research [cadence]` | Collect AI signals from curated Reddit subreddits via Perplexity sonar-pro web search, classify by Scale Lever, write JSONL to `research_db/raw/` |
 | Influencer Research | `/influencer-research [cadence]` | Collect AI signals from ~71 key influencers across 10 groups via parallel subagents with WebSearch, classify by Scale Lever, write JSONL to `research_db/raw/` |
-| Weekly Carousel | `/weekly-carousel [--start-date] [--end-date]` | Synthesize raw signals into a 7-slide LinkedIn carousel: dedup, score, select top 5 per lever, write editorial content, generate HTML |
-| Brew Espresso | `/brew-espresso [cadence]` | Run all 7 research collectors in parallel (excludes X/Apify), skip sources with missing API keys, present unified summary. Collection only |
+| Carousel | `/carousel [cadence] [--start-date] [--end-date]` | Synthesize raw signals into a 7-slide LinkedIn carousel for any cadence: dedup, score, select top 5 per lever, write editorial content, generate HTML |
+| GitHub Research | `/github-research [cadence]` | Collect open-source AI model releases from GitHub & Hugging Face, classify by Scale Lever, write JSONL to `research_db/raw/` |
+| Regulatory Research | `/regulatory-research [cadence]` | Collect AI regulatory signals from US Federal Register (free API, no auth), classify by Scale Lever, write JSONL to `research_db/raw/` |
+| SEC EDGAR Research | `/edgar-research [cadence]` | Collect AI-related SEC EDGAR corporate filings (10-K, 10-Q, 8-K) from ~17 curated companies, classify by Scale Lever (primary: CAPITAL), write JSONL to `research_db/raw/` |
+| EIA Energy Research | `/eia-research [cadence]` | Collect AI-relevant energy signals from US Energy Information Administration (free API, requires free key), detect trends in generation mix, renewable capacity, and state consumption, write JSONL to `research_db/raw/` |
+| OpenAlex Research | `/openalex-research [cadence]` | Collect AI papers from non-CS fields (medicine, law, energy, finance, education) via OpenAlex (free, no auth), classify by Scale Lever (primary: SOCIETY + INDUSTRY), write JSONL to `research_db/raw/` |
+| Fact Check | `/fact-check <report-path> [--start-date] [--end-date]` | Fact-check all signal claims in a report via 6 parallel subagents (one per Scale Lever), then remediate across all pipeline artifacts |
+| Brew Espresso | `/brew-espresso [cadence]` | Run all 9 research collectors in parallel (excludes X/Apify), skip sources with missing API keys, present unified summary. Collection only |
+| Serve Espresso | `/serve-espresso [cadence]` | Chain carousel synthesis + fact-checking into a single command. Run after `/brew-espresso` |
+| Brew & Serve Espresso | `/brew-and-serve-espresso [cadence]` | Full end-to-end pipeline: collect signals, synthesize carousel, fact-check. Chains `/brew-espresso` + `/serve-espresso` |
 
-Collection skills require a cadence argument. The weekly carousel skill accepts optional date range arguments and invokes `synthesize_signals.py`.
+Collection skills require a cadence argument. The carousel skill accepts a cadence and optional date range arguments and invokes `synthesize_signals.py`. The fact-check skill accepts a report path and optional date range. The serve-espresso skill chains carousel and fact-check sequentially, computing the report path automatically. The brew-and-serve-espresso skill chains the entire pipeline (collection + synthesis + fact-check) into a single command.
 
 ---
 
@@ -145,6 +153,7 @@ All keys are stored in a single file: `.env/.env`. Never quote values — store 
 ```
 PERPLEXITY_API_KEY=pplx-...
 ANTHROPIC_API_KEY=sk-ant-...
+GITHUB_TOKEN=ghp_...        (optional — increases GitHub API rate limit from 60 to 5,000 req/hr)
 ```
 
 To load keys in Python:

@@ -1,0 +1,54 @@
+{
+  "pipeline_run_id": "2026-03-15_2026-03-22_reddit_perplexity_weekly_13e97959",
+  "collection_batch_id": "batch_20260322_1918",
+  "cadence": "weekly",
+  "source": "reddit_via_perplexity",
+  "date_window": {
+    "after": "03/15/2026",
+    "before": "03/22/2026"
+  },
+  "started_at": "2026-03-22T19:18:54Z",
+  "completed_at": "2026-03-22T19:19:53Z",
+  "queries_executed": 5,
+  "subreddits_tracked": 9,
+  "subreddits_with_signals": 3,
+  "signals_collected": 13,
+  "duplicates_removed": 0,
+  "signals_written": 13,
+  "output_file": "/Users/tommasobabucci/projects/espresso-ai/research_db/raw/2026-03-15_2026-03-22_reddit_perplexity_weekly_signals.jsonl",
+  "quality_metrics": {
+    "with_primary_source_count": 9,
+    "no_primary_source_count": 4,
+    "speculation_heavy_count": 0,
+    "meme_or_humor_count": 0,
+    "self_promotional_count": 1,
+    "vendor_astroturf_count": 0,
+    "unknown_domain_count": 0,
+    "aggregator_title_count": 0,
+    "out_of_date_count": 0,
+    "missing_url_count": 6,
+    "url_not_in_citations_count": 7,
+    "direction_distribution": {
+      "+": 2,
+      "-": 0,
+      "~": 9,
+      "?": 2
+    },
+    "lever_distribution": {
+      "COMPUTE": 8,
+      "INDUSTRY": 1,
+      "CAPITAL": 4
+    },
+    "subreddit_distribution": {
+      "LocalLLaMA": 7,
+      "Singularity": 3,
+      "OpenAI": 3
+    },
+    "post_type_distribution": {
+      "experience": 7,
+      "news_discussion": 3,
+      "research": 2,
+      "analysis": 1
+    }
+  }
+}
